@@ -10,6 +10,5 @@ public interface TripDetailsRepository extends  CrudRepository<TripDetails, Inte
 	TripDetails findById(int id);
 	TripDetails save(TripDetails td);
 	void deleteById(int id);
-	
 	List<TripDetails> findAll();
 }
