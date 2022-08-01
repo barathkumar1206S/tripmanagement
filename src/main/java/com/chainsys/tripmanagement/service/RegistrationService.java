@@ -5,27 +5,28 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.tripmanagement.pojo.TripRegistration;
+import com.chainsys.tripmanagement.model.TripRegistration;
 import com.chainsys.tripmanagement.repo.TripRegistrationRepository;
 
 @Service
 public class RegistrationService {
 	@Autowired
-	private TripRegistrationRepository trrrepo;
+	private TripRegistrationRepository tripregistrationrepo;
 	
-	public List<TripRegistration> getallregistration(){
-		List<TripRegistration> reglist=trrrepo.findAll();
+	public List<TripRegistration> getAllRegistration(){
+		List<TripRegistration> reglist=tripregistrationrepo.findAll();
 		return reglist;
 	}
 	 public TripRegistration save(TripRegistration tpreg) {
-		return trrrepo.save(tpreg);
+		return tripregistrationrepo.save(tpreg);
 	 }
 	 public TripRegistration findById(int id) {
-		 return trrrepo.findById(id);
+		 return tripregistrationrepo.findById(id);
 	 }
-	 public void deleteByid(int id) {
-		 trrrepo.deleteById(id);
+	 public void deleteById(int id) {
+		 tripregistrationrepo.deleteById(id);
 	 }
+	 
 	
 
 }

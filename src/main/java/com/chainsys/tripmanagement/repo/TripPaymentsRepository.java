@@ -4,8 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-
-import com.chainsys.tripmanagement.pojo.TripPayments;
+import com.chainsys.tripmanagement.model.TripPayments;
 
 public interface TripPaymentsRepository extends  CrudRepository<TripPayments, Integer> {
 	

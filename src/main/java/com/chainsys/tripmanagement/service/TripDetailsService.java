@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.tripmanagement.controller.TripDetailsController;
-import com.chainsys.tripmanagement.pojo.TripDetails;
+import com.chainsys.tripmanagement.model.TripDetails;
 import com.chainsys.tripmanagement.repo.TripDetailsRepository;
 
 @Service
@@ -14,7 +14,7 @@ public class TripDetailsService {
 @Autowired
 private TripDetailsRepository triprepo;
 
-public List<TripDetails> getalltripdetails()
+public List<TripDetails> getAllTripDetails()
 { 
 	List<TripDetails>triplist = triprepo.findAll();
 	return triplist;

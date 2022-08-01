@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.tripmanagement.pojo.TripPayments;
+import com.chainsys.tripmanagement.model.TripPayments;
 import com.chainsys.tripmanagement.repo.TripPaymentsRepository;
 
 @Service
@@ -13,7 +13,7 @@ public class PaymentsService {
 	@Autowired
 	private TripPaymentsRepository tpayrepo; 
 	
-	public List<TripPayments> getallpayments(){
+	public List<TripPayments> getAllPayments(){
 		List<TripPayments> tpaylist=tpayrepo.findAll();
 		return tpaylist;
 	}

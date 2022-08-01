@@ -11,49 +11,73 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.tripmanagement.pojo.TripPackage;
-import com.chainsys.tripmanagement.pojo.TripRegistration;
+import com.chainsys.tripmanagement.model.TripPackage;
+import com.chainsys.tripmanagement.model.TripRegistration;
 import com.chainsys.tripmanagement.service.PackageService;
 
 @Controller
-@RequestMapping("/package")
+//@RequestMapping("/package")
 public class PackageController {
 @Autowired
 PackageService packservice;
 
-@GetMapping("/getallpackages")
+@GetMapping("/getAllPackages")
 public String getpackage(Model model) {
-	List<TripPackage> tpack=packservice.getallpackages();
-	model.addAttribute("allpackage",tpack);
-	return "list-package";
+	List<TripPackage> tpack=packservice.getAllPackages();
+	model.addAttribute("allPackage",tpack);
+	return "list-Package";
 }
-@GetMapping("/addpackageform")
+@GetMapping("/addPackageForm")
 public String showAddForm(Model model) {
 	TripPackage thepack = new TripPackage();
-	model.addAttribute("addpackage", thepack);
-	return "add-package-form";
+	model.addAttribute("addPackage", thepack);
+	return "add-Package-Form";
 }
 @PostMapping("/add")
-public String addNewPackage(@ModelAttribute("addpackage") TripPackage thepack) {
+public String addPackage(@ModelAttribute("addPackage") TripPackage thepack) {
 	packservice.save(thepack);
-	return "redirect:/package/getallpackage";
+	return "redirect:/getAllPackages";
 }
-@GetMapping("/updateform")
-public String showUpdateForm(@RequestParam("userid") int id, Model model) {
-	TripPackage tpack =packservice.findByid(id) ;
-	model.addAttribute("updatepackageform", tpack);
-	return "update-package-form";
+@GetMapping("/updateForm")
+public String showPackage(@RequestParam("packageId") int id, Model model) {
+	TripPackage tpack =packservice.findById(id) ;
+	model.addAttribute("updatePackageForm", tpack);
+	return "update-Package-Form";
 }
 
-@PostMapping("/updatepackform")
-public String updatepackage(@ModelAttribute("updatepack") TripPackage tpack) {
+@PostMapping("/updatePackForm")
+public String updatePackage(@ModelAttribute("updatePack") TripPackage tpack) {
 packservice.save(tpack);
-	return "redirect:/package/getallpackage";
+	return "redirect:/getAllPackages";
 }
-@GetMapping("/deletepack")
-public String deletePackage(@RequestParam("userid") int id) {
-	packservice.deleteByid(id);
-	return "redirect:/registration/getallregistration";
+@GetMapping("/deletePack")
+public String deletePackage(@RequestParam("packageId") int id) {
+	packservice.deleteById(id);
+	return "redirect:/getAllPackages";
 }
 
+@RequestMapping("/userLoggedIn")
+public String tourPackages() {
+	return "user-Package";
+}
+
+
+@RequestMapping("/chennaiToLadakh")
+public String chennaiToLadakhPackage() {
+	return "chennai-to-ladakh";
+}
+
+@RequestMapping("/chennaiToKashmir")
+public String chennaiToKashmirPackage() {
+	return "chennai-to-kashmir";
+}
+
+@RequestMapping("/chennaiToMumbai")
+public String chennaiToMumbai() {
+	return "chennai-to-mumbai";
+}
+@RequestMapping("/chennaiToDelhi")
+public String chennaiToDelhi() {
+	return "chennai-to-delhi";
+}
 }

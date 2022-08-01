@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.tripmanagement.pojo.TripDetails;
+import com.chainsys.tripmanagement.model.TripDetails;
 
 public interface TripDetailsRepository extends  CrudRepository<TripDetails, Integer> {
 	TripDetails findById(int id);

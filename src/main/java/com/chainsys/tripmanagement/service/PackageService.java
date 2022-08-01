@@ -5,25 +5,25 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.tripmanagement.pojo.TripPackage;
+import com.chainsys.tripmanagement.model.TripPackage;
 import com.chainsys.tripmanagement.repo.TripPackagesRepository;
 
 @Service
 public class PackageService {
 	@Autowired
-	private TripPackagesRepository trprepo;
+	private TripPackagesRepository packrepo;
 	
-	public List<TripPackage> getallpackages(){
-		List<TripPackage> packlist=trprepo.findAll();
+	public List<TripPackage> getAllPackages(){
+		List<TripPackage> packlist=packrepo.findAll();
 		return packlist;
 	}
 	public TripPackage save(TripPackage trpack) {
-		return trprepo.save(trpack);
+		return packrepo.save(trpack);
 	}
-	public TripPackage findByid(int id) {
-		return trprepo.findById(id);
+	public TripPackage findById(int id) {
+		return packrepo.findById(id);
 	}
-public void deleteByid(int id) {
-	trprepo.deleteById(id);
+public void deleteById(int id) {
+	packrepo.deleteById(id);
 }
 }
