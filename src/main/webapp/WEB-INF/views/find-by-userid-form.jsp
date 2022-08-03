@@ -7,7 +7,7 @@
 <title>Find By UserId</title>
 </head>
 <body>
-	<form action="getRegistration" method="get">
+	<form action="getregistration" method="get">
 		<div>
 			UserId :<input id="userId" name="userId" />
 		</div>

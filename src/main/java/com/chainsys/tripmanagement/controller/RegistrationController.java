@@ -18,55 +18,55 @@ import com.chainsys.tripmanagement.service.RegistrationService;
 @RequestMapping("/registration")
 public class RegistrationController {
 	@Autowired
-	public RegistrationService regservice;
+	public RegistrationService regService;
 
-	@GetMapping("/getAllRegistrations")
+	@GetMapping("/getallregistrations")
 	public String getRegistration(Model model) {
-		List<TripRegistration> reglist = regservice.getAllRegistration();
-		model.addAttribute("allRegistration", reglist);
+		List<TripRegistration> reglist =  regService.getAllRegistration();
+		model.addAttribute("allregistration", reglist);
 		return "list-registration";
 	}
 
 	@GetMapping("/addregform")
 	public String showAddForm(Model model) {
 		TripRegistration thereg = new TripRegistration();
-		model.addAttribute("addRegister", thereg);
+		model.addAttribute("addregister", thereg);
 		return "add-register-form";
 	}
 
 	@PostMapping("/add")
-	public String addRegister(@ModelAttribute("addRegister") TripRegistration thereg) {
-		regservice.save(thereg);
-		return "redirect:/registration/getAllRegistrations";
+	public String addRegister(@ModelAttribute("addregister") TripRegistration thereg) {
+		 regService.save(thereg);
+		return "redirect:/registration/getallregistrations";
 	}
 
 	@GetMapping("/updateregform")
 	public String showUpdateForm(@RequestParam("userId") int id, Model model) {
-		TripRegistration treg = regservice.findById(id);
-		model.addAttribute("updateRegister", treg);
+		TripRegistration treg =  regService.findById(id);
+		model.addAttribute("updateregister", treg);
 		return "update-registration-form";
 	}
 
 	@PostMapping("/update")
-	public String updateRegistration(@ModelAttribute("updateRegister") TripRegistration treg) {
-		regservice.save(treg);
-		return "redirect:/registration/getAllRegistrations";
+	public String updateRegistration(@ModelAttribute("updateregister") TripRegistration treg) {
+		 regService.save(treg);
+		return "redirect:/registration/getallregistrations";
 	}
 
-	@GetMapping("/deleteReg")
+	@GetMapping("/deletereg")
 	public String deleteRegistration(@RequestParam("userId") int id) {
-		regservice.deleteById(id);
-		return "redirect:/registration/getAllRegistrations";
+		 regService.deleteById(id);
+		return "redirect:/registration/getallregistrations";
 	}
 
-	@RequestMapping("/findById")
+	@RequestMapping("/findbyuserid")
 	public String findById() {
-		return "find-by-id-form";
+		return "find-by-userid-form";
 	}
-	@GetMapping("/getRegistration")
+	@GetMapping("/getregistration")
 	public String getRegistration(@RequestParam("userId") int id, Model model) {
-	TripRegistration tpr = regservice.findById(id);
-		model.addAttribute("getRegistration", tpr);
+	TripRegistration tpr =  regService.findById(id);
+		model.addAttribute("getregistration", tpr);
 		return "find-register-id-form";
 	}
 

@@ -11,20 +11,20 @@ import com.chainsys.tripmanagement.repo.TripRegistrationRepository;
 @Service
 public class RegistrationService {
 	@Autowired
-	private TripRegistrationRepository tripregistrationrepo;
+	private TripRegistrationRepository tripRegistrationRepo;
 	
 	public List<TripRegistration> getAllRegistration(){
-		List<TripRegistration> reglist=tripregistrationrepo.findAll();
+		List<TripRegistration> reglist=tripRegistrationRepo.findAll();
 		return reglist;
 	}
 	 public TripRegistration save(TripRegistration tpreg) {
-		return tripregistrationrepo.save(tpreg);
+		return tripRegistrationRepo.save(tpreg);
 	 }
 	 public TripRegistration findById(int id) {
-		 return tripregistrationrepo.findById(id);
+		 return tripRegistrationRepo.findById(id);
 	 }
 	 public void deleteById(int id) {
-		 tripregistrationrepo.deleteById(id);
+		 tripRegistrationRepo.deleteById(id);
 	 }
 	 
 	

@@ -1,6 +1,8 @@
 package com.chainsys.tripmanagement.model;
 
-import java.util.Date;
+
+
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -52,6 +54,7 @@ public class TripPayments {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-
+	
+	
 
 }

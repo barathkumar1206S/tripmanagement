@@ -16,44 +16,56 @@ import com.chainsys.tripmanagement.model.TripRegistration;
 import com.chainsys.tripmanagement.service.PackageService;
 
 @Controller
-//@RequestMapping("/package")
+@RequestMapping("/package")
 public class PackageController {
 @Autowired
-PackageService packservice;
+PackageService packService;
 
-@GetMapping("/getAllPackages")
+@GetMapping("/getallpackages")
 public String getpackage(Model model) {
-	List<TripPackage> tpack=packservice.getAllPackages();
+	List<TripPackage> tpack=packService.getAllPackages();
 	model.addAttribute("allPackage",tpack);
-	return "list-Package";
+	return "list-packages";
 }
-@GetMapping("/addPackageForm")
+@GetMapping("/addpackageform")
 public String showAddForm(Model model) {
 	TripPackage thepack = new TripPackage();
 	model.addAttribute("addPackage", thepack);
-	return "add-Package-Form";
+	return "add-package-form";
 }
 @PostMapping("/add")
 public String addPackage(@ModelAttribute("addPackage") TripPackage thepack) {
-	packservice.save(thepack);
-	return "redirect:/getAllPackages";
+	packService.save(thepack);
+	return "redirect:/package/getallpackages";
 }
-@GetMapping("/updateForm")
+@GetMapping("/updateform")
 public String showPackage(@RequestParam("packageId") int id, Model model) {
-	TripPackage tpack =packservice.findById(id) ;
+	TripPackage tpack =packService.findById(id) ;
 	model.addAttribute("updatePackageForm", tpack);
-	return "update-Package-Form";
+	return "update-package-form";
 }
 
-@PostMapping("/updatePackForm")
+@PostMapping("/updatepackform")
 public String updatePackage(@ModelAttribute("updatePack") TripPackage tpack) {
-packservice.save(tpack);
-	return "redirect:/getAllPackages";
+	packService.save(tpack);
+	return "redirect:/package/getallpackages";
 }
-@GetMapping("/deletePack")
+@GetMapping("/deletepack")
 public String deletePackage(@RequestParam("packageId") int id) {
-	packservice.deleteById(id);
-	return "redirect:/getAllPackages";
+	packService.deleteById(id);
+	return "redirect:/package/getallpackages";
+}
+
+@GetMapping("/findbyidpackform")
+public String findById() {
+	return "find-by-packid-form";
+}
+
+@GetMapping("/getpackagebyid")
+public String getPackageById(@RequestParam("packageId") int id, Model model) {
+	TripPackage tpack =packService.findById(id);
+	model.addAttribute("getpackbyid",tpack);
+	return "find-package-by-id-form";
 }
 
 @RequestMapping("/userLoggedIn")

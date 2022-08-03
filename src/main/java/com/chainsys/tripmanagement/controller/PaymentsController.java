@@ -17,50 +17,50 @@ import com.chainsys.tripmanagement.service.PaymentsService;
 @Controller
 public class PaymentsController {
 @Autowired
- PaymentsService payservice;
+ PaymentsService payService;
 
 @GetMapping("/getallpayments")
 public String getPayments(Model model) {
-List<TripPayments> paylist=payservice.getAllPayments();
-model.addAttribute("allpayments", paylist);
+List<TripPayments> payList=payService.getAllPayments();
+model.addAttribute("allpayments", payList);
 return "list-payments";
 }
-//@GetMapping("/addrform")
-//public String showAddForm(Model model) {
-//	TripRegistration thereg = new TripRegistration();
-//	model.addAttribute("addregister", thereg);
-//	return "add-register-form";
-//}
-//
-//@PostMapping("/add")
-//public String addNewRegister(@ModelAttribute("addregister") TripRegistration thereg) {
-//	regservice.save(thereg);
-//	return "redirect:/getallregistration";
-//}
-//
-//@GetMapping("/updateform")
-//public String showUpdateForm(@RequestParam("user_id") int id, Model model) {
-//	TripRegistration treg = regservice.findById(id);
-//	model.addAttribute("updateregister", treg);
-//	return "update-registration-form";
-//}
-//
-//@PostMapping("/updateregform")
-//public String updateregistration(@ModelAttribute("updateregister") TripRegistration treg) {
-//	regservice.save(treg);
-//	return "redirect:/getallregistration";
-//}
-//
-//@GetMapping("/deletereg")
-//public String deleteRegistration(@RequestParam("user_id") int id) {
-//	regservice.deleteByid(id);
-//	return "redirect:/getallregistration";
-//}
-//
-//@GetMapping("/getregistration")
-//public String getRegistration(@RequestParam("id") int id, Model model) {
-//TripRegistration tpr = regservice.findById(id);
-//	model.addAttribute("getregistration", tpr);
-//	return "find-register-id-form";
-//}
+@GetMapping("/addpaymentform")
+public String showAddPaymentForm(Model model) {
+	TripPayments addPay = new TripPayments();
+	model.addAttribute("addpayments", addPay);
+	return "add-payments-form";
+}
+
+@PostMapping("/addpay")
+public String addPayments(@ModelAttribute("addpayments") TripPayments thePay) {
+	payService.save(thePay);
+	return "redirect:/getallpayments";
+}
+
+@GetMapping("/updatepaymentform")
+public String showUpdatePayForm(@RequestParam("paymentId") int id, Model model) {
+	TripPayments tpay = payService.findById(id);
+	model.addAttribute("updatepayments", tpay);
+	return "update-payment-form";
+}
+
+@PostMapping("/updatepayment")
+public String updatepayment(@ModelAttribute("updatepayments") TripPayments tpay) {
+	payService.save(tpay);
+	return "redirect:/getallpayments";
+}
+
+@GetMapping("/deletepayment")
+public String deletePaymentById(@RequestParam("paymentId") int id) {
+	payService.deleteById(id);
+	return "redirect:/getallpayments";
+}
+
+@GetMapping("/getpayments")
+public String getpayments(@RequestParam("paymentId") int id, Model model) {
+TripPayments tpayments = payService.findById(id);
+	model.addAttribute("getpayments", tpayments);
+	return "find-payment-id-form";
+}
 }

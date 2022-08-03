@@ -23,7 +23,6 @@ public class TripPackage {
     private int noOfDays;
 	@Column(name = "max_no_of_seats")
     private int maxNoOfSeats;
-
 	public int getPackageId() {
 		return packageId;
 	}
@@ -66,7 +65,6 @@ public class TripPackage {
 	public void setMaxNoOfSeats(int maxNoOfSeats) {
 		this.maxNoOfSeats = maxNoOfSeats;
 	}
-	
-	
 
+	
 }

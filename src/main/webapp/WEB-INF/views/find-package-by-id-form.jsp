@@ -1,31 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Package Detail UsingBy Id</title>
 </head>
 <body>
 	<h1>Trip Management System</h1>
-	<h3>User Registration form</h3>
+	<h3>Package ById details</h3>
 	<div id="root">
 		<div id="form">
-			<form:form action="add" method="post" modelAttribute="addPackage">
+			<form:form action="getpackagebyid" method="post" modelAttribute="getpackbyid">
 				<div>
 					PackageId :
-					<form:input path="PackageId" />
+					<form:input path="packageId" />
 				</div>
 				<br>
 				<div>
 					Boarding Place :
-					<form:input path="BoardingPlace" />
+					<form:input path="boardingPlace" />
 				</div>
 				<br>
 				<div>
 					Destination :
-					<form:input path="Destination" />
+					<form:input path="destination" />
 				</div>
 				<br>
 				<div>
@@ -47,12 +48,9 @@
 					Max No Of Seats :
 					<form:input path="maxNoOfSeats" />
 				</div>
-				<br>
-				<div>
-					<input type="submit" value="Submit" /> 
-				</div>
-			</form:form>
+				</form:form>
 		</div>
 	</div>
+
 </body>
 </html>

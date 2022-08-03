@@ -12,23 +12,23 @@ import com.chainsys.tripmanagement.repo.TripDetailsRepository;
 @Service
 public class TripDetailsService {
 @Autowired
-private TripDetailsRepository triprepo;
+private TripDetailsRepository tripDetailsRepo;
 
 public List<TripDetails> getAllTripDetails()
 { 
-	List<TripDetails>triplist = triprepo.findAll();
+	List<TripDetails>triplist = tripDetailsRepo.findAll();
 	return triplist;
 }
 public TripDetails save(TripDetails tpd) {
-	return triprepo.save(tpd);
+	return tripDetailsRepo.save(tpd);
 	
 }
 public TripDetails findById(int id) {
-	return triprepo.findById(id);
+	return tripDetailsRepo.findById(id);
 	
 }
-public void deleteByid(int id) {
-	triprepo.deleteById(id);
+public void deleteById(int id) {
+	tripDetailsRepo.deleteById(id);
 }
 
 }

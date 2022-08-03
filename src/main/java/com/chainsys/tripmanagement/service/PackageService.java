@@ -11,19 +11,19 @@ import com.chainsys.tripmanagement.repo.TripPackagesRepository;
 @Service
 public class PackageService {
 	@Autowired
-	private TripPackagesRepository packrepo;
+	private TripPackagesRepository packRepo;
 	
 	public List<TripPackage> getAllPackages(){
-		List<TripPackage> packlist=packrepo.findAll();
+		List<TripPackage> packlist= packRepo.findAll();
 		return packlist;
 	}
 	public TripPackage save(TripPackage trpack) {
-		return packrepo.save(trpack);
+		return  packRepo.save(trpack);
 	}
 	public TripPackage findById(int id) {
-		return packrepo.findById(id);
+		return packRepo.findById(id);
 	}
 public void deleteById(int id) {
-	packrepo.deleteById(id);
+	 packRepo.deleteById(id);
 }
 }

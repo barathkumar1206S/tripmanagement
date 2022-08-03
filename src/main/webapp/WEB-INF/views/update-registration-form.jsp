@@ -6,14 +6,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update User</title>
+<title>Update Trip Package</title>
 </head>
-<body>
 <body>
 	<h1>Trip Management System</h1>
     <div id="root">
         <div id="form">
-            <form:form action="update" method="post" modelAttribute="updateRegister">
+            <form:form action="update" method="post" modelAttribute="updateregister">
                  <div>
                 UserId :<form:input path="userId" />
                 </div>

@@ -11,19 +11,19 @@ import com.chainsys.tripmanagement.repo.TripPaymentsRepository;
 @Service
 public class PaymentsService {
 	@Autowired
-	private TripPaymentsRepository tpayrepo; 
+	private TripPaymentsRepository tPayrRepo; 
 	
 	public List<TripPayments> getAllPayments(){
-		List<TripPayments> tpaylist=tpayrepo.findAll();
+		List<TripPayments> tpaylist=tPayrRepo.findAll();
 		return tpaylist;
 	}
 	public TripPayments save(TripPayments trpay) {
-		return tpayrepo.save(trpay);
+		return tPayrRepo.save(trpay);
 	}
 	public TripPayments findById(int id) {
-		return tpayrepo.findById(id);
+		return tPayrRepo.findById(id);
 	}
    public void deleteById(int id) {
-	   tpayrepo.deleteById(id);
+	   tPayrRepo.deleteById(id);
    }
 }
