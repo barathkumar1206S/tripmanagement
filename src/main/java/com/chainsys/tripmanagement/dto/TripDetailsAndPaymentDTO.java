@@ -1,4 +1,4 @@
-package com.chainsys.tirpmanagement.dto;
+package com.chainsys.tripmanagement.dto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

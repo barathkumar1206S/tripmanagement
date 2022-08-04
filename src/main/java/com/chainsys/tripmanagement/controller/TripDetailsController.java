@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.tirpmanagement.dto.TripDetailsAndPaymentDTO;
+import com.chainsys.tripmanagement.dto.TripDetailsAndPaymentDTO;
 import com.chainsys.tripmanagement.model.TripDetails;
 import com.chainsys.tripmanagement.service.TripDetailsService;
 

@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.tirpmanagement.dto.TripDetailsAndPaymentDTO;
 import com.chainsys.tripmanagement.controller.TripDetailsController;
+import com.chainsys.tripmanagement.dto.TripDetailsAndPaymentDTO;
 import com.chainsys.tripmanagement.model.TripDetails;
 import com.chainsys.tripmanagement.model.TripPayments;
 import com.chainsys.tripmanagement.repo.TripDetailsRepository;

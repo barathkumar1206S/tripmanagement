@@ -1,4 +1,4 @@
-package com.chainsys.tirpmanagement.dto;
+package com.chainsys.tripmanagement.dto;
 
 import java.util.ArrayList;
 import java.util.List;

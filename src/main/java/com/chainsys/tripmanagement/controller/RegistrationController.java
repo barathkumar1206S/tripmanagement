@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-import com.chainsys.tirpmanagement.dto.TripRegistrationAndTripPaymentsDTO;
+import com.chainsys.tripmanagement.dto.TripRegistrationAndTripPaymentsDTO;
 import com.chainsys.tripmanagement.model.TripRegistration;
 import com.chainsys.tripmanagement.service.RegistrationService;
 
