@@ -4,7 +4,11 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="trip")
@@ -23,7 +27,28 @@ public class TripDetails {
 	@Column(name="TRIP_STATUS")
 	private String tripStatus;
 	                
-	         
+	@OneToOne(mappedBy="tripdetails",fetch=FetchType.LAZY)
+	private TripPayments trippayments;
+	public TripPayments getTrippayments() {
+		return trippayments;
+	}
+	public void setTrippayments(TripPayments trippayments) {
+		this.trippayments = trippayments;
+	}
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="PACKAGE_ID" ,nullable = false, insertable = false,updatable = false)
+	 private TripPackage tripPackage;
+	
+	
+	public TripPackage getTripPackage() {
+		return tripPackage;
+	}
+	public void setTripPackage(TripPackage tripPackage) {
+		this.tripPackage = tripPackage;
+	}
+	
+	
 	public int getTripId() {
 		return tripId;
 	}

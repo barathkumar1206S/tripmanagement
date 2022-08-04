@@ -1,10 +1,15 @@
 package com.chainsys.tripmanagement.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="registration")
@@ -36,7 +41,17 @@ public class TripRegistration {
 	@Column(name="role")
 	private String role;
 	
+	@OneToMany(mappedBy="tripRegistration",fetch=FetchType.LAZY)
+	private List<TripPayments> tripPayment;
 	
+
+	public List<TripPayments> getTripPayments() {
+		return tripPayment;
+	}
+
+	public void setTripPayments(List<TripPayments> tripPayments) {
+		this.tripPayment = tripPayments;
+	}
 
 	public int getUserId() {
 		return userId;
@@ -109,9 +124,4 @@ public class TripRegistration {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
-	
-	
-	
-
 }

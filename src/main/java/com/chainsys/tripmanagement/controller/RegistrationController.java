@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+import com.chainsys.tirpmanagement.dto.TripRegistrationAndTripPaymentsDTO;
 import com.chainsys.tripmanagement.model.TripRegistration;
 import com.chainsys.tripmanagement.service.RegistrationService;
 
@@ -22,7 +23,7 @@ public class RegistrationController {
 
 	@GetMapping("/getallregistrations")
 	public String getRegistration(Model model) {
-		List<TripRegistration> reglist =  regService.getAllRegistration();
+		List<TripRegistration> reglist = regService.getAllRegistration();
 		model.addAttribute("allregistration", reglist);
 		return "list-registration";
 	}
@@ -36,26 +37,26 @@ public class RegistrationController {
 
 	@PostMapping("/add")
 	public String addRegister(@ModelAttribute("addregister") TripRegistration thereg) {
-		 regService.save(thereg);
+		regService.save(thereg);
 		return "redirect:/registration/getallregistrations";
 	}
 
 	@GetMapping("/updateregform")
 	public String showUpdateForm(@RequestParam("userId") int id, Model model) {
-		TripRegistration treg =  regService.findById(id);
+		TripRegistration treg = regService.findById(id);
 		model.addAttribute("updateregister", treg);
 		return "update-registration-form";
 	}
 
 	@PostMapping("/update")
 	public String updateRegistration(@ModelAttribute("updateregister") TripRegistration treg) {
-		 regService.save(treg);
+		regService.save(treg);
 		return "redirect:/registration/getallregistrations";
 	}
 
 	@GetMapping("/deletereg")
 	public String deleteRegistration(@RequestParam("userId") int id) {
-		 regService.deleteById(id);
+		regService.deleteById(id);
 		return "redirect:/registration/getallregistrations";
 	}
 
@@ -63,11 +64,20 @@ public class RegistrationController {
 	public String findById() {
 		return "find-by-userid-form";
 	}
+
 	@GetMapping("/getregistration")
-	public String getRegistration(@RequestParam("userId") int id, Model model) {
-	TripRegistration tpr =  regService.findById(id);
+	public String getRegistration(@RequestParam("userId") int id, Model model) { 
+		TripRegistration tpr = regService.findById(id);
 		model.addAttribute("getregistration", tpr);
 		return "find-register-id-form";
+	}
+
+	@GetMapping("/getpaymentsusingregistrationid")
+	public String getPaymentsByUserId(@RequestParam("userId") int id, Model model) {
+		TripRegistrationAndTripPaymentsDTO tripRegistrationAndTripPaymentsDTO = regService.getTripDetailsAndPaymentDto(id);
+		model.addAttribute("getpayments", tripRegistrationAndTripPaymentsDTO.getTripPayment());
+		model.addAttribute("getregistration", tripRegistrationAndTripPaymentsDTO.getTripRegistration());
+		return "registration-payments-details";
 	}
 
 }

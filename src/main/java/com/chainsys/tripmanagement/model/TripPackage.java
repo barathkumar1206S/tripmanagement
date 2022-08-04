@@ -1,8 +1,12 @@
 package com.chainsys.tripmanagement.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +27,18 @@ public class TripPackage {
     private int noOfDays;
 	@Column(name = "max_no_of_seats")
     private int maxNoOfSeats;
+	
+	@OneToMany(mappedBy="tripPackage",fetch=FetchType.LAZY)
+	private List<TripDetails> tripDetails;
+
+	public List<TripDetails> getTripDetails() {
+		return tripDetails;
+	}
+
+	public void setTripDetails(List<TripDetails> tripDetails) {
+		this.tripDetails = tripDetails;
+	}
+
 	public int getPackageId() {
 		return packageId;
 	}

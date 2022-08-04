@@ -1,0 +1,28 @@
+package com.chainsys.tirpmanagement.dto;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.chainsys.tripmanagement.model.TripDetails;
+import com.chainsys.tripmanagement.model.TripPayments;
+
+public class TripDetailsAndPaymentDTO {
+	
+	private TripDetails tripDetails;
+	
+	private TripPayments tripPayments;
+	
+	public TripDetails getTripDetails() {
+		return tripDetails;
+	}
+	public void setTripDetails(TripDetails tripDetails) {
+		this.tripDetails = tripDetails;
+	}
+	public TripPayments getTripPayments() {
+		return tripPayments;
+	}
+	public void setTripPayments(TripPayments tripPayments) {
+		this.tripPayments = tripPayments;
+	}
+	
+
+}

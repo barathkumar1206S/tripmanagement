@@ -6,7 +6,12 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +28,28 @@ public class TripPayments {
 	private int tripId;
 	@Column(name = "USER_ID")
 	private int userId;
+	
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="TRIP_ID",nullable = false, insertable = false,updatable = false)
+     
+	private TripDetails tripdetails; 
+	public TripDetails getTripdetails() {
+		return tripdetails;
+	}
+	public void setTripdetails(TripDetails tripdetails) {
+		this.tripdetails = tripdetails;
+	}
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="USER_ID", nullable= false,insertable = false,updatable = false)
+	private TripRegistration tripRegistration;
+	public TripRegistration getTripRegistration() {
+		return tripRegistration;
+	}
+	public void setTripRegistration(TripRegistration tripRegistration) {
+		this.tripRegistration = tripRegistration;
+	}
+	
 	
 	public int getPaymentId() {
 		return paymentId;

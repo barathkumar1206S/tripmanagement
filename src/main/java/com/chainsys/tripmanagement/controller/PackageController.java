@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.tirpmanagement.dto.TripPackageAndTripDetailsDTO;
 import com.chainsys.tripmanagement.model.TripPackage;
 import com.chainsys.tripmanagement.model.TripRegistration;
 import com.chainsys.tripmanagement.service.PackageService;
@@ -38,15 +39,15 @@ public String addPackage(@ModelAttribute("addPackage") TripPackage thepack) {
 	packService.save(thepack);
 	return "redirect:/package/getallpackages";
 }
-@GetMapping("/updateform")
+@GetMapping("/updatepackform")
 public String showPackage(@RequestParam("packageId") int id, Model model) {
 	TripPackage tpack =packService.findById(id) ;
-	model.addAttribute("updatePackageForm", tpack);
+	model.addAttribute("updatepackageform", tpack);
 	return "update-package-form";
 }
 
 @PostMapping("/updatepackform")
-public String updatePackage(@ModelAttribute("updatePack") TripPackage tpack) {
+public String updatePackage(@ModelAttribute("updatepackageform") TripPackage tpack) {
 	packService.save(tpack);
 	return "redirect:/package/getallpackages";
 }
@@ -68,9 +69,18 @@ public String getPackageById(@RequestParam("packageId") int id, Model model) {
 	return "find-package-by-id-form";
 }
 
-@RequestMapping("/userLoggedIn")
+@GetMapping("/gettripdetailsusingpackageid")
+public String getDetailsByPackageId(@RequestParam("packageId") int id, Model model)
+{
+	TripPackageAndTripDetailsDTO tripPackageAndTripDetailsDTO	= packService.tripPackageAndTripDetailsDTO(id);
+    model.addAttribute("gettripdetails",tripPackageAndTripDetailsDTO.getTripDetails());
+    model.addAttribute("gettrippackages",tripPackageAndTripDetailsDTO.getTripPackage());
+    return "package-tripdetails";
+}
+
+@RequestMapping("/userloggedin")
 public String tourPackages() {
-	return "user-Package";
+	return "user-package";
 }
 
 
@@ -92,4 +102,5 @@ public String chennaiToMumbai() {
 public String chennaiToDelhi() {
 	return "chennai-to-delhi";
 }
+
 }

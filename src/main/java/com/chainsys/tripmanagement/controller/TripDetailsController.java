@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.tirpmanagement.dto.TripDetailsAndPaymentDTO;
 import com.chainsys.tripmanagement.model.TripDetails;
 import com.chainsys.tripmanagement.service.TripDetailsService;
 
@@ -69,8 +70,14 @@ public class TripDetailsController {
 	public String gettripdetails(@RequestParam("tripId") int id, Model model) {
 		TripDetails tripDetails=tripDetailservice.findById(id);
 		model.addAttribute("gettripdetails",tripDetails);
-		return "find-tripdeatils-id-form";
+		return "find-tripdetails-id-form";
 	}
 	
-	
+	@GetMapping("/getpaymentdetailsbytripid")
+	public String getPaymentIdByTripDetails(@RequestParam("id") int id ,Model model){
+		TripDetailsAndPaymentDTO dto=tripDetailservice.getTripPaymentsByTripDetails(id);
+		model.addAttribute("paymentdetail",dto.getTripPayments());
+		model.addAttribute("tripdetail",dto.getTripDetails());
+		return "payment-id-trip-details";
+	}
 }

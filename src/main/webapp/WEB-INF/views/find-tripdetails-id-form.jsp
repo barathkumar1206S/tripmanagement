@@ -13,7 +13,7 @@
 	<h3>Trip Details Form</h3>
 	<div id="root">
 		<div id="form">
-			<form:form action="gettripdetails" method="post"
+			<form:form action="gettripdetails" method="get"
 				modelAttribute="gettripdetails">
 				<div>
 					TripId :
