@@ -28,6 +28,10 @@ public String getpackage(Model model) {
 	model.addAttribute("allPackage",tpack);
 	return "list-packages";
 }
+@GetMapping("/showpackages")
+public String ShowAllPackages() {
+	return "show-packages";
+}
 @GetMapping("/addpackageform")
 public String showAddForm(Model model) {
 	TripPackage thepack = new TripPackage();
@@ -78,29 +82,31 @@ public String getDetailsByPackageId(@RequestParam("packageId") int id, Model mod
     return "package-tripdetails";
 }
 
-@RequestMapping("/userloggedin")
-public String tourPackages() {
-	return "user-package";
-}
 
 
-@RequestMapping("/chennaiToLadakh")
-public String chennaiToLadakhPackage() {
-	return "chennai-to-ladakh";
-}
-
-@RequestMapping("/chennaiToKashmir")
-public String chennaiToKashmirPackage() {
-	return "chennai-to-kashmir";
-}
-
-@RequestMapping("/chennaiToMumbai")
-public String chennaiToMumbai() {
-	return "chennai-to-mumbai";
-}
-@RequestMapping("/chennaiToDelhi")
-public String chennaiToDelhi() {
-	return "chennai-to-delhi";
-}
+//@RequestMapping("/userloggedin")
+//public String tourPackages() {
+//	return "user-package";
+//}
+//
+//
+//@RequestMapping("/chennaiToLadakh")
+//public String chennaiToLadakhPackage() {
+//	return "chennai-to-ladakh";
+//}
+//
+//@RequestMapping("/chennaiToKashmir")
+//public String chennaiToKashmirPackage() {
+//	return "chennai-to-kashmir";
+//}
+//
+//@RequestMapping("/chennaiToMumbai")
+//public String chennaiToMumbai() {
+//	return "chennai-to-mumbai";
+//}
+//@RequestMapping("/chennaiToDelhi")
+//public String chennaiToDelhi() {
+//	return "chennai-to-delhi";
+//}
 
 }

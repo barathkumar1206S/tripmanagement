@@ -7,12 +7,12 @@
 <title>User Package List</title>
 </head>
 <body>
-<a href="chennaitoLadakh">Chennai To Ladakh</a>
+<a href="addtripdetailsform1">Chennai To Ladakh</a>
 <br>
-<a href="chennaitoKashmir">Chennai To Kashmir</a>
+<a href="addtripdetailsform2">Chennai To Kashmir</a>
 <br>
-<a href="chennaitoMumabi">Chennai To Mumbai</a>
+<a href="addtripdetailsform3">Chennai To Mumbai</a>
 <br>
-<a href="chennaitoDelhi">Chennai To Delhi</a>
+<a href="addtripdetailsform4">Chennai To Delhi</a>
 </body>
 </html>

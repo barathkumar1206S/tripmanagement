@@ -5,15 +5,20 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 @Entity
 @Table(name="trip")
 public class TripDetails {
 	@Id
+	@SequenceGenerator(name="trip_id", sequenceName="trip_id", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="trip_id")
 	@Column(name="TRIP_ID")
 	private int tripId;
 	@Column(name="PACKAGE_ID")

@@ -2,6 +2,7 @@ package com.chainsys.tripmanagement.repo;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.tripmanagement.model.TripDetails;
@@ -11,6 +12,8 @@ public interface TripDetailsRepository extends  CrudRepository<TripDetails, Inte
 	TripDetails save(TripDetails td);
 	void deleteById(int id);
 	List<TripDetails> findAll();
-	
 	List<TripDetails> findByTripPackagePackageId(int id);
+	
+//	@Query("select trip_id.nextval from dual")
+//	int sequenceTripId();
 }

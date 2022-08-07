@@ -21,6 +21,23 @@
 <div><a href="/package/deletepack?packageId=">Delete package</a></div>
 <div><a href="/package/findbyidpackform">FindById Package</a></div>
 <div></div>
+<div><h1>Trip Detail List</h1></div>
+<div><a href="/tripdetail/getalltripdetails">TripDetails List</a></div>
+<div><a href="/tripdetail/addtripdetailsform">Add TripDetails</a></div>
+<div><a href="/tripdetail/updatetripdetailform?tripId=">Update TripDetails</a></div>
+<div><a href="/tripdetail/deletebyidform?tripId=">Delete TripDetails</a></div>
+<div><a href="/tripdetail/findbyidform?tripId=">FindById TripDetails</a></div>
+<div><a href="/tripdetail/getpaymentdetailsbytripid?id=">FindPayment By TripId</a></div>
+
+<div></div>
+<div><h1>Payment List</h1></div>
+<div><a href="/getallpayments">Payment List</a></div>
+<div><a href="/addpaymentform">Add Payment</a></div>
+<div><a href="/updatepaymentform?paymentId=">Update Payment</a></div>
+<div><a href="/deletepayment?paymentId=">Delete Payment</a></div>
+<div><a href="/getpayments?paymentId=">FindById Payment</a></div>
+
+<div></div>
 
 
 

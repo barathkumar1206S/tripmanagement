@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.tripmanagement.model.TripPayments;
@@ -15,6 +16,7 @@ import com.chainsys.tripmanagement.model.TripRegistration;
 import com.chainsys.tripmanagement.service.PaymentsService;
 
 @Controller
+@RequestMapping("/payment")
 public class PaymentsController {
 @Autowired
  PaymentsService payService;
@@ -29,6 +31,7 @@ return "list-payments";
 public String showAddPaymentForm(Model model) {
 	TripPayments addPay = new TripPayments();
 	model.addAttribute("addpayments", addPay);
+	
 	return "add-payments-form";
 }
 

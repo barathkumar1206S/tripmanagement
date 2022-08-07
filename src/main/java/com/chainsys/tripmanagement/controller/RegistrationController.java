@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.chainsys.tripmanagement.dto.TripRegistrationAndTripPaymentsDTO;
@@ -66,7 +68,7 @@ public class RegistrationController {
 	}
 
 	@GetMapping("/getregistration")
-	public String getRegistration(@RequestParam("userId") int id, Model model) { 
+	public String getRegistration(@RequestParam("userId") int id, Model model) {
 		TripRegistration tpr = regService.findById(id);
 		model.addAttribute("getregistration", tpr);
 		return "find-register-id-form";
@@ -74,10 +76,33 @@ public class RegistrationController {
 
 	@GetMapping("/getpaymentsusingregistrationid")
 	public String getPaymentsByUserId(@RequestParam("userId") int id, Model model) {
-		TripRegistrationAndTripPaymentsDTO tripRegistrationAndTripPaymentsDTO = regService.getTripDetailsAndPaymentDto(id);
+		TripRegistrationAndTripPaymentsDTO tripRegistrationAndTripPaymentsDTO = regService
+				.getTripDetailsAndPaymentDto(id);
 		model.addAttribute("getpayments", tripRegistrationAndTripPaymentsDTO.getTripPayment());
 		model.addAttribute("getregistration", tripRegistrationAndTripPaymentsDTO.getTripRegistration());
 		return "registration-payments-details";
+	}
+
+	@GetMapping("/usersloginform")
+	public String userLogIn() {
+		return "user-loginform";
+	}
+
+	@GetMapping("/userloggedinform")
+	public String backToLoginForm(@RequestParam("userId") Integer id, @RequestParam("userPassword") String pass,
+			@RequestParam("role") String role, TripRegistration trip) {
+		List<TripRegistration> trips = new ArrayList<TripRegistration>();
+
+		Integer uid = trip.getUserId();
+		String upass = trip.getPassword();
+		String urole = trip.getRole();
+		Iterator<TripRegistration> itr = trips.iterator();
+		while (itr.hasNext()) {
+			if (id.equals(uid) && pass.equals(upass) && role.equals(urole)) {
+				return "redirect:/package/userloggedin";
+			}
+		}
+		return "redirect:/registration/userloginform";
 	}
 
 }

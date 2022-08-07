@@ -25,6 +25,7 @@ public class PackageService {
 	}
 	public TripPackage save(TripPackage trpack) {
 		return  packRepository.save(trpack);
+		
 	}
 	public TripPackage findById(int id) {
 		return packRepository.findById(id);

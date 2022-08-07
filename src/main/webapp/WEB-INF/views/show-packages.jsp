@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Chennai To ladakh</title>
+<title>All Packages</title>
 </head>
 <body>
 

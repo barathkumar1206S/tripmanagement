@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Trip Management System</title>
 </head>
 <body>
-	<h1>Trip Management System</h1>
-	<h3>User Registration form</h3>
+	<h1></h1>
+	<h3>Add Package form</h3>
 	<div id="root">
 		<div id="form">
 			<form:form action="add" method="post" modelAttribute="addPackage">

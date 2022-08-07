@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Trip Management</title>
 </head>
 <body>
 <h3>Update Payments Form</h3>

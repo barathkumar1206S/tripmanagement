@@ -34,6 +34,8 @@ public class RegistrationService {
 		 tripRegistrationRepository.deleteById(id);
 	 }
 	 
+	 
+	 
 	public TripRegistrationAndTripPaymentsDTO getTripDetailsAndPaymentDto(int id) {
 		TripRegistration tripRegistration=findById(id);
 		TripRegistrationAndTripPaymentsDTO tripRegistrationAndTripPaymentsDTO=new TripRegistrationAndTripPaymentsDTO();

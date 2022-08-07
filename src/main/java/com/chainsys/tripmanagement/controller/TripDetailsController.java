@@ -27,11 +27,29 @@ public class TripDetailsController {
 	model.addAttribute("alltripdetails",triplist);
 	return "list-tripdetails";
 	}
-	@GetMapping("/addtripdetailsform")
-	public String addTripDetails(Model model) {
+	@RequestMapping("/addtripdetailsform1")
+	public String addTripDetails1(Model model) {
 		TripDetails tdetails =new TripDetails();
 		model.addAttribute("addtripdetails",tdetails);
-		return "add-trip-details-form";
+		return "add-trip-details-form1";
+	}
+	@GetMapping("/addtripdetailsform2")
+	public String addTripDetails2(Model model) {
+		TripDetails tdetails =new TripDetails();
+		model.addAttribute("addtripdetails",tdetails);
+		return "add-trip-details-form2";
+	}
+	@GetMapping("/addtripdetailsform3")
+	public String addTripDetails3(Model model) {
+		TripDetails tdetails =new TripDetails();
+		model.addAttribute("addtripdetails",tdetails);
+		return "add-trip-details-form3";
+	}
+	@GetMapping("/addtripdetailsform4")
+	public String addTripDetails4(Model model) {
+		TripDetails tdetails =new TripDetails();
+		model.addAttribute("addtripdetails",tdetails);
+		return "add-trip-details-form4";
 	}
 	@PostMapping("/addtripdetail")
 	public String addTrip(@ModelAttribute("addtripdetails") TripDetails tdetails) {
@@ -65,7 +83,7 @@ public class TripDetailsController {
 	public String findByTripId() {
 		return "find-by-tripid-form";
 	}
-	
+
 	@GetMapping("/gettripdetails")
 	public String gettripdetails(@RequestParam("tripId") int id, Model model) {
 		TripDetails tripDetails=tripDetailservice.findById(id);

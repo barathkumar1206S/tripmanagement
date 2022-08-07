@@ -7,17 +7,21 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "payments")
 public class TripPayments {
 	@Id
+	@SequenceGenerator(name="payment_id", sequenceName="payment_id", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="payment_id")
 	@Column(name = "PAYMENT_ID")
 	private int paymentId;
 	@Column(name = "FROM_DATE")
@@ -29,6 +33,7 @@ public class TripPayments {
 	@Column(name = "USER_ID")
 	private int userId;
 	
+
 	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="TRIP_ID",nullable = false, insertable = false,updatable = false)
      

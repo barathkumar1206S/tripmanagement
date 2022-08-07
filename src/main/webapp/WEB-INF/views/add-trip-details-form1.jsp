@@ -15,14 +15,9 @@
 		<div id="form">
 			<form:form action="addtripdetail" method="post"
 				modelAttribute="addtripdetails">
-				<div>
-					TripId :
-					<form:input path="tripId" />
-				</div>
 				<br>
 				<div>
-					Package Id :
-					<form:input path="packageId" />
+					<form:hidden path="packageId" value="1" />
 				</div>
 				<br>
 				<div>
