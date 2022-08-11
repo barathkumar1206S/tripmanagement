@@ -6,24 +6,35 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 @Entity
 @Table(name="registration")
 public class TripRegistration {
 	@Id
+	@SequenceGenerator(name="user_id", sequenceName="user_id", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="user_id")
 	@Column(name="user_id")
 	private int userId;
-	@Column(name="first_name")
-	private String firstName;
 	
+	@Column(name="first_name")
+    private String firstName;
+	 
 	@Column(name="last_name")
 	private String lastName;
 	
 	@Column(name="gender")
+	
 	private String gender;
 	
 	@Column(name="dob")
@@ -52,7 +63,8 @@ public class TripRegistration {
 	public void setTripPayments(List<TripPayments> tripPayments) {
 		this.tripPayment = tripPayments;
 	}
-
+	
+	
 	public int getUserId() {
 		return userId;
 	}
@@ -124,4 +136,16 @@ public class TripRegistration {
 	public void setRole(String role) {
 		this.role = role;
 	}
+
+	public List<TripPayments> getTripPayment() {
+		return tripPayment;
+	}
+
+	public void setTripPayment(List<TripPayments> tripPayment) {
+		this.tripPayment = tripPayment;
+	}
+
+	
+
+	
 }

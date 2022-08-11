@@ -1,20 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-       <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+           <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Trip Details</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>Trip Management System</h1>
-	<h3>Trip Details Update Form</h3>
-	<div id="root">
-		<div id="form">
-			<form:form action="updatetripdetail" method="post"
-				modelAttribute="updatetripdetailsform">
+           <h1>Package Chennai to Goa Trip Details</h1>  
+			<form:form action="gettripdetails" method="get">
 				<div>
 					TripId :
 					<form:input path="tripId" />
@@ -23,11 +19,6 @@
 				<div>
 					Package Id :
 					<form:input path="packageId" />
-				</div>
-				<br>
-				<div>
-					User Id :
-					<form:input path="userId" />
 				</div>
 				<br>
 				<div>
@@ -57,8 +48,7 @@
 					<input type="submit" value="update" />
 				</div>
 			</form:form>
-		</div>
-	</div>
+		
 
 </body>
 </html>

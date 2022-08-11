@@ -13,7 +13,6 @@ public interface TripPaymentsRepository extends  CrudRepository<TripPayments, In
 	void deleteById(int id);
 	List <TripPayments> findAll();
 	TripPayments findByTripId(int id);
-	
-	
 	List<TripPayments> findByTripRegistrationUserId(int id);
+	TripPayments findByTripIdAndUserId(int tripId,int userId);
 }

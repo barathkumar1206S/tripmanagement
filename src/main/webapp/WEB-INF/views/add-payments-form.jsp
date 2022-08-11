@@ -6,7 +6,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Add Payments Details  </title>
+<style>
+.text-danger {
+    color: #e80c4d;
+    font-size: 0.9em;
+}
+</style>
 </head>
 <body>
 	<h1>Trip Management System</h1>
@@ -23,11 +29,12 @@
 	<div id="root">
 		<div id="form">
 			<form:form action="addpay" method="post" modelAttribute="addpayments">
-				
+			 	
 				<div>
 					FromDate :
 					<form:input type="date" path="fromDate" />
 				</div>
+				
 				<br>
 				<div>
 					TripId:

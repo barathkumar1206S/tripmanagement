@@ -14,6 +14,7 @@
 			<thead>
 				<tr>
 					<th>Trip Id</th>
+					<th>User Id</th>
 					<th>Package Id</th> 
 					<th>Start Date</th>
 					<th>End Date</th>
@@ -27,6 +28,7 @@
 					<tr>
 						<td>${tripdetails.tripId}</td>
 						<td>${tripdetails.packageId}</td>
+				    	<td>${tripdetails.userId}</td>
 						<td>${tripdetails.startDate}</td>
 						<td>${tripdetails.endDate}</td>
 						<td>${tripdetails.bookedPassengers}</td>

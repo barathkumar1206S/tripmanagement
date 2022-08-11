@@ -2,6 +2,7 @@ package com.chainsys.tripmanagement.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.tripmanagement.dto.TripDetailsAndPaymentDTO;
 import com.chainsys.tripmanagement.model.TripDetails;
+import com.chainsys.tripmanagement.model.TripPackage;
+import com.chainsys.tripmanagement.service.PackageService;
 import com.chainsys.tripmanagement.service.TripDetailsService;
 
 @Controller
@@ -20,41 +23,32 @@ import com.chainsys.tripmanagement.service.TripDetailsService;
 public class TripDetailsController {
 	@Autowired
 	TripDetailsService tripDetailservice;
-	
+	@Autowired
+	private PackageService packageService;
 	@GetMapping("/getalltripdetails")
 	public String getTripDetails(Model model) {
 	List<TripDetails> triplist= tripDetailservice.getAllTripDetails();
 	model.addAttribute("alltripdetails",triplist);
 	return "list-tripdetails";
 	}
-	@RequestMapping("/addtripdetailsform1")
-	public String addTripDetails1(Model model) {
+	@RequestMapping("/addtripdetailsform")
+	public String addTripDetails1(@RequestParam("packageid")int id,@RequestParam("userId")int userId,Model model) {
 		TripDetails tdetails =new TripDetails();
+		TripPackage trippackage=packageService.findById(id);
+		tdetails.setPackageId(id);
+		tdetails.setUserId(userId);
+		tdetails.setStartDate(trippackage.getStartDate());
+		tdetails.setEndDate(trippackage.getEndDate());
 		model.addAttribute("addtripdetails",tdetails);
-		return "add-trip-details-form1";
+		return "add-trip-details-form";
 	}
-	@GetMapping("/addtripdetailsform2")
-	public String addTripDetails2(Model model) {
-		TripDetails tdetails =new TripDetails();
-		model.addAttribute("addtripdetails",tdetails);
-		return "add-trip-details-form2";
-	}
-	@GetMapping("/addtripdetailsform3")
-	public String addTripDetails3(Model model) {
-		TripDetails tdetails =new TripDetails();
-		model.addAttribute("addtripdetails",tdetails);
-		return "add-trip-details-form3";
-	}
-	@GetMapping("/addtripdetailsform4")
-	public String addTripDetails4(Model model) {
-		TripDetails tdetails =new TripDetails();
-		model.addAttribute("addtripdetails",tdetails);
-		return "add-trip-details-form4";
-	}
+	
+	
 	@PostMapping("/addtripdetail")
-	public String addTrip(@ModelAttribute("addtripdetails") TripDetails tdetails) {
-		 tripDetailservice.save(tdetails);
-		return "redirect:/tripdetail/getalltripdetails";
+	public String addTrip(@ModelAttribute("addtripdetails") TripDetails tdetails,Model model) {
+		System.out.println(tdetails.getUserId());
+		tripDetailservice.save(tdetails);
+		return "redirect:/payment/getpayments?tripId="+tdetails.getTripId()+"&userId="+tdetails.getUserId();
 	}
 	
 	@GetMapping("/updatetripdetailform")
@@ -65,6 +59,7 @@ public class TripDetailsController {
 	}
 	@PostMapping("/updatetripdetail")
 	public String updateTripDetails(@ModelAttribute("updatetripdetailsform") TripDetails tripdetails) {
+		
 		tripDetailservice.save(tripdetails);
 		return "redirect:/tripdetail/getalltripdetils";
 	}

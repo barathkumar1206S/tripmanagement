@@ -31,11 +31,11 @@
 
 <div></div>
 <div><h1>Payment List</h1></div>
-<div><a href="/getallpayments">Payment List</a></div>
-<div><a href="/addpaymentform">Add Payment</a></div>
-<div><a href="/updatepaymentform?paymentId=">Update Payment</a></div>
-<div><a href="/deletepayment?paymentId=">Delete Payment</a></div>
-<div><a href="/getpayments?paymentId=">FindById Payment</a></div>
+<div><a href="/payment/getallpayments">Payment List</a></div>
+<div><a href="/payment/addpaymentform">Add Payment</a></div>
+<div><a href="/payment/updatepaymentform?paymentId=">Update Payment</a></div>
+<div><a href="/payment/deletepayment?paymentId=">Delete Payment</a></div>
+<div><a href="/payment/getpayments?paymentId=">FindById Payment</a></div>
 
 <div></div>
 

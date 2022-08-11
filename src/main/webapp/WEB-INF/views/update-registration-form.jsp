@@ -31,7 +31,7 @@
                 </div>
                 <br>
                 <div>
-                Dob : <form:input type="date" path="dob" />
+                DateOfBirth : <form:input type="date" path="dob" />
                 </div>
                 <br>
                 <div>

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import com.chainsys.tripmanagement.dto.TripRegistrationAndTripPaymentsDTO;
 import com.chainsys.tripmanagement.model.TripRegistration;
 import com.chainsys.tripmanagement.service.RegistrationService;
@@ -39,8 +38,9 @@ public class RegistrationController {
 
 	@PostMapping("/add")
 	public String addRegister(@ModelAttribute("addregister") TripRegistration thereg) {
+		
 		regService.save(thereg);
-		return "redirect:/registration/getallregistrations";
+		return "redirect:/home/login";	
 	}
 
 	@GetMapping("/updateregform")
@@ -51,7 +51,8 @@ public class RegistrationController {
 	}
 
 	@PostMapping("/update")
-	public String updateRegistration(@ModelAttribute("updateregister") TripRegistration treg) {
+	public String updateRegistration(@ModelAttribute("updateregister") TripRegistration treg){
+		
 		regService.save(treg);
 		return "redirect:/registration/getallregistrations";
 	}

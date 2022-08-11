@@ -13,7 +13,5 @@ public interface TripDetailsRepository extends  CrudRepository<TripDetails, Inte
 	void deleteById(int id);
 	List<TripDetails> findAll();
 	List<TripDetails> findByTripPackagePackageId(int id);
-	
-//	@Query("select trip_id.nextval from dual")
-//	int sequenceTripId();
+
 }

@@ -1,9 +1,8 @@
 package com.chainsys.tripmanagement.model;
 
 
-
 import java.sql.Date;
-
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -24,10 +23,13 @@ public class TripPayments {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="payment_id")
 	@Column(name = "PAYMENT_ID")
 	private int paymentId;
+	
 	@Column(name = "FROM_DATE")
-	private Date fromDate;
+   private Date fromDate;
+	
 	@Column(name = "PAYMENT_AMOUNT")
-	private float paymentAmout;
+    private float paymentAmout;
+	
 	@Column(name = "TRIP_ID")
 	private int tripId;
 	@Column(name = "USER_ID")

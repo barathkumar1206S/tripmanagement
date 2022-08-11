@@ -9,7 +9,7 @@
 <title>All Packages</title>
 </head>
 <body>
-	<div id="table root">
+	<div id="table root" align="center">
 		<table>
 			<thead>
 				<tr>
@@ -20,6 +20,10 @@
 					<th>amount</th>
 					<th>noOfDays</th>
 					<th>maxNoOfSeats</th>
+					<th>StartDate</th>
+					<th>EndDate</th>
+					
+					
 				</tr>
 			</thead>
 			<tbody>
@@ -32,6 +36,10 @@
 						<td>${tripPackage.amount}</td>
 						<td>${tripPackage.noOfDays}</td>
 						<td>${tripPackage.maxNoOfSeats}</td>
+						<td>${tripPackage.startDate}</td>
+						<td>${tripPackage.endDate}</td>
+						
+						
 						
 					</tr>
                 </c:forEach>

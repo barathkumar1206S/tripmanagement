@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.chainsys.tripmanagement.businesslogic.Logic;
 import com.chainsys.tripmanagement.dto.TripDetailsAndPaymentDTO;
 import com.chainsys.tripmanagement.model.TripDetails;
+import com.chainsys.tripmanagement.model.TripPackage;
 import com.chainsys.tripmanagement.model.TripPayments;
 import com.chainsys.tripmanagement.repo.TripDetailsRepository;
 import com.chainsys.tripmanagement.repo.TripPaymentsRepository;
@@ -21,19 +22,21 @@ public class TripDetailsService {
 	private TripPaymentsRepository tripPaymentsRepo;
 	@Autowired
 	private PaymentsService paymentsService;
+	@Autowired
+	private PackageService packageService;
 	public List<TripDetails> getAllTripDetails() {
 		List<TripDetails> triplist = tripDetailsRepo.findAll();
 		return triplist;
 	}
 
 	public TripDetails save(TripDetails tpd) {
-		Calendar calendar =Calendar.getInstance();
 		TripDetails tripDetails= tripDetailsRepo.save(tpd);
 		TripPayments tripPayments =new TripPayments();
 		tripPayments.setTripId(tpd.getTripId());
-		tripPayments.setUserId(100);
-		tripPayments.setPaymentAmout(Logic.paymentAmountCalculation(tpd.getBookedPassengers(), 1000));
-		tripPayments.setFromDate(null);
+		tripPayments.setUserId(tpd.getUserId());
+		TripPackage tripPackage=packageService.findById(tpd.getPackageId());
+		tripPayments.setPaymentAmout((float)(Logic.paymentAmountCalculation(tpd.getBookedPassengers(), tripPackage.getAmount())));
+		tripPayments.setFromDate(Logic.getInstanceDate());
 		paymentsService.save(tripPayments);
 		return tripDetails;
 	}

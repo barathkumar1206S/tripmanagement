@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-    
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
 	<h3>Package ById details</h3>
 	<div id="root">
 		<div id="form">
-			<form:form action="getpackagebyid" method="post" modelAttribute="getpackbyid">
+			<form:form action="" method="get" modelAttribute="getpackbyid">
 				<div>
 					PackageId :
 					<form:input path="packageId" />
@@ -36,7 +36,7 @@
 				<br>
 				<div>
 					Amount :
-					<form:input  path="amount" />
+					<form:input path="amount" />
 				</div>
 				<br>
 				<div>
@@ -48,9 +48,26 @@
 					Max No Of Seats :
 					<form:input path="maxNoOfSeats" />
 				</div>
-				</form:form>
+				<br>
+				<div>
+					Start Date :
+					<form:input type="date" path="startDate" />
+					</div>
+					<br>
+					<div>
+					End Date :
+					<form:input type="date" path="endDate" />
+					</div>
+					<br>
+						<form:button>
+							<a href="/package/showpackages">Back</a>
+
+						</form:button>
+						<form:button>
+							<a href="/tripdetail/addtripdetailsform?packageid=${packageId}&userId=${userId}">Next</a>
+						</form:button>
+			</form:form>
 		</div>
 	</div>
-
 </body>
 </html>

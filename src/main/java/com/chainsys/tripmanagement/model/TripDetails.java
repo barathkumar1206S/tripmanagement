@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
 @Entity
 @Table(name="trip")
 public class TripDetails {
@@ -21,14 +22,26 @@ public class TripDetails {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="trip_id")
 	@Column(name="TRIP_ID")
 	private int tripId;
+	
 	@Column(name="PACKAGE_ID")
 	private int packageId;
+	
+	@Column(name="USER_ID")
+	private int userId;
+	
+
 	@Column(name="START_DATE")
 	private Date startDate;
+	
+	
 	@Column(name="END_DATE")
-	private Date endDate;
+    private Date endDate;
+	
+	
 	@Column(name="BOOKED_PASSENGERS")
-	private int bookedPassengers;
+   private int bookedPassengers;
+	
+	
 	@Column(name="TRIP_STATUS")
 	private String tripStatus;
 	                
@@ -66,6 +79,13 @@ public class TripDetails {
 	public void setPackageId(int packageId) {
 		this.packageId = packageId;
 	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	public Date getStartDate() {
 		return startDate;
 	}

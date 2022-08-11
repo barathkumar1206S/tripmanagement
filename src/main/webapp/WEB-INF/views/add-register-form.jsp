@@ -6,18 +6,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>NEW REGISTRATION</title>
+<style>
+.text-danger {
+    color: #e80c4d;
+    font-size: 0.9em;
+}
+</style>
 </head>
-<body>
 <body>
 	<h1>Trip Management System</h1>
 	<h3>User Registration form</h3>
 	<div id="root">
 		<div id="form">
 			<form:form action="add" method="post" modelAttribute="addregister">
-				<div>
-					UserId :
-					<form:input path="userId" />
-				</div>
+				
 				<br>
 				<div>
 					First Name :
@@ -38,7 +40,7 @@
 				</div>
 				<br>
 				<div>
-					Dob :
+					DateOfBirth :
 					<form:input type="date" path="dob" />
 				</div>
 				<br>
@@ -51,7 +53,6 @@
 					Email :
 					<form:input path="email" />
 				</div>
-				<br>
 				<br>
 				<div>
 					Password :

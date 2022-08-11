@@ -2,6 +2,8 @@ package com.chainsys.tripmanagement.controller;
 
 import java.util.List;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.tripmanagement.dto.TripPackageAndTripDetailsDTO;
 import com.chainsys.tripmanagement.model.TripPackage;
-import com.chainsys.tripmanagement.model.TripRegistration;
 import com.chainsys.tripmanagement.service.PackageService;
 
 @Controller
@@ -29,7 +30,9 @@ public String getpackage(Model model) {
 	return "list-packages";
 }
 @GetMapping("/showpackages")
-public String ShowAllPackages() {
+public String ShowAllPackages(@RequestParam("id")int userId,Model model) {
+	System.out.println(userId + " showpackage");
+	model.addAttribute("userId", userId);
 	return "show-packages";
 }
 @GetMapping("/addpackageform")
@@ -40,6 +43,7 @@ public String showAddForm(Model model) {
 }
 @PostMapping("/add")
 public String addPackage(@ModelAttribute("addPackage") TripPackage thepack) {
+	
 	packService.save(thepack);
 	return "redirect:/package/getallpackages";
 }
@@ -52,6 +56,7 @@ public String showPackage(@RequestParam("packageId") int id, Model model) {
 
 @PostMapping("/updatepackform")
 public String updatePackage(@ModelAttribute("updatepackageform") TripPackage tpack) {
+	
 	packService.save(tpack);
 	return "redirect:/package/getallpackages";
 }
@@ -67,9 +72,12 @@ public String findById() {
 }
 
 @GetMapping("/getpackagebyid")
-public String getPackageById(@RequestParam("packageId") int id, Model model) {
+public String getPackageById(@RequestParam("packageId") int id,@RequestParam("userId") int userId, Model model) {
 	TripPackage tpack =packService.findById(id);
 	model.addAttribute("getpackbyid",tpack);
+	model.addAttribute("packageId", id);
+	System.out.println(userId+" getpackagebyid");
+	model.addAttribute("userId", userId);
 	return "find-package-by-id-form";
 }
 

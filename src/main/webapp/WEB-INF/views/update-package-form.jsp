@@ -42,6 +42,14 @@
                 </div>
                 <br>
                 <div>
+                Start Date : <form:input type="date" path="startDate" />
+                </div>
+                <br>
+                 <div>
+                end Date : <form:input type="date" path="endDate" />
+                </div>
+                <br>
+                <div>
                 <form:button>Update</form:button>
                 </div>
             </form:form>

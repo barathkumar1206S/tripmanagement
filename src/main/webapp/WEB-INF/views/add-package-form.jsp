@@ -6,6 +6,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Trip Management System</title>
+<style>
+.text-danger {
+    color: #e80c4d;
+    font-size: 0.9em;
+}
+</style>
 </head>
 <body>
 	<h1></h1>
@@ -17,15 +23,16 @@
 					PackageId :
 					<form:input path="PackageId" />
 				</div>
+				
 				<br>
 				<div>
 					Boarding Place :
-					<form:input path="BoardingPlace" />
+					<form:input path="boardingPlace" />
 				</div>
 				<br>
 				<div>
 					Destination :
-					<form:input path="Destination" />
+					<form:input path="destination" />
 				</div>
 				<br>
 				<div>
@@ -46,6 +53,17 @@
 				<div>
 					Max No Of Seats :
 					<form:input path="maxNoOfSeats" />
+				</div>
+				<br>
+				
+				<div>
+				Start Date :
+					<form:input  type="date" path="startDate" />
+				</div>
+				<br>
+				<div>
+				End Date :
+					<form:input  type="date" path="endDate" />
 				</div>
 				<br>
 				<div>
