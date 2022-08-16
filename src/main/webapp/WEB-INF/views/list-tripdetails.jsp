@@ -7,6 +7,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>TripDetails List</title>
+<style><%@include file ="/WEB-INF/css/list.css"%>
+
+</style>
 </head>
 <body>
 <div id="table root">
@@ -14,12 +17,15 @@
 			<thead>
 				<tr>
 					<th>Trip Id</th>
-					<th>User Id</th>
-					<th>Package Id</th> 
+					<th>Package Id</th>
+					<th>User Id</th> 
 					<th>Start Date</th>
 					<th>End Date</th>
 					<th>Booked Passengers</th>
 					<th>Trip Status</th>
+					<th>Edit</th>
+                    <th>Delete</th>
+                    <th>View</th>
 					
 				</tr>
 			</thead>
@@ -33,10 +39,16 @@
 						<td>${tripdetails.endDate}</td>
 						<td>${tripdetails.bookedPassengers}</td>
 						<td>${tripdetails.tripStatus}</td>
+							<td><a href="updatetripdetailform?tripId=${tripdetails.tripId}">Edit</a></td>
+                        <td><a href="deletebyid?tripId=${tripdetails.tripId}">Delete</a></td>
+                        <td><a href="gettripdetails?tripId=${tripdetails.tripId}">View</a></td>
 						</tr>
                 </c:forEach>
 			</tbody>
 		</table>
+		<div class="btn_align">
+            <a href="addtripform"><button class="button">ADD TRIPDETAILS
+                </button></a>
 	</div>
 </body>
 </html>

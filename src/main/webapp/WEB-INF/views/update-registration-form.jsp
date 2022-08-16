@@ -6,57 +6,99 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Trip Package</title>
+<title>Update Registration</title>
+<style ><%@include file ="/WEB-INF/css/alljsp.css"%>
+
+body {
+    background-color: #a5edf3;
+}
+
+</style>
 </head>
 <body>
-	<h1>Trip Management System</h1>
     <div id="root">
-        <div id="form">
-            <form:form action="update" method="post" modelAttribute="updateregister">
+        <div id="form" class="top">
+            <form:form class="action" action="update" method="post" modelAttribute="updateregister">
                  <div>
-                UserId :<form:input path="userId" />
+                
+				<label class="heading-text" for="userId">User Id</label>
+                 <div>
+              <form:input path="userId"  class="input-size"/>
                 </div>
-                <br>
-                <div>
-                First Name : <form:input path="firstName" />
                 </div>
-                <br>
-                <div>
-                Last Name : <form:input path="lastName" />
+                
+               <div>
+				<label class="heading-text" for="firstName">First Name</label>
+				<div>
+				
+					<form:input path="firstName" pattern="^[a-z A-Z]+$" title="Please Enter Charactor Only"  placeholder = "Enter First Name"
+					 class="input-size"/>
+				</div>
+				</div>
+				
+				
+				<div>
+				<label class="heading-text" for="lastName">Last Name</label>
+				<div>
+				
+					<form:input path="lastName" pattern="^[a-z A-Z]+$" title="Please Enter Charactor Only"  placeholder = "Enter last Name"
+					 class="input-size"/>
+				</div>
+				</div>
+				
+				<div>
+					Gender :
+					<form:radiobutton path="gender" value="Male" />
+					Male
+					<form:radiobutton path="gender" value="Female" />
+					Female
+				</div>
+				
+				<div>
+				<label class="heading-text" for="dob">DateOfBirth</label>
+				<div>
+					<form:input type="date" path="dob" required="true" class="input-size"/>
+				</div>
+				</div>
+				
+				<div>
+				<label class="heading-text" for="phoneNumber">PhoneNumber</label>
+				<div>
+					<form:input path="phoneNumber" name="phoneNumber" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="Enter 10 digits number" placeholder = "Enter Phone Number" required="true" size="10" class="input-size" />
+				</div>
+				</div>
+				
+				<div>
+				<label class="heading-text" for="email">Email</label>
+				<div>
+					<form:input path="email" name="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" title ="Enter a valid email welcome03@gmail.com" placeholder = "Enter a Email" required="true" class="input-size" />
+				</div>
+				</div>
+				
+				<div>
+				<label class="heading-text" for="password">Password</label>
+				<div>
+					<form:input path="password" name="password" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" title="Enter a valid password Welcomes@03 " type="password" required="true"
+					class="input-size" />
+				</div>
+				</div>
+				
+				<div>
+				<label class="heading-text" for="role">Role</label>
+				<div>
+					
+					<form:radiobutton path="role" value="user" />
+					user
+					<form:radiobutton path="role" value="admin" />
+					admin
+				</div>
+				</div>
+				
+				<div>
+                    <form:button class="button-style">UPDATE</form:button>
                 </div>
-                <br>
-                <div>
-                Gender : <form:radiobutton path="gender" value="Male" />Male
-                         <form:radiobutton path="gender" value="Female" />Female
-                </div>
-                <br>
-                <div>
-                DateOfBirth : <form:input type="date" path="dob" />
-                </div>
-                <br>
-                <div>
-                 Phone Number : <form:input path="phoneNumber" name="phoneNumber" size="10" />
-                </div>
-                <br>
-                <div>
-                Email : <form:input path="email" />
-                </div>
-                <br>
-                <br>
-                <div>
-                Password : <form:password path="password" />
-                </div>
-                <br>
-                <div>
-                Role:<form:radiobutton path="role" value="user" />user
-                         <form:radiobutton path="role" value="admin" />admin
-                </div>
-                <br>
-                <div>
-                <form:button>Update</form:button>
-                </div>
-            </form:form>
-        </div>
-    </div>
+			</form:form>
+		</div>
+	</div>
 </body>
 </html>

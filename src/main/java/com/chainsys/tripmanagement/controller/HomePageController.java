@@ -35,10 +35,10 @@ public class HomePageController {
 		return "redirect:/registration/addregform";
 	}
 
-	@GetMapping("/userpackage")
-	public String getPackageList(Model model) {
-		return "redirect/package/getallpackages";
-	}
+//	@GetMapping("/userpackage")
+//	public String getPackageList(Model model) {
+//		return "redirect/package/getallpackages";
+//	}
 
 	@PostMapping("/userpage")
 	public String userPage(@ModelAttribute("login") Login login, Model model) {

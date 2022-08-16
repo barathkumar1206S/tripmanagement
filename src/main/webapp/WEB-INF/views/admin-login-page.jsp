@@ -6,13 +6,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Admin login page</title>
+<title>AdminLogin page</title>
 </head>
 <body style="background-color:#3d403d; color:white;">
 <div align="center">
 	<form:form action="userpage" method="post" modelAttribute="login">
 				<div>
-					<label for="userId"> Admin Id</label>
+					<label for="userId"> AdminId</label>
 					<div>
 						<form:input path="userId" />
 					</div>
@@ -24,7 +24,7 @@
 					</div>
 				</div>
 				<div>
-					<form:button>Adminlogin</form:button>
+					<form:button>AdminLogin</form:button>
 					
 				</div>
 				

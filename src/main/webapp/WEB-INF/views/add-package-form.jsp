@@ -6,68 +6,95 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Trip Management System</title>
-<style>
+<style><%@include file ="/WEB-INF/css/alljsp.css"%>
 .text-danger {
     color: #e80c4d;
     font-size: 0.9em;
 }
+body {
+    background-color: #a5edf3;
+}
 </style>
 </head>
 <body>
-	<h1></h1>
-	<h3>Add Package form</h3>
+	<h3 align="center">Add Package form</h3>
 	<div id="root">
-		<div id="form">
+		<div id="form" class="form">
 			<form:form action="add" method="post" modelAttribute="addPackage">
 				<div>
-					PackageId :
-					<form:input path="PackageId" />
+				<label class="heading-text" for="packageId">Package Id</label>
+				<div>
+					<form:input path="PackageId" title="Please enter number only"
+                            pattern="^[0-9]+$" required="true" class="input-size"/>
+				</div>
 				</div>
 				
-				<br>
-				<div>
-					Boarding Place :
-					<form:input path="boardingPlace" />
-				</div>
-				<br>
-				<div>
-					Destination :
-					<form:input path="destination" />
-				</div>
-				<br>
-				<div>
-					Package Type :
-					<form:input path="packageType" />
-				</div>
-				<br>
-				<div>
-					Amount :
-					<form:input  path="amount" />
-				</div>
-				<br>
-				<div>
-					No Of Days:
-					<form:input path="noOfDays" />
-				</div>
-				<br>
-				<div>
-					Max No Of Seats :
-					<form:input path="maxNoOfSeats" />
-				</div>
-				<br>
 				
 				<div>
-				Start Date :
-					<form:input  type="date" path="startDate" />
-				</div>
-				<br>
+					<label class="heading-text" for="boardingPlace">Boarding Place</label>
 				<div>
-				End Date :
-					<form:input  type="date" path="endDate" />
+					<form:input path="boardingPlace"  pattern="^[a-z A-Z]+$" title="Please Enter Charactor Only"  placeholder = "Enter boarding place"
+					 class="input-size"/>
 				</div>
-				<br>
+				</div>
+				
 				<div>
-					<input type="submit" value="Submit" /> 
+					<label class="heading-text" for="destination">Destination</label>
+				<div>
+					<form:input path="destination"  pattern="^[a-z A-Z]+$" title="Please Enter Charactor Only"  placeholder = "Enter destinatination"
+					 class="input-size"/>
+				</div>
+				</div>
+				
+				<div>
+					<label class="heading-text" for="packageType">Package Type</label>
+				<div>
+					<form:input path="packageType"  pattern="^[a-z A-Z]+$" title="Please Enter Charactor Only"  placeholder = "Enter packageType"
+					 class="input-size" />
+				</div>
+				</div>
+				
+				<div>
+				<label class="heading-text" for="amount">Amount</label>
+				<div>
+					<form:input path="amount" title="Please enter number only"
+                            pattern="^[0-9]+$" required="true" class="input-size"/>
+				</div>
+				</div>
+				
+				<div>
+				<label class="heading-text" for="noOfDays">No Of Days</label>
+				<div>
+					<form:input path="noOfDays" title="Please enter number only"
+                            pattern="^[0-9]+$" required="true" class="input-size"/>
+				</div>
+				</div>
+				
+				<div>
+				<label class="heading-text" for="maxNoOfSeats">MaxNoOfSeats</label>
+				<div>
+					<form:input path="maxNoOfSeats" title="Please enter number only"
+                            pattern="^[0-9]+$" required="true" class="input-size"/>
+				</div>
+				</div>
+				
+				
+			<div>
+				<label class="heading-text" for="startDate">startDate</label>
+					<div>
+					<form:input  type="date" path="startDate"  required="true" class="input-size"/>
+				</div>
+				</div>
+				
+			<div>
+				<label class="heading-text" for="endDate">EndDate</label>
+					<div>
+					<form:input  type="date" path="endDate"  required="true" class="input-size"/>
+				</div>
+				</div>
+				
+				<div>
+					<input type="submit" value="Submit" class="submit" /> 
 				</div>
 			</form:form>
 		</div>

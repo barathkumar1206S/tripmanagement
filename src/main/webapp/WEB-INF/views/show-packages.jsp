@@ -6,35 +6,61 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>All Packages</title>
+
 </head>
+
 <body>
-<div align="center">
-	Chennai to Goa
-	<form action="getpackagebyid" method="get">
-		<div>
-			<input type="hidden" id="packageId" name="packageId" value=1 />
+	<div style="margin-top: 40px; margin-right: 600px; font-size: 40px;">
+     <label class="heading-text" for="chennaitogoa">Chennai To Goa</label>
+			<div style="width: 1500px; margin-left: 1200px; font-size:20px;">
+		<form action="getpackagebyid" method="get">
+			<div>
+					<input type="hidden" id="packageId" name="packageId" value=1 />
+				
+					<input type="hidden" name="userId" id="userId" value="${userId}">
+					<input type="submit" value="BookNow" />
+				</div>
+				
+			</form>
 		</div>
-		<input type="hidden" name="userId" id="userId" value="${userId}">
-		<input type="submit" value="pack1"/>
-	</form>
-	Chennai to Ladakh
-	<form action="getpackagebyid" method="get">
-		<div>
-			<input type="hidden" id="packageId" name="packageId" value=2 />
 		</div>
-		<input type="hidden" name="userId" id="userId" value="${userId}">
-		<input type="submit" value="pack2"/>
-	</form>
-		Chennai to kashmir
-	<form action="getpackagebyid" method="get">
-		<div>
-			<input type="hidden" id="packageId" name="packageId" value=3 />
+
+
+	<div style="margin-top: 100px; margin-right: 600px; font-size: 40px;">
+     <label class="heading-text" for="firstName">Chennai To Ladakh</label>
+		<div style="width: 1500px; margin-left: 1200px;font-size:20px">
+			<form action="getpackagebyid" method="get">
+				<div>
+					<input type="hidden" id="packageId" name="packageId" value=2 /> 
+					<input type="hidden" name="userId" id="userId" value="${userId}">
+					<input type="submit" value="BookNow" />
+				</div>
+			</form>
 		</div>
-		<input type="hidden" name="userId" id="userId" value="${userId}">
-		<input type="submit" value="pack3"/>
-		
-		
-	</form>
+	</div>
+
+	<div style="margin-top: 100px; margin-right: 600px; font-size: 40px;">
+		<label class="heading-text" for="firstName">Chennai To Kashmir</label>
+		<div style="width: 1500px; height: 100px; margin-left: 1200px;font-size:20px">
+			<form action="getpackagebyid" method="get">
+				<div>
+					<input type="hidden" id="packageId" name="packageId" value=3 />
+				</div>
+				<div>
+					<input type="hidden" name="userId" id="userId" value="${userId}">
+					<input type="submit" value="BookNow" />
+				</div>
+			</form>
+		</div>
 	</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

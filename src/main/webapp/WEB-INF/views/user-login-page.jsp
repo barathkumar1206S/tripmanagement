@@ -3,51 +3,45 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>LogIn Page</title>
-<style>
+<style><%@include file ="/WEB-INF/css/login.css"%>
 body {
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://31.media.tumblr.com/41c01e3f366d61793e5a3df70e46b462/tumblr_n4vc8sDHsd1st5lhmo1_1280.jpg");
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://wc.wallpaperuse.com/wallp/42-422457_s.jpg");
     background-repeat: no-repeat;
     background-size: 1400px 700px;
     
 }
-.login-form{
-width: 75px;
-    height: 30px;
-    font-size: 17px;
-    background-color: lightblue;
-    border: 1px solid blue;
-    border-radius: 3px;
-    color: blue;
-}
+
 </style>
 </head>
 <body>
-	<div>
+	
+	 <div id="root">
 		<div id="form" align="center">
 		
 		
 	<form:form action="userpage" method="post" modelAttribute="login">
- <h1 style="font-size: 68px;color: antiquewhite;">LOGIN</h1>
+ <h1 >LOGIN</h1>
 	<table>
 				<div>
-					<label for="userId" style="font-size: 35px; color: antiquewhite;"> User Id</label>
+					<label for="userId" class="label"> UserId</label>
 					<div>
-						<form:input path="userId" placeholder="userId" style="width: 20%;height: 35px;margin-left: 20px;font-size: 17px;"/>
+						<form:input path="userId" placeholder="userId" class="input-size"/>
 					</div>
 				</div>
 				<div>
-					<label for="password" style="font-size: 35px; color: antiquewhite;">Password</label>
+					<label for="password" class="label">Password</label>
 					<div>
-						<form:input type="password" path="password" style="width: 20%;height: 35px;margin-left: 20px;font-size: 17px;"/>
+						<form:input path="password"  pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" title="Enter a valid password Welcomes@03 " type="password" required="true"
+					class="input-size" />
 					</div>
 				</div>
 				</table>
-				<div style="margin-top: 20px;margin-left: 42px;">
+				<div class="belowinput-size">
 				<tr>
 				<td><form:button class="login-form">login</form:button>	</td>	
 				<td><form:button class="login-form" style="margin-left: 12px;">
@@ -55,7 +49,7 @@ width: 75px;
                                
                                 </tr>
                                  </div>	
-                                 <div id="root">
+                                
    	
 				</form:form>
 				</div>

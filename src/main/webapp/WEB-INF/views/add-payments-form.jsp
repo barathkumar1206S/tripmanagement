@@ -1,62 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-    <%@page import="com.chainsys.tripmanagement.businesslogic.Logic"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@page import="com.chainsys.tripmanagement.businesslogic.Logic"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Payments Details  </title>
-<style>
-.text-danger {
-    color: #e80c4d;
-    font-size: 0.9em;
+<title>Add Payments Details</title>
+<style><%@include file ="/WEB-INF/css/alljsp.css"%>
+body {
+	background-image: url("https://thumbs.dreamstime.com/b/euro-4054151.jpg");
+	background-repeat: no-repeat;
+	background-size: 1366px 650px;
+	background-position: center top;
+	position: relative;
 }
+
+
 </style>
 </head>
 <body>
-	<h1>Trip Management System</h1>
-	<h3>Payments Form</h3>
-	<script>
-		function calculation(){
-			var noofticket=document.getElementById("noOfTickets").value;
-			var noOfTickets=parseInt(noofticket);
-			//var amount=Logic.paymentAmountCalculation(noOfTickets,500);
-			
-			document.getElementById("paymentAmout").value=noOfTickets*500;
-		}
-	</script>
+	<h2>Payments Form</h2>
 	<div id="root">
-		<div id="form">
-			<form:form action="addpay" method="post" modelAttribute="addpayments">
-			 	
+		<div id="form" class="top">
+			<form:form class="action" action="addpay" method="post" modelAttribute="addpayments">
+
 				<div>
-					FromDate :
-					<form:input type="date" path="fromDate" />
+					<label class="heading-text" for="fromDate">FromDate</label>
+					<div>
+						<form:input type="date" path="fromDate" class="input-size" />
+					</div>
 				</div>
-				
-				<br>
+
 				<div>
-					TripId:
-					<form:input  path="tripId" />
+					<label class="heading-text" for="tripId">TripId</label>
+					<div>
+						<form:input path="tripId" readonly="true" class="input-size" />
+					</div>
 				</div>
-				<br>
+
 				<div>
-					UserId:
-					<form:input path="userId" />
+					<label class="heading-text" for="userId">UserId</label>
+					<div>
+						<form:input path="userId" readonly="true" class="input-size" />
+					</div>
 				</div>
-				<br>
+
 				<div>
-					PaymentAmout :
-					<form:input path="paymentAmout" id="paymentAmout" onchange="calculation(this.form)"/>
+					<label class="heading-text" for="paymentAmout">PaymentAmout</label>
+					<div>
+					<form:input path="paymentAmout" class="input-size" />
+					</div>
 				</div>
-				<br>
+
 				<div>
-					<input type="submit" value="Submit" /> 
+					<input class="submit" type="submit" value="Submit" />
 				</div>
 			</form:form>
 		</div>
 	</div>
-	
+
 </body>
 </html>

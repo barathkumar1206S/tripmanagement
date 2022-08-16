@@ -42,14 +42,25 @@ public class TripDetailsController {
 		model.addAttribute("addtripdetails",tdetails);
 		return "add-trip-details-form";
 	}
-	
-	
 	@PostMapping("/addtripdetail")
-	public String addTrip(@ModelAttribute("addtripdetails") TripDetails tdetails,Model model) {
-		System.out.println(tdetails.getUserId());
-		tripDetailservice.save(tdetails);
-		return "redirect:/payment/getpayments?tripId="+tdetails.getTripId()+"&userId="+tdetails.getUserId();
+	public String addTrip(@ModelAttribute("addtripdetails") TripDetails tDetails,Model model) {
+		System.out.println(tDetails.getUserId());
+		tripDetailservice.save(tDetails);
+		return "redirect:/payment/getpayments?tripId="+tDetails.getTripId()+"&userId="+tDetails.getUserId();
 	}
+	
+	@GetMapping("/addtripform")
+	public String addNew(Model model) {
+		TripDetails tripDetails=new TripDetails();
+		model.addAttribute("addtripform",tripDetails);
+		return  "add-trip-form";
+	}
+	@PostMapping("/addform")
+	public String addTripForm(@ModelAttribute("addtripform") TripDetails tDetails,Model model) {
+		tripDetailservice.save(tDetails);
+		return "redirect:/tripdetail/getalltripdetails";
+	}
+
 	
 	@GetMapping("/updatetripdetailform")
 	public String updateTripDetailsForm(@RequestParam("tripId") int id, Model model) {
@@ -58,31 +69,28 @@ public class TripDetailsController {
 		return "update-trip-details-form";
 	}
 	@PostMapping("/updatetripdetail")
-	public String updateTripDetails(@ModelAttribute("updatetripdetailsform") TripDetails tripdetails) {
+	public String updateTripDetails(@ModelAttribute("updatetripdetailsform") TripDetails tripDetail) {
 		
-		tripDetailservice.save(tripdetails);
-		return "redirect:/tripdetail/getalltripdetils";
+		tripDetailservice.save(tripDetail);
+		return "redirect:/tripdetail/getalltripdetails";
 	}
 	
-	@RequestMapping("/deletebyidform")
-	public String deleteBytripId() {
-		return "delete-by-tripid-form";
-	}
-	
+//	@RequestMapping("/deletebyidform")
+//	public String deleteBytripId() {
+//		return "delete-by-tripid-form";
+//	}
+//	
 	@GetMapping("/deletebyid")
 	public String deleteTrip(@RequestParam("tripId") int id) {
 		tripDetailservice.deleteById(id);
 		return "redirect:/tripdetail/getalltripdetails";
 	}
-	@RequestMapping("/findbyidform")
-	public String findByTripId() {
-		return "find-by-tripid-form";
-	}
+	
 
 	@GetMapping("/gettripdetails")
-	public String gettripdetails(@RequestParam("tripId") int id, Model model) {
+	public String getTripDetail(@RequestParam("tripId") int id, Model model) {
 		TripDetails tripDetails=tripDetailservice.findById(id);
-		model.addAttribute("gettripdetails",tripDetails);
+		model.addAttribute("gettripdetail",tripDetails);
 		return "find-tripdetails-id-form";
 	}
 	

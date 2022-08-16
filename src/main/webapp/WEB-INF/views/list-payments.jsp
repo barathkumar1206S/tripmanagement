@@ -7,6 +7,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Payments List</title>
+<style><%@include file ="/WEB-INF/css/list.css"%>
+
+</style>
 </head>
 <body>
 <div id="table root">
@@ -18,7 +21,10 @@
 					<th>Payment Amount</th>
 					<th>Trip Id</th>
 					<th>User Id</th>
-					
+					<th>Edit</th>
+                    <th>Delete</th>
+                    <th>View</th>
+						
 				</tr>
 			</thead>
 			<tbody>
@@ -29,7 +35,9 @@
 						<td>${payment.paymentAmout}</td>
 						<td>${payment.tripId}</td>
 						<td>${payment.userId}</td>
-			
+			<td><a href="updatepaymentform?paymentId=${payment.paymentId}">Edit</a></td>
+                        <td><a href="deletepayment?paymentId=${payment.paymentId}">Delete</a></td>
+                        <td><a href="getpaymentbyid?paymentId=${payment.paymentId}">View</a></td>
 						
 						
 						
@@ -37,6 +45,9 @@
                 </c:forEach>
 			</tbody>
 		</table>
+		<div class="btn_align">
+            <a href="addpaymentform"><button class="button">ADD PAYMENTS
+                </button></a>
 	</div>
 </body>
 </html>

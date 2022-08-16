@@ -1,24 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-        	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Trip Management</title>
+<title>Insert title here</title>
 <style><%@include file ="/WEB-INF/css/alljsp.css"%>
+body {
+    background-color: #a5edf3;
+
+}
+
+
 </style>
 </head>
 <body>
-<h3 align="center">Update Payments Form</h3>
+<h2 align="center">Payments Form</h2>
 	<div id="root">
 		<div id="form" class="top">
-			<form:form class="action"  action="updatepayment" method="post" modelAttribute="updatepayments">
-				<div>
+			<form:form action="" method="post" modelAttribute="getpayment">
+
+			<div>
 					<label class="heading-text" for="paymentId">PaymentId</label>
 					<div>
-						<form:input  path="paymentId" readonly="true" class="input-size" />
+						<form:input  path="paymentId"  class="input-size" />
 					</div>
 				</div>
 				<div>
@@ -36,18 +43,16 @@
 				<div>
 					<label class="heading-text" for="tripId">TripId</label>
 					<div>
-						<form:input path="tripId" readonly="true" class="input-size" />
+						<form:input path="tripId" class="input-size" />
 					</div>
 				</div>
 			<div>
 					<label class="heading-text" for="userId">UserId</label>
 					<div>
-						<form:input path="userId" readonly="true" class="input-size" />
+						<form:input path="userId"  class="input-size" />
 					</div>
 				</div>
-				<div>
-                    <form:button class="button-style">UPDATE</form:button>
-                </div>
+				
 			</form:form>
 		</div>
 	</div>

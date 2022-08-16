@@ -6,10 +6,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Package List</title>
+<title>Registration List</title>
+<style><%@include file ="/WEB-INF/css/list.css"%>
+
+</style>
 </head>
 <body>
-<div id="table root">
+<div id="table root" class="top">
 		<table>
 			<thead>
 				<tr>
@@ -22,6 +25,9 @@
 					<th>Email</th>
 					<th>password</th>
 					<th>role</th>
+					<th>Edit</th>
+                    <th>Delete</th>
+                    <th>View</th>
 						
 				</tr>
 			</thead>
@@ -37,13 +43,19 @@
 						<td>${reg.email}</td>
 						<td>${reg.password}</td>
 						<td>${reg.role}</td>
-						
+						<td><a href="updateregform?userId=${reg.userId}">Edit</a></td>
+                        <td><a href="deletereg?userId=${reg.userId}">Delete</a></td>
+                        <td><a href="getregistration?userId=${reg.userId}">View</a></td>
 						
 						
 					</tr>
                 </c:forEach>
 			</tbody>
 		</table>
+		<div class="btn_align">
+            <a href="addregform"><button class="button">ADD USER
+                </button></a>
+        </div>
 	</div>
 </body>
 </html>

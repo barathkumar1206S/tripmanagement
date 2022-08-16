@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.tripmanagement.dto.TripPackageAndTripDetailsDTO;
 import com.chainsys.tripmanagement.model.TripPackage;
+import com.chainsys.tripmanagement.model.TripPayments;
 import com.chainsys.tripmanagement.service.PackageService;
 
 @Controller
@@ -30,21 +31,21 @@ public String getpackage(Model model) {
 	return "list-packages";
 }
 @GetMapping("/showpackages")
-public String ShowAllPackages(@RequestParam("id")int userId,Model model) {
-	System.out.println(userId + " showpackage");
+public String showAllPackages(@RequestParam("id")int userId,Model model) {
+	//System.out.println(userId + " showpackage");
 	model.addAttribute("userId", userId);
 	return "show-packages";
 }
 @GetMapping("/addpackageform")
 public String showAddForm(Model model) {
-	TripPackage thepack = new TripPackage();
-	model.addAttribute("addPackage", thepack);
+	TripPackage thePack = new TripPackage();
+	model.addAttribute("addPackage", thePack);
 	return "add-package-form";
 }
 @PostMapping("/add")
-public String addPackage(@ModelAttribute("addPackage") TripPackage thepack) {
+public String addPackage(@ModelAttribute("addPackage") TripPackage thePack) {
 	
-	packService.save(thepack);
+	packService.save(thePack);
 	return "redirect:/package/getallpackages";
 }
 @GetMapping("/updatepackform")
@@ -66,19 +67,28 @@ public String deletePackage(@RequestParam("packageId") int id) {
 	return "redirect:/package/getallpackages";
 }
 
-@GetMapping("/findbyidpackform")
-public String findById() {
-	return "find-by-packid-form";
-}
+//@GetMapping("/findbyidpackform")
+//public String findById() {
+//	return "find-by-packid-form";
+//}
+
 
 @GetMapping("/getpackagebyid")
 public String getPackageById(@RequestParam("packageId") int id,@RequestParam("userId") int userId, Model model) {
 	TripPackage tpack =packService.findById(id);
 	model.addAttribute("getpackbyid",tpack);
 	model.addAttribute("packageId", id);
-	System.out.println(userId+" getpackagebyid");
+	//System.out.println(userId+" getpackagebyid");
 	model.addAttribute("userId", userId);
 	return "find-package-by-id-form";
+}
+
+@GetMapping("/getpackage")
+public String getAllPackages(@RequestParam("packageId") int id ,Model model)
+{
+ TripPackage tripPackage=packService.findById(id);
+model.addAttribute("getpackage",tripPackage);
+   return "find-allPackage-by-id";        
 }
 
 @GetMapping("/gettripdetailsusingpackageid")
@@ -92,29 +102,6 @@ public String getDetailsByPackageId(@RequestParam("packageId") int id, Model mod
 
 
 
-//@RequestMapping("/userloggedin")
-//public String tourPackages() {
-//	return "user-package";
-//}
-//
-//
-//@RequestMapping("/chennaiToLadakh")
-//public String chennaiToLadakhPackage() {
-//	return "chennai-to-ladakh";
-//}
-//
-//@RequestMapping("/chennaiToKashmir")
-//public String chennaiToKashmirPackage() {
-//	return "chennai-to-kashmir";
-//}
-//
-//@RequestMapping("/chennaiToMumbai")
-//public String chennaiToMumbai() {
-//	return "chennai-to-mumbai";
-//}
-//@RequestMapping("/chennaiToDelhi")
-//public String chennaiToDelhi() {
-//	return "chennai-to-delhi";
-//}
+
 
 }

@@ -31,13 +31,9 @@ model.addAttribute("allpayments", payList);
 return "list-payments";
 }
 @GetMapping("/addpaymentform")
-public String showAddPaymentForm(@RequestParam("tripId")int tripId,Model model) {
+public String showAddPaymentForm(Model model) {
 	TripPayments addPay = new TripPayments();
-	model.addAttribute("addpayments", addPay);
-	TripDetails tripDetails=tripDetailsService.findById(tripId);
-	addPay.setTripId(tripId);
-	addPay.setUserId(tripDetails.getUserId());
-	addPay.setFromDate(null);
+	model.addAttribute("addpayments",  addPay);
 	return "add-payments-form";
 }
 
@@ -69,9 +65,22 @@ public String deletePaymentById(@RequestParam("paymentId") int id) {
 }
 
 @GetMapping("/getpayments")
-public String getpayments(@RequestParam("tripId") int tripid,@RequestParam("userId") int userId, Model model) {
+public String getPayment(@RequestParam("tripId") int tripid,@RequestParam("userId") int userId, Model model) {
 TripPayments tpayments = payService.findByTripIdAndUserid(tripid, userId);
 	model.addAttribute("getpayments", tpayments);
+	model.addAttribute("getpayments",tpayments);
+	TripDetails tripDetails=tripDetailsService.findById(tripid);
+	tpayments.setTripId(tripid);
+	tpayments.setUserId(tripDetails.getUserId());
+	tpayments.setFromDate(tpayments.getFromDate());
 	return "find-payment-id-form";
+}
+
+@GetMapping("/getpaymentbyid")
+public String getAllPayments(@RequestParam("paymentId") int id ,Model model)
+{
+   TripPayments tripPayments=payService.findById(id);
+model.addAttribute("getpayment",tripPayments);
+   return "find-allPayments-by-id";        
 }
 }

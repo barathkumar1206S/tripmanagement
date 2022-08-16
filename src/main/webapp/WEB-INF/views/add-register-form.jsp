@@ -6,31 +6,44 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>NEW REGISTRATION</title>
-<style>
-.text-danger {
-    color: #e80c4d;
-    font-size: 0.9em;
+<style><%@include file ="/WEB-INF/css/alljsp.css"%>
+
+
+body {
+    /* background-image:url(https://lh5.googleusercontent.com/proxy/YXR3HSsNAGzGBwz1EHBaA_56py2o7Vzt7fFHRwRft7yrFZwHdXqB_4r8wO3DosViVWDWZQRQCbJZPNHknU70Q0epxAu5eljcjlG535LIFAojMU-e8quIUuTrOpDfMF1nyDGQ93GqJvTbzMyxRh00oBhKuff8xdA); */
+    background-color: #a5edf3; 
+    background-repeat: no-repeat;
+    background-size: 1366px 650px;
+    background-position: center top;
+    position: relative;
 }
+
+
 </style>
 </head>
 <body>
-	<h1>Trip Management System</h1>
-	<h3>User Registration form</h3>
+	<h3 align="center" >User Registration form</h3>
 	<div id="root">
-		<div id="form">
-			<form:form action="add" method="post" modelAttribute="addregister">
+		<div id="form" class="top">
+			<form:form class="action" action="add" method="post" modelAttribute="addregister">
 				
-				<br>
 				<div>
-					First Name :
-					<form:input path="firstName" />
-				</div>
-				<br>
+				<label class="heading-text" for="firstName">First Name</label>
 				<div>
-					Last Name :
-					<form:input path="lastName" />
+				<form:input path="firstName" pattern="^[a-z A-Z]+$" title="Please Enter Charactor Only"  placeholder = "Enter First Name"
+					 class="input-size"/>
 				</div>
-				<br>
+				</div>
+				
+				
+				<div>
+				<label class="heading-text" for="lastName">Last Name</label>
+				<div>
+				
+					<form:input path="lastName" pattern="^[a-z A-Z]+$" title="Please Enter Charactor Only"  placeholder = "Enter last Name"
+					 class="input-size"/>
+				</div>
+				</div>
 				<div>
 					Gender :
 					<form:radiobutton path="gender" value="Male" />
@@ -38,27 +51,31 @@
 					<form:radiobutton path="gender" value="Female" />
 					Female
 				</div>
-				<br>
+				
 				<div>
-					DateOfBirth :
-					<form:input type="date" path="dob" />
-				</div>
-				<br>
+				<label class="heading-text" for="dob">DateOfBirth</label>
 				<div>
-					Phone Number :
-					<form:input path="phoneNumber" name="phoneNumber" size="10" />
-				</div>
-				<br>
+					<form:input type="date" path="dob" required="true" class="input-size"/>
+				</div></div>
 				<div>
-					Email :
-					<form:input path="email" />
-				</div>
-				<br>
+				<label class="heading-text" for="phoneNumber">PhoneNumber</label>
 				<div>
-					Password :
-					<form:password path="password" />
+					<form:input path="phoneNumber" name="phoneNumber" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="Enter 10 digits number" placeholder = "Enter Phone Number" required="true" size="10" class="input-size" />
 				</div>
-				<br>
+				</div>
+				<div>
+				<label class="heading-text" for="email">Email</label>
+				<div>
+					<form:input path="email" name="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" title ="Enter a valid email welcome03@gmail.com" placeholder = "Enter a Email" required="true" class="input-size" />
+				</div>
+				</div>
+				<div>
+				<label class="heading-text" for="password">Password</label>
+				<div>
+					<form:input  path="password"  pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" title="Enter a valid password Welcomes@03 " type="password" required="true"
+					class="input-size" />
+				</div>
+				</div>
 				<div>
 					Role:
 					<form:radiobutton path="role" value="user" />
@@ -66,8 +83,7 @@
 					<form:radiobutton path="role" value="admin" />
 					admin
 				</div>
-				<br>
-				<div>
+				<div >
 					<input type="submit" value="Submit" /> <input type="reset">
 				</div>
 			</form:form>

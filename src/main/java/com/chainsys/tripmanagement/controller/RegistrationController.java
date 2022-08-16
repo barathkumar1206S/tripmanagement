@@ -37,9 +37,9 @@ public class RegistrationController {
 	}
 
 	@PostMapping("/add")
-	public String addRegister(@ModelAttribute("addregister") TripRegistration thereg) {
+	public String addRegister(@ModelAttribute("addregister") TripRegistration registrationTrip) {
 		
-		regService.save(thereg);
+		regService.save(registrationTrip);
 		return "redirect:/home/login";	
 	}
 
@@ -62,11 +62,11 @@ public class RegistrationController {
 		regService.deleteById(id);
 		return "redirect:/registration/getallregistrations";
 	}
-
-	@RequestMapping("/findbyuserid")
-	public String findById() {
-		return "find-by-userid-form";
-	}
+//
+//	@RequestMapping("/findbyuserid")
+//	public String findById() {
+//		return "find-by-userid-form";
+//	}
 
 	@GetMapping("/getregistration")
 	public String getRegistration(@RequestParam("userId") int id, Model model) {
