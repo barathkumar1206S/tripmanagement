@@ -16,7 +16,7 @@ public class Logic {
 	        Date date=null;
 	        try {
 	            date=new java.sql.Date(dateFormat.parse(dates).getTime());
-	            System.out.println(date);
+	           // System.out.println(date);
 	        } catch (ParseException e) {
 	            e.printStackTrace();
 	        }

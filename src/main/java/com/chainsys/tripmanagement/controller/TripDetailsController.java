@@ -31,7 +31,7 @@ public class TripDetailsController {
 	model.addAttribute("alltripdetails",triplist);
 	return "list-tripdetails";
 	}
-	@RequestMapping("/addtripdetailsform")
+	@GetMapping("/addtripdetailsform")
 	public String addTripDetails1(@RequestParam("packageid")int id,@RequestParam("userId")int userId,Model model) {
 		TripDetails tdetails =new TripDetails();
 		TripPackage trippackage=packageService.findById(id);
