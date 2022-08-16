@@ -45,14 +45,14 @@ public class HomePageController {
 		TripRegistration tripRegistration = registrationService.findById(login.getUserId());
 		if (tripRegistration.getPassword().equals(login.getPassword())) {
 			if (tripRegistration.getRole().equalsIgnoreCase("user")) {
-				System.out.println("somthing");
+			//	System.out.println("somthing");
 				return "redirect:/package/showpackages?id="+login.getUserId();
 
 			} else if (tripRegistration.getRole().equalsIgnoreCase("admin")) {
 				return "redirect:/home/adminform";
 			}
 		} else {
-			model.addAttribute("message", "Somthing Wrong ");
+			model.addAttribute("message", "Something Wrong ");
 			return "login-page";
 		}
 		return "login-page";

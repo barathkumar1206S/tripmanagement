@@ -10,7 +10,7 @@
 <style><%@include file ="/WEB-INF/css/login.css"%>
 body {
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://wc.wallpaperuse.com/wallp/42-422457_s.jpg");
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://wallpaperaccess.com/full/2314950.jpg");
     background-repeat: no-repeat;
     background-size: 1400px 700px;
     
@@ -45,7 +45,7 @@ body {
 				<tr>
 				<td><form:button class="login-form">login</form:button>	</td>	
 				<td><form:button class="login-form" style="margin-left: 12px;">
-                                <a href="newuser">Sign Up</a></form:button></td>
+                                <a href="newuser">SignIn</a></form:button></td>
                                
                                 </tr>
                                  </div>	

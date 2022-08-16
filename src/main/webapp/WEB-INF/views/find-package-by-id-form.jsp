@@ -2,12 +2,12 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Package Detail UsingBy Id</title>
-<style>
-<%@include file ="/WEB-INF/css/alljsp.css"%>
+<style><%@include file ="/WEB-INF/css/alljsp.css"%>
+
 
 body {
     background-image: url("https://wallpapersmug.com/download/1366x768/e1e099/gradient-pattern-abstract.jpg"); 
@@ -17,11 +17,10 @@ body {
     background-position: center top;
     position: relative;
 }
-
 </style>
 </head>
 <body>
-	<h2 align= "center">Package Details</h2>
+	<h2 text-align= "center">Package Details</h2>
 	<div id="root">
 		<div id="form" id="form" class="top">
 			<form:form action="" method="get" modelAttribute="getpackbyid">

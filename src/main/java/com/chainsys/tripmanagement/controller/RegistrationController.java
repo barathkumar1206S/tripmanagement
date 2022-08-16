@@ -89,21 +89,18 @@ public class RegistrationController {
 		return "user-loginform";
 	}
 
-	@GetMapping("/userloggedinform")
-	public String backToLoginForm(@RequestParam("userId") Integer id, @RequestParam("userPassword") String pass,
-			@RequestParam("role") String role, TripRegistration trip) {
-		List<TripRegistration> trips = new ArrayList<TripRegistration>();
-
-		Integer uid = trip.getUserId();
-		String upass = trip.getPassword();
-		String urole = trip.getRole();
-		Iterator<TripRegistration> itr = trips.iterator();
-		while (itr.hasNext()) {
-			if (id.equals(uid) && pass.equals(upass) && role.equals(urole)) {
-				return "redirect:/package/userloggedin";
-			}
-		}
-		return "redirect:/registration/userloginform";
-	}
-
+	/*
+	 * @GetMapping("/userloggedinform") public String
+	 * backToLoginForm(@RequestParam("userId") Integer
+	 * id, @RequestParam("userPassword") String pass,
+	 * 
+	 * @RequestParam("role") String role, TripRegistration trip) {
+	 * List<TripRegistration> trips = new ArrayList<TripRegistration>();
+	 * 
+	 * Integer uid = trip.getUserId(); String upass = trip.getPassword(); String
+	 * urole = trip.getRole(); Iterator<TripRegistration> itr = trips.iterator();
+	 * while (itr.hasNext()) { if (id.equals(uid) && pass.equals(upass) &&
+	 * role.equals(urole)) { return "redirect:/package/userloggedin"; } } return
+	 * "redirect:/registration/userloginform"; }
+	 */
 }

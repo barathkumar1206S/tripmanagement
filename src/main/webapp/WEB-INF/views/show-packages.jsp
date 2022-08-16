@@ -2,19 +2,21 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>All Packages</title>
-
+<style><%@include file ="/WEB-INF/css/showpackages.css"%>
+</style>
 </head>
 
 <body>
-	<div style="margin-top: 40px; margin-right: 600px; font-size: 40px;">
-     <label class="heading-text" for="chennaitogoa">Chennai To Goa</label>
-			<div style="width: 1500px; margin-left: 1200px; font-size:20px;">
+<section>
+	 <div class="images__card">
+                <h2 class="center">ChennaiToGoa</h2>
+            </div>
 		<form action="getpackagebyid" method="get">
-			<div>
+			<div class="center">
 					<input type="hidden" id="packageId" name="packageId" value=1 />
 				
 					<input type="hidden" name="userId" id="userId" value="${userId}">
@@ -26,38 +28,35 @@
 		</div>
 
 
-	<div style="margin-top: 100px; margin-right: 600px; font-size: 40px;">
-     <label class="heading-text" for="firstName">Chennai To Ladakh</label>
-		<div style="width: 1500px; margin-left: 1200px;font-size:20px">
+ <div class="images__card1">
+                <h2 class="center">ChennaiToLadakh</h2>
+            </div>
 			<form action="getpackagebyid" method="get">
-				<div>
+				<div class="center">
 					<input type="hidden" id="packageId" name="packageId" value=2 /> 
 					<input type="hidden" name="userId" id="userId" value="${userId}">
 					<input type="submit" value="BookNow" />
 				</div>
 			</form>
-		</div>
-	</div>
+		
 
-	<div style="margin-top: 100px; margin-right: 600px; font-size: 40px;">
-		<label class="heading-text" for="firstName">Chennai To Kashmir</label>
-		<div style="width: 1500px; height: 100px; margin-left: 1200px;font-size:20px">
+	 <div class="images__card2">
+                <h2  class="center">ChennaiToKashmir</h2>
+            </div>
 			<form action="getpackagebyid" method="get">
 				<div>
 					<input type="hidden" id="packageId" name="packageId" value=3 />
 				</div>
-				<div>
+				<div class="center"> 
 					<input type="hidden" name="userId" id="userId" value="${userId}">
 					<input type="submit" value="BookNow" />
 				</div>
 			</form>
 		</div>
 	</div>
+	</section>
 </body>
 </html>
-
-
-
 
 
 

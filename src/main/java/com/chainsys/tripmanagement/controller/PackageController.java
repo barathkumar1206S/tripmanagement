@@ -32,7 +32,7 @@ public String getpackage(Model model) {
 }
 @GetMapping("/showpackages")
 public String showAllPackages(@RequestParam("id")int userId,Model model) {
-	//System.out.println(userId + " showpackage");
+	// System.out.println(userId + " showpackage");
 	model.addAttribute("userId", userId);
 	return "show-packages";
 }

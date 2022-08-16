@@ -44,7 +44,7 @@ public class TripDetailsController {
 	}
 	@PostMapping("/addtripdetail")
 	public String addTrip(@ModelAttribute("addtripdetails") TripDetails tDetails,Model model) {
-		System.out.println(tDetails.getUserId());
+	//	System.out.println(tDetails.getUserId());
 		tripDetailservice.save(tDetails);
 		return "redirect:/payment/getpayments?tripId="+tDetails.getTripId()+"&userId="+tDetails.getUserId();
 	}
