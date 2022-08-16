@@ -9,6 +9,7 @@ import com.chainsys.tripmanagement.model.TripPayments;
 import com.chainsys.tripmanagement.model.TripRegistration;
 
 public class TripRegistrationAndTripPaymentsDTO {
+	@Autowired
 	private TripRegistration tripRegistration;
 	private List<TripPayments> tripPayment=new ArrayList<TripPayments>();
 

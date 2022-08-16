@@ -6,9 +6,9 @@ import com.chainsys.tripmanagement.model.TripDetails;
 import com.chainsys.tripmanagement.model.TripPayments;
 
 public class TripDetailsAndPaymentDTO {
-	
+	@Autowired
 	private TripDetails tripDetails;
-	
+	@Autowired
 	private TripPayments tripPayments;
 	
 	public TripDetails getTripDetails() {

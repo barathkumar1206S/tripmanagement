@@ -3,7 +3,6 @@ package com.chainsys.tripmanagement.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.chainsys.tripmanagement.businesslogic.Logic;
 import com.chainsys.tripmanagement.model.TripPayments;
 import com.chainsys.tripmanagement.repo.TripPaymentsRepository;
 

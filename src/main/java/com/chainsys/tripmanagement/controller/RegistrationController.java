@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import com.chainsys.tripmanagement.dto.TripRegistrationAndTripPaymentsDTO;
 import com.chainsys.tripmanagement.model.TripRegistration;

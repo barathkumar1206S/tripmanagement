@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.tripmanagement.dto.TripPackageAndTripDetailsDTO;
 import com.chainsys.tripmanagement.model.TripPackage;
-import com.chainsys.tripmanagement.model.TripPayments;
 import com.chainsys.tripmanagement.service.PackageService;
 
 @Controller
