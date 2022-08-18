@@ -36,7 +36,7 @@ body {
 				<div>
 					<label for="password" class="label">Password</label>
 					<div>
-						<form:input path="password"  pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" title="Enter a valid password Welcomes@03 " type="password" required="true"
+						<form:input path="password"  placeholder="password"  pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" title="Enter a valid password Welcomes@03 " type="password" required="true"
 					class="input-size" />
 					</div>
 				</div>

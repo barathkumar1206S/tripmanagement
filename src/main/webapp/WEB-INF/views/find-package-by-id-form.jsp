@@ -6,6 +6,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Package Detail UsingBy Id</title>
+<script type="text/javascript">
+function maxNumberOfSeats() {
+   
+    
+    if (document.myForm.maxNoOfSeats.value <= 0){
+		alert("Seats not available!")
+		return false
+	}
+	else
+		return true
+}
+
+</script>
 <style><%@include file ="/WEB-INF/css/alljsp.css"%>
 
 
@@ -23,7 +36,7 @@ body {
 	<h2 text-align= "center">Package Details</h2>
 	<div id="root">
 		<div id="form" id="form" class="top">
-			<form:form action="" method="get" modelAttribute="getpackbyid">
+			<form:form action="" method="get" modelAttribute="getpackbyid" name="myForm">
 				
 				<div>
 				<label class="heading-text" for="packageId">PackageId</label>
@@ -70,7 +83,7 @@ body {
 				<div>
 				<label class="heading-text" for="maxNoOfSeats">Max No Of Seats</label>			
 				<div>
-					<form:input path="maxNoOfSeats" class="input-size" />
+					<form:input path="maxNoOfSeats" id ="maxNoOfSeats" class="input-size" name="maxNoOfSeats" value=""/>
 				</div>
 				</div>
 				
@@ -89,11 +102,13 @@ body {
 					</div>
 					
 						<form:button class="button-style">
-							<a href="/package/showpackages">Back</a>
+							<a href="/package/showpackages?id=${userId}">Back</a>
 						</form:button>
-						<form:button class="button-style">
+						 <form:button class="button-style" onclick="return maxNumberOfSeats()">
 							<a href="/tripdetail/addtripdetailsform?packageid=${packageId}&userId=${userId}">Next</a>
-						</form:button>
+						</form:button> 
+						
+						
 			</form:form>
 		</div>
 	</div>

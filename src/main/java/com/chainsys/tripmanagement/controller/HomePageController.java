@@ -17,9 +17,14 @@ import com.chainsys.tripmanagement.service.RegistrationService;
 public class HomePageController {
 	@Autowired
 	private RegistrationService registrationService;
+//	@GetMapping("homepage")
+//	public String getHome(Model model) {
+//		return "webpage";
+//		
+//	}
 	@GetMapping("homepage")
-	public String getHome(Model model) {
-		return "webpage";
+	public String getHomeDemo(Model model) {
+		return "homepage-demo";
 		
 	}
 	

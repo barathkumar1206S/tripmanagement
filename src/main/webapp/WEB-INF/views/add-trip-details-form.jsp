@@ -17,7 +17,7 @@ body {
 </head>
 <body>
 	
-	<h3 align="center">Trip Details Form</h3>
+	<h3 class="center">Trip Details Form</h3>
 	<div id="root">
 		<div id="form" class="top">
 			<form:form class="action" action="addtripdetail" method="post"

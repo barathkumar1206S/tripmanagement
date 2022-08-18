@@ -44,9 +44,14 @@ public class TripDetailsController {
 	}
 	@PostMapping("/addtripdetail")
 	public String addTrip(@ModelAttribute("addtripdetails") TripDetails tDetails,Model model) {
-	//	System.out.println(tDetails.getUserId());
+		TripPackage trippackage=packageService.findById(tDetails.getPackageId());
+		if(tDetails.getBookedPassengers()>trippackage.getMaxNoOfSeats()) {
+			return "error-page";
+		}
+		else {
 		tripDetailservice.save(tDetails);
 		return "redirect:/payment/getpayments?tripId="+tDetails.getTripId()+"&userId="+tDetails.getUserId();
+		}
 	}
 	
 	@GetMapping("/addtripform")
@@ -94,11 +99,12 @@ public class TripDetailsController {
 		return "find-tripdetails-id-form";
 	}
 	
+	
 	@GetMapping("/getpaymentdetailsbytripid")
 	public String getPaymentIdByTripDetails(@RequestParam("id") int id ,Model model){
 		TripDetailsAndPaymentDTO dto=tripDetailservice.getTripPaymentsByTripDetails(id);
 		model.addAttribute("paymentdetail",dto.getTripPayments());
 		model.addAttribute("tripdetail",dto.getTripDetails());
-		return "payment-id-trip-details";
+		return "payment-id-by-trip-details";
 	}
 }

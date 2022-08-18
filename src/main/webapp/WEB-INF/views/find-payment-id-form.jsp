@@ -26,7 +26,7 @@ body {
 	<h2 align="center" class="color">Payments Form</h2>
 	<div id="root">
 		<div id="form" class="top" >
-			<form:form action="" method="post"
+			<form:form action="paymentrecived" method="get"
 				modelAttribute="getpayments">
 
 				<div>

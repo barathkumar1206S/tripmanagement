@@ -67,7 +67,7 @@ public String deletePaymentById(@RequestParam("paymentId") int id) {
 @GetMapping("/getpayments")
 public String getPayment(@RequestParam("tripId") int tripid,@RequestParam("userId") int userId, Model model) {
 TripPayments tpayments = payService.findByTripIdAndUserid(tripid, userId);
-	model.addAttribute("getpayments", tpayments);
+//	model.addAttribute("getpayments", tpayments);
 	model.addAttribute("getpayments",tpayments);
 	TripDetails tripDetails=tripDetailsService.findById(tripid);
 	tpayments.setTripId(tripid);
@@ -77,10 +77,15 @@ TripPayments tpayments = payService.findByTripIdAndUserid(tripid, userId);
 }
 
 @GetMapping("/getpaymentbyid")
-public String getAllPayments(@RequestParam("paymentId") int id ,Model model)
+public String getPaymentsById(@RequestParam("paymentId") int id ,Model model)
 {
    TripPayments tripPayments=payService.findById(id);
 model.addAttribute("getpayment",tripPayments);
    return "find-allPayments-by-id";        
+}
+@GetMapping("/paymentrecived")
+public String getPaymentRecived() {
+	return "payment-received-form";
+	
 }
 }

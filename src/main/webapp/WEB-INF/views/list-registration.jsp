@@ -17,8 +17,7 @@
 			<thead>
 				<tr>
 					<th>User Id</th>
-					<th>First Name</th>
-					<th>Last Name</th>
+					<th>User Name</th>
 					<th>Gender</th>
 					<th>dob</th>
 					<th>Phone Number</th>
@@ -35,8 +34,7 @@
 				<c:forEach var="reg" items="${allregistration}">
 					<tr>
 						<td>${reg.userId}</td>
-						<td>${reg.firstName}</td>
-						<td>${reg.lastName}</td>
+						<td>${reg.userName}</td>
 						<td>${reg.gender}</td>
 						<td>${reg.dob}</td>
 						<td>${reg.phoneNumber}</td>

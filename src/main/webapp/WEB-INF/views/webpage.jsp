@@ -7,7 +7,7 @@
 <title>HOME PAGE</title>
 <style><%@include file ="/WEB-INF/css/home.css"%>
 body {
-	background-image: url("https://wallpaperaccess.com/full/136008.jpg");
+	background-image: url("https://wallpaperaccess.com/full/185289.jpg");
 	background-repeat: no-repeat;
 	background-size: 1366px 680px;
 	background-position: center top;

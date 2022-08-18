@@ -35,6 +35,7 @@ public String showAllPackages(@RequestParam("id")int userId,Model model) {
 	model.addAttribute("userId", userId);
 	return "show-packages";
 }
+
 @GetMapping("/addpackageform")
 public String showAddForm(Model model) {
 	TripPackage thePack = new TripPackage();
@@ -79,7 +80,10 @@ public String getPackageById(@RequestParam("packageId") int id,@RequestParam("us
 	model.addAttribute("packageId", id);
 	//System.out.println(userId+" getpackagebyid");
 	model.addAttribute("userId", userId);
-	return "find-package-by-id-form";
+	if(tpack.getMaxNoOfSeats()<0) {
+		return "error-page";
+	}else
+		return "find-package-by-id-form";
 }
 
 @GetMapping("/getpackage")
@@ -93,7 +97,7 @@ model.addAttribute("getpackage",tripPackage);
 @GetMapping("/gettripdetailsusingpackageid")
 public String getDetailsByPackageId(@RequestParam("packageId") int id, Model model)
 {
-	TripPackageAndTripDetailsDTO tripPackageAndTripDetailsDTO	= packService.tripPackageAndTripDetailsDTO(id);
+	TripPackageAndTripDetailsDTO tripPackageAndTripDetailsDTO = packService.tripPackageAndTripDetailsDTO(id);
     model.addAttribute("gettripdetails",tripPackageAndTripDetailsDTO.getTripDetails());
     model.addAttribute("gettrippackages",tripPackageAndTripDetailsDTO.getTripPackage());
     return "package-tripdetails";

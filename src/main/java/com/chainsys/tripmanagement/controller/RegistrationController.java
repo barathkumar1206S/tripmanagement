@@ -60,6 +60,9 @@ public class RegistrationController {
 		regService.deleteById(id);
 		return "redirect:/registration/getallregistrations";
 	}
+	
+
+	
 //
 //	@RequestMapping("/findbyuserid")
 //	public String findById() {

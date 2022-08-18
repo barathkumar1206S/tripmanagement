@@ -28,23 +28,14 @@ body {
                 </div>
                 
                <div>
-				<label class="heading-text" for="firstName">First Name</label>
+				<label class="heading-text" for="userName">User Name</label>
 				<div>
 				
-					<form:input path="firstName" pattern="^[a-z A-Z]+$" title="Please Enter Charactor Only"  placeholder = "Enter First Name"
+					<form:input path="userName" pattern="^[a-z A-Z]+$" title="Please Enter Charactor Only"  placeholder = "Enter First Name"
 					 class="input-size"/>
 				</div>
 				</div>
-				
-				
-				<div>
-				<label class="heading-text" for="lastName">Last Name</label>
-				<div>
-				
-					<form:input path="lastName" pattern="^[a-z A-Z]+$" title="Please Enter Charactor Only"  placeholder = "Enter last Name"
-					 class="input-size"/>
-				</div>
-				</div>
+			
 				
 				<div>
 					Gender :

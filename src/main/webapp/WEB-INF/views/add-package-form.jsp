@@ -17,7 +17,7 @@ body {
 </style>
 </head>
 <body>
-	<h3 align="center">Add Package form</h3>
+	<h3 class="center">Add Package form</h3>
 	<div id="root">
 		<div id="form" class="form">
 			<form:form action="add" method="post" modelAttribute="addPackage">

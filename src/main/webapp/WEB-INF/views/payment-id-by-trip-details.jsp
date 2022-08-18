@@ -10,42 +10,53 @@
 </head>
 <body>
 <div id="root">
-		<div id="form">
+	<div id="form" class="top">
+
 			<form:form action="addtripdetail" method="post"
 				modelAttribute="tripdetail">
 				<div>
-					TripId :
-					<form:input path="tripId" />
-				</div>
-				<br>
+				<label class="heading-text" for="packageId">Package Id</label>
 				<div>
-					Package Id :
-					<form:input path="packageId" />
+					<form:input path="packageId" readonly="true" class="input-size" />
 				</div>
-				<br>
-				<div>
-					Start Date :
-					<form:input type="date" path="startDate" />
 				</div>
-				<br>
+				
 				<div>
-					End Date :
-					<form:input type="date" path="endDate" />
+				<label class="heading-text" for="userId">UserId</label>
+				<div>
+					<form:input path="userId" readonly="true" class="input-size" />
 				</div>
-				<br>
-				<div>
-					Booked Passengers:
-					<form:input path="bookedPassengers" />
 				</div>
-				<br>
+			
+			    <div>
+				<label class="heading-text" for="startDate">Start Date </label>
+				<div>		
+					<form:input type="date" path="startDate" readonly="true" class="input-size" />
+				</div>
+				</div>
+                 
+                <div>
+				<label class="heading-text" for="endDate">End Date</label>	
+				<div>	
+					<form:input type="date" path="endDate" readonly="true" class="input-size" />
+				</div>
+				</div>
+				
 				<div>
+				<label class="heading-text" for="bookedPassengers">Booked Passengers</label>	
+				<div class="bottom">					
+					<form:input path="bookedPassengers" readonly="readonly" title="Please enter number only"
+                            pattern="^[0-9]+$" required="true" class="input-size" />
+				</div>
+				</div>
+
+				<div class="bottom">
 					Trip Status: <form:select path="tripStatus">  
         <form:option value="Starting" label="Starting"/>  
         <form:option value="Inprogress" label="Inprogress"/>  
         <form:option value="cancel" label="cancel"/>  
         </form:select>
 				</div>
-				<br>
 			
 			</form:form>
 		</div>

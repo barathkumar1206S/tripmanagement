@@ -17,17 +17,17 @@ import javax.persistence.Table;
 @Table(name="registration")
 public class TripRegistration {
 	@Id
-	@SequenceGenerator(name="user_id", sequenceName="user_id", allocationSize=1)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="user_id")
+	@SequenceGenerator(name="users_id", sequenceName="users_id", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="users_id")
 	@Column(name="user_id")
 	private int userId;
 	
-	@Column(name="first_name")
-    private String firstName;
+	@Column(name="user_name")
+    private String userName;
 	 
-	@Column(name="last_name")
-	private String lastName;
 	
+
+
 	@Column(name="gender")
 	
 	private String gender;
@@ -67,22 +67,17 @@ public class TripRegistration {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-
-	public String getFirstName() {
-		return firstName;
+	
+	
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+	
 
 	public String getGender() {
 		return gender;

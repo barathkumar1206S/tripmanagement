@@ -37,6 +37,9 @@ public class TripDetailsService {
 		tripPayments.setPaymentAmout((float)(Logic.paymentAmountCalculation(tpd.getBookedPassengers(), tripPackage.getAmount())));
 		tripPayments.setFromDate(Logic.getInstanceDate());
 		paymentsService.save(tripPayments);
+		TripPackage  tripPackageDetail=packageService.findById(tpd.getPackageId());
+		tripPackageDetail.setMaxNoOfSeats(tripPackageDetail.getMaxNoOfSeats()-tpd.getBookedPassengers());
+		packageService.save(tripPackageDetail);
 		return tripDetails;
 	}
 
@@ -44,11 +47,12 @@ public class TripDetailsService {
 		return tripDetailsRepo.findById(id);
 
 	}
+	
+
 
 	public void deleteById(int id) {
-		tripDetailsRepo.deleteById(id);
+			tripDetailsRepo.deleteById(id);
 	}
-
 	public TripDetailsAndPaymentDTO getTripPaymentsByTripDetails(int id) {
 		TripDetails tripdetails = findById(id);
 		TripDetailsAndPaymentDTO dto = new TripDetailsAndPaymentDTO();
@@ -57,5 +61,6 @@ public class TripDetailsService {
 		dto.setTripPayments(tripPayments);
 		return dto;
 	}
+	
 
 }
