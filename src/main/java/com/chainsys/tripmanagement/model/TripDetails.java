@@ -1,6 +1,7 @@
 package com.chainsys.tripmanagement.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -18,8 +19,8 @@ import javax.persistence.Table;
 @Table(name="trip")
 public class TripDetails {
 	@Id
-	@SequenceGenerator(name="trip_id", sequenceName="trip_id", allocationSize=1)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="trip_id")
+	@SequenceGenerator(name="triip_id", sequenceName="triip_id", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="triip_id")
 	@Column(name="TRIP_ID")
 	private int tripId;
 	
@@ -45,14 +46,16 @@ public class TripDetails {
 	@Column(name="TRIP_STATUS")
 	private String tripStatus;
 	                
-	@OneToOne(mappedBy="tripdetails",fetch=FetchType.LAZY)
-	private TripPayments trippayments;
-	public TripPayments getTrippayments() {
+	@OneToMany(mappedBy="tripdetails",fetch=FetchType.LAZY)
+	private List<TripPayments> trippayments;
+	public List<TripPayments> getTrippayments() {
 		return trippayments;
 	}
-	public void setTrippayments(TripPayments trippayments) {
+	public void setTrippayments(List<TripPayments> trippayments) {
 		this.trippayments = trippayments;
 	}
+	
+	
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="PACKAGE_ID" ,nullable = false, insertable = false,updatable = false)
@@ -65,8 +68,6 @@ public class TripDetails {
 	public void setTripPackage(TripPackage tripPackage) {
 		this.tripPackage = tripPackage;
 	}
-	
-	
 	public int getTripId() {
 		return tripId;
 	}
@@ -85,7 +86,6 @@ public class TripDetails {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -113,6 +113,4 @@ public class TripDetails {
 	
 	
 	
-	
-
 }

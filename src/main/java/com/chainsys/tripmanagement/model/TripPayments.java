@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -18,8 +17,8 @@ import javax.persistence.Table;
 @Table(name = "payments")
 public class TripPayments {
 	@Id
-	@SequenceGenerator(name="payment_id", sequenceName="payment_id", allocationSize=1)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="payment_id")
+	@SequenceGenerator(name="payyment_id", sequenceName="payyment_id", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="payyment_id")
 	@Column(name = "PAYMENT_ID")
 	private int paymentId;
 	
@@ -35,7 +34,7 @@ public class TripPayments {
 	private int userId;
 	
 
-	@OneToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="TRIP_ID",nullable = false, insertable = false,updatable = false)
      
 	private TripDetails tripdetails; 
@@ -46,6 +45,13 @@ public class TripPayments {
 		this.tripdetails = tripdetails;
 	}
 	
+	
+	
+	
+	
+	
+	
+	//-----------------
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="USER_ID", nullable= false,insertable = false,updatable = false)
 	private TripRegistration tripRegistration;

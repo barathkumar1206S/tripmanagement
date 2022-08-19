@@ -1,5 +1,6 @@
 package com.chainsys.tripmanagement.service;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,8 +58,12 @@ public class TripDetailsService {
 		TripDetails tripdetails = findById(id);
 		TripDetailsAndPaymentDTO dto = new TripDetailsAndPaymentDTO();
 		dto.setTripDetails(tripdetails);
-		TripPayments tripPayments = tripPaymentsRepo.findByTripId(id);
-		dto.setTripPayments(tripPayments);
+		List<TripPayments> trippayments=tripPaymentsRepo.findByTripId(id);
+		Iterator<TripPayments> itr=trippayments.iterator();
+		while(itr.hasNext())
+		{
+			dto.addTripDetailsAndPayments(itr.next());
+		}
 		return dto;
 	}
 	

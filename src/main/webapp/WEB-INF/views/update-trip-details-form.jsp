@@ -17,6 +17,13 @@
 			<form:form class="action" action="updatetripdetail" method="post"
 				modelAttribute="updatetripdetailsform">
 				<div>
+				<label class="heading-text" for="tripId">TripId</label>
+				<div>
+					<form:input path="tripId" readonly="true" class="input-size" />
+				</div>
+				</div>
+				
+				<div>
 				<label class="heading-text" for="packageId">Package Id</label>
 				<div>
 					<form:input path="packageId" readonly="true" class="input-size" />

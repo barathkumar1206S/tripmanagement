@@ -1,5 +1,8 @@
 package com.chainsys.tripmanagement.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.chainsys.tripmanagement.model.TripDetails;
@@ -9,20 +12,22 @@ public class TripDetailsAndPaymentDTO {
 	@Autowired
 	private TripDetails tripDetails;
 	@Autowired
-	private TripPayments tripPayments;
-	
+	private List<TripPayments> trippayments=new ArrayList<TripPayments>();
 	public TripDetails getTripDetails() {
 		return tripDetails;
 	}
 	public void setTripDetails(TripDetails tripDetails) {
 		this.tripDetails = tripDetails;
 	}
-	public TripPayments getTripPayments() {
-		return tripPayments;
+	public List<TripPayments> getTrippayments() {
+		return trippayments;
 	}
-	public void setTripPayments(TripPayments tripPayments) {
-		this.tripPayments = tripPayments;
+	public void addTripDetailsAndPayments(TripPayments tripPayment) {
+
+		trippayments.add(tripPayment);
+	
 	}
+	
 	
 
 }

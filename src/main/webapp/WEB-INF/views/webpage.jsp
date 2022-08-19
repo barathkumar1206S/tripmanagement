@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>HomePage</title>
 <style><%@include file ="/WEB-INF/css/homepage.css"%>
 body{
 background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://cutewallpaper.org/21/maldives-hd-wallpaper/Best-Beautiful-Maldives-Wallpaper-NU-WALLPAPER-HD.jpg");
@@ -22,14 +22,15 @@ background-repeat: no-repeat;
 <header>
 <div class="nav">
 <h2 class="logo"><span>Tr</span>avel</h2>
-<a href="/home/login" class="btn">Log in</a>
+<a href="#" class="btnone">Learn more</a>
 </div>
 <div class="main">
 <div class="text">
 <h1><span>Travel website</span>Design</h1>
 <p>Explore the world with us </p>
 <div class="active">
-<a href="#" class="btnone">Learn more</a>
+
+<a href="/home/login" class="btnone">Log in</a>
 <a href="newuser" class="btntwo">Signup Here</a>
 </div>
 </div>

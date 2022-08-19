@@ -26,4 +26,5 @@ public class PaymentsService {
    }public TripPayments findByTripIdAndUserid(int tripId,int userId) {
 	   return tPayRepo.findByTripIdAndUserId(tripId, userId);
    }
+   
 }

@@ -103,7 +103,7 @@ public class TripDetailsController {
 	@GetMapping("/getpaymentdetailsbytripid")
 	public String getPaymentIdByTripDetails(@RequestParam("id") int id ,Model model){
 		TripDetailsAndPaymentDTO dto=tripDetailservice.getTripPaymentsByTripDetails(id);
-		model.addAttribute("paymentdetail",dto.getTripPayments());
+		model.addAttribute("paymentdetail",dto.getTrippayments());
 		model.addAttribute("tripdetail",dto.getTripDetails());
 		return "payment-id-by-trip-details";
 	}
