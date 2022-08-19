@@ -38,7 +38,7 @@ public class RegistrationController {
 	public String addRegister(@ModelAttribute("addregister") TripRegistration registrationTrip) {
 		
 		regService.save(registrationTrip);
-		return "redirect:/home/login";	
+		return "redirect:/registration/getregistration?userId=" + registrationTrip.getUserId();	
 	}
 
 	@GetMapping("/updateregform")

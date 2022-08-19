@@ -69,7 +69,7 @@ body {
 				<div>
 				<label class="heading-text" for="password">Password</label>
 				<div>
-					<form:input path="password" name="password" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" title="Enter a valid password Welcomes@03 " type="password" required="true"
+					<form:input type="hidden" path="password" name="password" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" title="Enter a valid password Welcomes@03 "  required="true"
 					class="input-size" />
 				</div>
 				</div>

@@ -22,21 +22,14 @@
                 </div>
                 </div>
                 
-               <div>
-				<label class="heading-text" for="firstName">First Name</label>
-				<div>
-				
-					<form:input path="firstName"   placeholder = "Enter First Name"
-					 class="input-size"/>
-				</div>
-				</div>
+            
 				
 				
 				<div>
-				<label class="heading-text" for="lastName">Last Name</label>
+				<label class="heading-text" for="userName">UserName</label>
 				<div>
 				
-					<form:input path="lastName"  placeholder = "Enter last Name"
+					<form:input path="userName"  placeholder = "Enter Your Name"
 					 class="input-size"/>
 				</div>
 				</div>
@@ -88,7 +81,9 @@
 					admin
 				</div>
 				</div>
-				
+				<form:button class="button-style">
+                            <a href="/home/login">NEXT</a>
+                        </form:button>
             </form:form>
         </div>
     </div>

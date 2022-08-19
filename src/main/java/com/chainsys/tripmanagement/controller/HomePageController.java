@@ -17,16 +17,12 @@ import com.chainsys.tripmanagement.service.RegistrationService;
 public class HomePageController {
 	@Autowired
 	private RegistrationService registrationService;
-//	@GetMapping("homepage")
-//	public String getHome(Model model) {
-//		return "webpage";
-//		
-//	}
 	@GetMapping("homepage")
-	public String getHomeDemo(Model model) {
-		return "homepage-demo";
+	public String getHome(Model model) {
+		return "webpage";
 		
 	}
+	
 	
 	@GetMapping("/login")
 	public String loginPage(Model model) {
@@ -50,11 +46,10 @@ public class HomePageController {
 		TripRegistration tripRegistration = registrationService.findById(login.getUserId());
 		if (tripRegistration.getPassword().equals(login.getPassword())) {
 			if (tripRegistration.getRole().equalsIgnoreCase("user")) {
-			//	System.out.println("somthing");
 				return "redirect:/package/showpackages?id="+login.getUserId();
 
 			} else if (tripRegistration.getRole().equalsIgnoreCase("admin")) {
-				return "redirect:/home/adminform";
+				return "redirect:/home/adminHomeform";
 			}
 		} else {
 			model.addAttribute("message", "Something Wrong ");
@@ -68,6 +63,11 @@ public class HomePageController {
 		return "redirect:/payment/addpaymentform";
 	}
 	
+	@GetMapping("/adminHomeform")
+    public String getAdminHomePage(Model model) {
+        return "admin-homepage";
+    }
+
 	@GetMapping("/adminform")
     public String getIndex(Model model) {
         return "index";

@@ -22,11 +22,9 @@
 					<th>dob</th>
 					<th>Phone Number</th>
 					<th>Email</th>
-					<th>password</th>
 					<th>role</th>
-					<th>View</th>
 					<th>Edit</th>
-					<th>Delete</th>
+					
 
 				</tr>
 			</thead>
@@ -39,11 +37,8 @@
 						<td>${reg.dob}</td>
 						<td>${reg.phoneNumber}</td>
 						<td>${reg.email}</td>
-						<td>${reg.password}</td>
 						<td>${reg.role}</td>
-						<td><a href="getregistration?userId=${reg.userId}">View</a></td>
 						<td><a href="updateregform?userId=${reg.userId}">Edit</a></td>
-						<td><a href="deletereg?userId=${reg.userId}">Delete</a></td>
 
 
 					</tr>
