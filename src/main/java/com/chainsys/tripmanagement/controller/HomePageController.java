@@ -57,7 +57,8 @@ public class HomePageController {
 				int id=tripRegistration.getUserId();
 				return "redirect:/home/adminHomeform?userId="+id;
 			}
-			}} else {
+			}}
+		else {
 			model.addAttribute("message", "Something Wrong ");
 			return "login-page";
 		}
