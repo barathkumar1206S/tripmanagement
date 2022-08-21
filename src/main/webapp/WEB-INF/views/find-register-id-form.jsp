@@ -82,8 +82,10 @@
 				</div>
 				</div>
 				<form:button class="button-style">
-                            <a href="/home/login">NEXT</a>
+                            <a href="/home/login">Next</a>
                         </form:button>
+                       
+                      
             </form:form>
         </div>
     </div>

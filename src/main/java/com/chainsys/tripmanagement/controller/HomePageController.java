@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.tripmanagement.model.Login;
 import com.chainsys.tripmanagement.model.TripRegistration;
@@ -36,20 +37,18 @@ public class HomePageController {
 		return "redirect:/registration/addregform";
 	}
 
-//	@GetMapping("/userpackage")
-//	public String getPackageList(Model model) {
-//		return "redirect/package/getallpackages";
-//	}
 
 	@PostMapping("/userpage")
 	public String userPage(@ModelAttribute("login") Login login, Model model) {
 		TripRegistration tripRegistration = registrationService.findById(login.getUserId());
 		if (tripRegistration.getPassword().equals(login.getPassword())) {
 			if (tripRegistration.getRole().equalsIgnoreCase("user")) {
-				return "redirect:/package/showpackages?id="+login.getUserId();
+				int id=tripRegistration.getUserId();
+				return "redirect:/home/userHomeform?userId="+id;
 
 			} else if (tripRegistration.getRole().equalsIgnoreCase("admin")) {
-				return "redirect:/home/adminHomeform";
+				int id=tripRegistration.getUserId();
+				return "redirect:/home/adminHomeform?userId="+id;
 			}
 		} else {
 			model.addAttribute("message", "Something Wrong ");
@@ -64,13 +63,24 @@ public class HomePageController {
 	}
 	
 	@GetMapping("/adminHomeform")
-    public String getAdminHomePage(Model model) {
-        return "admin-homepage";
+    public String getAdminHomePage(@RequestParam("userId")int userId,Model model) {
+      model.addAttribute("userId",userId);
+		return "admin-homepage";
     }
+	
+	@GetMapping("/userHomeform")
+	  public String getUserHomePage(@RequestParam("userId")int userId,Model model) {
+	      model.addAttribute("userId",userId);
+	      return "userhome-page";
+	}
 
 	@GetMapping("/adminform")
     public String getIndex(Model model) {
         return "index";
     }
+	@GetMapping("/contactus")
+	public String getContactus(Model model) {
+		return "contactus-page";
+	}
 
 }

@@ -22,16 +22,16 @@ background-repeat: no-repeat;
 <header>
 <div class="nav">
 <h2 class="logo"><span>Tr</span>avel</h2>
-<a href="#" class="btnone">Learn more</a>
+<a href="/home/contactus" class="btnone">Contact Us</a>
 </div>
 <div class="main">
 <div class="text">
-<h1><span>Travel website</span>Design</h1>
+<h1><span>Travel Management</span>System</h1>
 <p>Explore the world with us </p>
 <div class="active">
 
 <a href="/home/login" class="btnone">Log in</a>
-<a href="newuser" class="btntwo">Signup Here</a>
+<a href="newuser" class="btntwo">Sign Up</a>
 </div>
 </div>
 </div>

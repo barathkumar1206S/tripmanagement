@@ -17,7 +17,7 @@
 			<form:form class="action" action="updatetripdetail" method="post"
 				modelAttribute="updatetripdetailsform">
 				<div>
-				<label class="heading-text" for="tripId">TripId</label>
+				<label class="heading-text" for="tripId">Trip Id</label>
 				<div>
 					<form:input path="tripId" readonly="true" class="input-size" />
 				</div>
@@ -31,7 +31,7 @@
 				</div>
 				
 				<div>
-				<label class="heading-text" for="userId">UserId</label>
+				<label class="heading-text" for="userId">User Id</label>
 				<div>
 					<form:input path="userId" readonly="true" class="input-size" />
 				</div>
@@ -54,7 +54,7 @@
 				<div>
 				<label class="heading-text" for="bookedPassengers">Booked Passengers</label>	
 				<div class="bottom">					
-					<form:input path="bookedPassengers" readonly="readonly" title="Please enter number only"
+					<form:input path="bookedPassengers"  title="Please enter number only"
                             pattern="^[0-9]+$" required="true" class="input-size" />
 				</div>
 				</div>

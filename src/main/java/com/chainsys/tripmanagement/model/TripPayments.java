@@ -17,8 +17,8 @@ import javax.persistence.Table;
 @Table(name = "payments")
 public class TripPayments {
 	@Id
-	@SequenceGenerator(name="payyment_id", sequenceName="payyment_id", allocationSize=1)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="payyment_id")
+	@SequenceGenerator(name="paymentss_id", sequenceName="paymentss_id", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="paymentss_id")
 	@Column(name = "PAYMENT_ID")
 	private int paymentId;
 	

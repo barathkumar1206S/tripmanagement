@@ -102,7 +102,7 @@ body {
 					</div>
 					
 						<form:button class="button-style">
-							<a href="/package/showpackages?id=${userId}">Back</a>
+							<a href="/package/showpackages?userId=${userId}">Back</a>
 						</form:button>
 						 <form:button class="button-style" onclick="return maxNumberOfSeats()">
 							<a href="/tripdetail/addtripdetailsform?packageid=${packageId}&userId=${userId}">Next</a>

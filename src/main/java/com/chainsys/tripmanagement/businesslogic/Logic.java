@@ -6,6 +6,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Logic {
+	private Logic()
+	{
+		
+	}
 		public static double paymentAmountCalculation(int noOftickets,double amountPerticket) {
 			return noOftickets*amountPerticket;
 		}
@@ -16,7 +20,6 @@ public class Logic {
 	        Date date=null;
 	        try {
 	            date=new java.sql.Date(dateFormat.parse(dates).getTime());
-	           // System.out.println(date);
 	        } catch (ParseException e) {
 	            e.printStackTrace();
 	        }

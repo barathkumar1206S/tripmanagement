@@ -62,7 +62,7 @@
 				</div>
 				
 				<div>
-				<label class="heading-text" for="maxNoOfSeats">MaxNoOfSeats</label>
+				<label class="heading-text" for="maxNoOfSeats">Max No Of Seats</label>
 				<div>
 					<form:input path="maxNoOfSeats"  required="true" class="input-size"/>
 				</div>
@@ -70,14 +70,14 @@
 				
 				
 			<div>
-				<label class="heading-text" for="startDate">startDate</label>
+				<label class="heading-text" for="startDate">Start Date</label>
 					<div>
 					<form:input  type="date" path="startDate"  required="true"  class="input-size"/>
 				</div>
 				</div>
 				
 			<div>
-				<label class="heading-text" for="endDate">EndDate</label>
+				<label class="heading-text" for="endDate">End Date</label>
 					<div>
 					<form:input  type="date" path="endDate"  required="true" class="input-size"/>
 				</div>

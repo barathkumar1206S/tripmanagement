@@ -49,6 +49,7 @@ public class TripDetailsService {
 
 	}
 	
+	
 
 
 	public void deleteById(int id) {
@@ -65,6 +66,11 @@ public class TripDetailsService {
 			dto.addTripDetailsAndPayments(itr.next());
 		}
 		return dto;
+	}
+
+	public List<TripDetails> findUserById(int userId) {
+		List<TripDetails> triplist =tripDetailsRepo.findByUserId(userId);
+	  return triplist;
 	}
 	
 

@@ -6,7 +6,7 @@
 body{
 	margin: 0;
 	padding: 0;
-	background: #F5F5DC;;
+	background: #F5F5DC;
 	font-family: 'Poppins',sans-serif;
 }
 
@@ -14,7 +14,6 @@ nav{
 	position: relative;
 	display: flex;
 	justify-content: center;
-	background: #F5F5DC;
 	 margin-left: 600px
 }
 
@@ -28,7 +27,7 @@ nav ul{
 nav ul li{
 	list-style: none;
 	position: relative;
-	background: #79131385;
+	background: #13327985;
     margin:1px;
     border-radius: 4px;
 	}

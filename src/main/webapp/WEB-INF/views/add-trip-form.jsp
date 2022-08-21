@@ -22,30 +22,30 @@ body {
 			<form:form class="action" action="addform" method="post"
 				modelAttribute="addtripform">
 				<div>
-				<label class="heading-text" for="packageId">PackageId</label>
+				<label class="heading-text" for="packageId">Package Id</label>
 				<div>
 					<form:input path="packageId" readonly="true" class="input-size" />
 				</div>
 				</div>
 				
 				<div>
-				<label class="heading-text" for="userId">UserId</label>
+				<label class="heading-text" for="userId">User Id</label>
 				<div>
 					<form:input path="userId" readonly="true" class="input-size" />
 				</div>
 				</div>
 			
 			    <div>
-				<label class="heading-text" for="startDate">StartDate </label>
+				<label class="heading-text" for="startDate">Start Date </label>
 				<div>		
-					<form:input type="date" path="startDate" class="input-size" />
+					<form:input type="date" path="startDate" readonly="true" class="input-size" />
 				</div>
 				</div>
                  
                 <div>
 				<label class="heading-text" for="endDate">EndDate</label>	
 				<div>	
-					<form:input type="date" path="endDate" class="input-size" />
+					<form:input type="date" path="endDate" readonly="true" class="input-size" />
 				</div>
 				</div>
 				

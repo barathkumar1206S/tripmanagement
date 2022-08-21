@@ -42,8 +42,8 @@ public class RegistrationController {
 	}
 
 	@GetMapping("/updateregform")
-	public String showUpdateForm(@RequestParam("userId") int id, Model model) {
-		TripRegistration treg = regService.findById(id);
+	public String showUpdateForm(@RequestParam("userId") int userId, Model model) {
+		TripRegistration treg = regService.findById(userId);
 		model.addAttribute("updateregister", treg);
 		return "update-registration-form";
 	}
@@ -52,8 +52,11 @@ public class RegistrationController {
 	public String updateRegistration(@ModelAttribute("updateregister") TripRegistration treg){
 		
 		regService.save(treg);
-		return "redirect:/registration/getallregistrations";
-	}
+		int userId=treg.getUserId(); 
+			return "redirect:/home/userHomeform?userId="+userId;
+		}
+		
+	
 
 	@GetMapping("/deletereg")
 	public String deleteRegistration(@RequestParam("userId") int id) {
@@ -70,8 +73,8 @@ public class RegistrationController {
 //	}
 
 	@GetMapping("/getregistration")
-	public String getRegistration(@RequestParam("userId") int id, Model model) {
-		TripRegistration tpr = regService.findById(id);
+	public String getRegistration(@RequestParam("userId") int userId, Model model) {
+		TripRegistration tpr = regService.findById(userId);
 		model.addAttribute("getregistration", tpr);
 		return "find-register-id-form";
 	}
@@ -90,18 +93,4 @@ public class RegistrationController {
 		return "user-loginform";
 	}
 
-	/*
-	 * @GetMapping("/userloggedinform") public String
-	 * backToLoginForm(@RequestParam("userId") Integer
-	 * id, @RequestParam("userPassword") String pass,
-	 * 
-	 * @RequestParam("role") String role, TripRegistration trip) {
-	 * List<TripRegistration> trips = new ArrayList<TripRegistration>();
-	 * 
-	 * Integer uid = trip.getUserId(); String upass = trip.getPassword(); String
-	 * urole = trip.getRole(); Iterator<TripRegistration> itr = trips.iterator();
-	 * while (itr.hasNext()) { if (id.equals(uid) && pass.equals(upass) &&
-	 * role.equals(urole)) { return "redirect:/package/userloggedin"; } } return
-	 * "redirect:/registration/userloginform"; }
-	 */
 }

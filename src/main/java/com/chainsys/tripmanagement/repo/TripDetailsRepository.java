@@ -9,6 +9,7 @@ import com.chainsys.tripmanagement.model.TripDetails;
 
 public interface TripDetailsRepository extends  CrudRepository<TripDetails, Integer> {
 	TripDetails findById(int id);
+	List<TripDetails> findByUserId(int userId);
 	TripDetails save(TripDetails td);
 	void deleteById(int id);
 	List<TripDetails> findAll();

@@ -25,7 +25,7 @@ body {
 				modelAttribute="addregister">
 
 				<div>
-					<label class="heading-text" for="userName">UserName</label>
+					<label class="heading-text" for="userName">User Name</label>
 					<div>
 						<form:input path="userName" pattern="^[a-z A-Z]+$"
 							title="Please Enter Charactor Only"
@@ -44,14 +44,14 @@ body {
 				</div>
 
 				<div>
-					<label class="heading-text" for="dob">DateOfBirth</label>
+					<label class="heading-text" for="dob">Date Of Birth</label>
 					<div>
 						<form:input type="date" path="dob" required="true"
 							class="input-size" />
 					</div>
 				</div>
 				<div>
-					<label class="heading-text" for="phoneNumber">PhoneNumber</label>
+					<label class="heading-text" for="phoneNumber">Phone Number</label>
 					<div>
 						<form:input path="phoneNumber" name="phoneNumber"
 							pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="Enter 10 digits number"
@@ -83,9 +83,9 @@ body {
 					<div>
 
 						<form:radiobutton path="role" value="user" />
-						user
+						User
 						<form:radiobutton path="role" value="admin" />
-						admin
+						Admin
 					</div>
 				</div>
 				<div>

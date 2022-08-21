@@ -46,14 +46,14 @@ body {
 				</div>
 				
 				<div>
-				<label class="heading-text" for="dob">DateOfBirth</label>
+				<label class="heading-text" for="dob">Date Of Birth</label>
 				<div>
 					<form:input type="date" path="dob" required="true" class="input-size"/>
 				</div>
 				</div>
 				
 				<div>
-				<label class="heading-text" for="phoneNumber">PhoneNumber</label>
+				<label class="heading-text" for="phoneNumber">Phone Number</label>
 				<div>
 					<form:input path="phoneNumber" name="phoneNumber" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="Enter 10 digits number" placeholder = "Enter Phone Number" required="true" size="10" class="input-size" />
 				</div>
@@ -79,9 +79,9 @@ body {
 				<div>
 					
 					<form:radiobutton path="role" value="user" />
-					user
+					User
 					<form:radiobutton path="role" value="admin" />
-					admin
+					Admin
 				</div>
 				</div>
 				

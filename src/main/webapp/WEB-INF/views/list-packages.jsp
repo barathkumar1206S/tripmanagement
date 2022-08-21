@@ -14,17 +14,18 @@
 <body>
 	<div id="table root" align="center">
 		<table>
+		<caption></caption>
 			<thead>
 				<tr>
-					<th>packageId</th>
-					<th>boardingPlace</th>
-					<th>destination</th>
-					<th>packageType</th>
-					<th>amount</th>
-					<th>noOfDays</th>
-					<th>maxNoOfSeats</th>
-					<th>StartDate</th>
-					<th>EndDate</th>
+					<th>Package Id</th>
+					<th>Boarding Place</th>
+					<th>Destination</th>
+					<th>Package Type</th>
+					<th>Amount</th>
+					<th>No Of Days</th>
+					<th>Max No Of Seats</th>
+					<th>Start Date</th>
+					<th>End Date</th>
 					<th>Edit</th>
                     <th>Delete</th>
                     <th>View</th>
@@ -56,6 +57,7 @@
 		<div class="btn_align">
             <a href="addpackageform"><button class="button">ADD PACKAGE
                 </button></a>
+	</div>
 	</div>
 </body>
 </html>

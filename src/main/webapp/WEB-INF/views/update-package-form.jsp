@@ -72,14 +72,14 @@
 				
 				
 			<div>
-				<label class="heading-text" for="startDate">startDate</label>
+				<label class="heading-text" for="startDate">start Date</label>
 					<div>
 					<form:input  type="date" path="startDate"  required="true"  class="input-size"/>
 				</div>
 				</div>
 				
 			<div>
-				<label class="heading-text" for="endDate">EndDate</label>
+				<label class="heading-text" for="endDate">End Date</label>
 					<div>
 					<form:input  type="date" path="endDate"  required="true" class="input-size"/>
 				</div>

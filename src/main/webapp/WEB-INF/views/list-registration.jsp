@@ -14,16 +14,16 @@
 <body>
 	<div id="table root" class="top">
 		<table>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>User Id</th>
 					<th>User Name</th>
 					<th>Gender</th>
-					<th>dob</th>
+					<th>Date Of Birth</th>
 					<th>Phone Number</th>
 					<th>Email</th>
-					<th>role</th>
-					<th>Edit</th>
+					<th>Role</th>
 					
 
 				</tr>
@@ -38,16 +38,13 @@
 						<td>${reg.phoneNumber}</td>
 						<td>${reg.email}</td>
 						<td>${reg.role}</td>
-						<td><a href="updateregform?userId=${reg.userId}">Edit</a></td>
 
 
 					</tr>
                 </c:forEach>
 			</tbody>
 		</table>
-		<div class="btn_align">
-			<a href="addregform"><button class="button">ADD USER</button></a>
-		</div>
+		
 	</div>
 </body>
 </html>

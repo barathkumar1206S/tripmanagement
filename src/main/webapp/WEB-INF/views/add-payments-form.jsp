@@ -26,28 +26,28 @@ body {
 			<form:form class="action" action="addpay" method="post" modelAttribute="addpayments">
 
 				<div>
-					<label class="heading-text" for="fromDate">FromDate</label>
+					<label class="heading-text" for="fromDate">From Date</label>
 					<div>
 						<form:input type="date" path="fromDate" class="input-size" />
 					</div>
 				</div>
 
 				<div>
-					<label class="heading-text" for="tripId">TripId</label>
+					<label class="heading-text" for="tripId">Trip Id</label>
 					<div>
 						<form:input path="tripId" readonly="true" class="input-size" />
 					</div>
 				</div>
 
 				<div>
-					<label class="heading-text" for="userId">UserId</label>
+					<label class="heading-text" for="userId">User Id</label>
 					<div>
 						<form:input path="userId" readonly="true" class="input-size" />
 					</div>
 				</div>
 
 				<div>
-					<label class="heading-text" for="paymentAmout">PaymentAmout</label>
+					<label class="heading-text" for="paymentAmout">Payment Amout</label>
 					<div>
 					<form:input path="paymentAmout" class="input-size" />
 					</div>

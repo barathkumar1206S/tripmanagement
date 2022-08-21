@@ -19,14 +19,14 @@ import javax.persistence.Table;
 @Table(name="trip")
 public class TripDetails {
 	@Id
-	@SequenceGenerator(name="triip_id", sequenceName="triip_id", allocationSize=1)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="triip_id")
+	@SequenceGenerator(name="tripp_id", sequenceName="tripp_id", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="tripp_id")
 	@Column(name="TRIP_ID")
 	private int tripId;
 	
 	@Column(name="PACKAGE_ID")
 	private int packageId;
-	
+
 	@Column(name="USER_ID")
 	private int userId;
 	

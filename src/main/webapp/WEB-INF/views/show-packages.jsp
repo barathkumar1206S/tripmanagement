@@ -24,9 +24,7 @@
 				</div>
 				
 			</form>
-		</div>
-		</div>
-
+		
 
  <div class="images__card1">
                 <h2 class="center">ChennaiToLadakh</h2>
@@ -52,8 +50,7 @@
 					<input type="submit" value="BookNow" />
 				</div>
 			</form>
-		</div>
-	</div>
+		
 	</section>
 </body>
 </html>

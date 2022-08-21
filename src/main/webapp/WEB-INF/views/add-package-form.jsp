@@ -71,7 +71,7 @@ body {
 				</div>
 				
 				<div>
-				<label class="heading-text" for="maxNoOfSeats">MaxNoOfSeats</label>
+				<label class="heading-text" for="maxNoOfSeats">Max No Of Seats</label>
 				<div>
 					<form:input path="maxNoOfSeats" title="Please enter number only"
                             pattern="^[0-9]+$" required="true" class="input-size"/>
@@ -80,14 +80,14 @@ body {
 				
 				
 			<div>
-				<label class="heading-text" for="startDate">startDate</label>
+				<label class="heading-text" for="startDate">start Date</label>
 					<div>
 					<form:input  type="date" path="startDate"  required="true" class="input-size"/>
 				</div>
 				</div>
 				
 			<div>
-				<label class="heading-text" for="endDate">EndDate</label>
+				<label class="heading-text" for="endDate">End Date</label>
 					<div>
 					<form:input  type="date" path="endDate"  required="true" class="input-size"/>
 				</div>

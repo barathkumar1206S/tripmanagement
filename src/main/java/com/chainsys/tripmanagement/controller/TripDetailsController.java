@@ -54,6 +54,8 @@ public class TripDetailsController {
 		}
 	}
 	
+	
+	
 	@GetMapping("/addtripform")
 	public String addNew(Model model) {
 		TripDetails tripDetails=new TripDetails();
@@ -98,10 +100,17 @@ public class TripDetailsController {
 		model.addAttribute("gettripdetail",tripDetails);
 		return "find-tripdetails-id-form";
 	}
+
+	@GetMapping("/getuseridbydetails")
+		public String getUserIdByTripDetails(@RequestParam("userId")int userId,Model model) {
+	List<TripDetails> tripDetails=tripDetailservice.findUserById(userId);
+	    model.addAttribute("alluserdetails",tripDetails);		
+		return "list-useridbytripdetails";
+		}
 	
 	
 	@GetMapping("/getpaymentdetailsbytripid")
-	public String getPaymentIdByTripDetails(@RequestParam("id") int id ,Model model){
+	    public String getPaymentIdByTripDetails(@RequestParam("id") int id ,Model model){
 		TripDetailsAndPaymentDTO dto=tripDetailservice.getTripPaymentsByTripDetails(id);
 		model.addAttribute("paymentdetail",dto.getTrippayments());
 		model.addAttribute("tripdetail",dto.getTripDetails());

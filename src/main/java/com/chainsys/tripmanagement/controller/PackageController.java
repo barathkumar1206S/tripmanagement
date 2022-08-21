@@ -30,7 +30,7 @@ public String getpackage(Model model) {
 	return "list-packages";
 }
 @GetMapping("/showpackages")
-public String showAllPackages(@RequestParam("id")int userId,Model model) {
+public String showAllPackages(@RequestParam("userId")int userId,Model model) {
 	// System.out.println(userId + " showpackage");
 	model.addAttribute("userId", userId);
 	return "show-packages";
