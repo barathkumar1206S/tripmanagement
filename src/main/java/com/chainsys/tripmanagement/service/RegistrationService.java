@@ -33,6 +33,12 @@ public class RegistrationService {
 		 tripRegistrationRepository.deleteById(id);
 	 }
 	 
+	 public TripRegistration findByEmailAndPassword(String email,String password)
+	 {
+		 return tripRegistrationRepository.findByEmailAndPassword(email, password);
+	 }
+
+	 
 	 
 	 
 	public TripRegistrationAndTripPaymentsDTO getTripDetailsAndPaymentDto(int id) {

@@ -40,9 +40,16 @@ public class HomePageController {
 
 	@PostMapping("/userpage")
 	public String userPage(@ModelAttribute("login") Login login, Model model) {
-		TripRegistration tripRegistration = registrationService.findById(login.getUserId());
-		if (tripRegistration.getPassword().equals(login.getPassword())) {
-			if (tripRegistration.getRole().equalsIgnoreCase("user")) {
+		TripRegistration tripRegistration = registrationService.findByEmailAndPassword(login.getEmail(), login.getPassword());
+		model.addAttribute("tripRegistration",tripRegistration.getUserId());
+		if (tripRegistration.getEmail().equals(login.getEmail())) 
+		{
+			if(tripRegistration.getPassword().equals(login.getPassword())) 
+			{
+				
+			
+			if (tripRegistration.getRole().equalsIgnoreCase("user")) 
+			{
 				int id=tripRegistration.getUserId();
 				return "redirect:/home/userHomeform?userId="+id;
 
@@ -50,12 +57,12 @@ public class HomePageController {
 				int id=tripRegistration.getUserId();
 				return "redirect:/home/adminHomeform?userId="+id;
 			}
-		} else {
+			}} else {
 			model.addAttribute("message", "Something Wrong ");
 			return "login-page";
 		}
 		return "login-page";
-
+	
 	}
 	@GetMapping("/addpayment")
 	public String addPayment(Model model) {

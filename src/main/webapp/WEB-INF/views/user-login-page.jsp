@@ -18,10 +18,16 @@ body {
         <div class="form-container">
             <h1>Login form</h1>
             <form:form action="userpage" method="post" modelAttribute="login">
+                
                 <div class="control">
-                    <label for="userId" class="label">UserId :</label>
-                    <form:input path="userId" placeholder="userId" class="input" />
-                </div>
+					<label class="heading-text" for="email">Email</label>
+					
+						<form:input path="email" name="email"
+							pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+							title="Enter a valid email welcome03@gmail.com"
+							placeholder="Enter a Email" required="true" class="input-size" />
+					
+				</div>
                 <div class="control">
                     <label for="password" class="label">Password :</label>
                     <form:input path="password" placeholder="password"
