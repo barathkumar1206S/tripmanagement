@@ -30,3 +30,37 @@ tr:hover {
     margin-top: 25px;
     text-align: center;
 }
+body{
+    background-size: 1366px 768px;
+    background-attachment: fixed;
+}
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+th, td {
+    border-color: #96D4D4;
+}
+
+tr:hover {
+    background-color: #D6EEEE;
+}
+
+
+.label-size {
+    font-size: 20px;
+}
+
+.text-box {
+    height: 20px;
+    width: 200px;
+}
+
+.button {
+    font-size: 19px;
+    background-color: #17c0cd5e;
+    border: 1px solid blue;
+    border-radius: 5px;
+}

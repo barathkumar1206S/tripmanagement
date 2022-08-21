@@ -19,6 +19,12 @@ p
     text-align: center;
         line-height: 60px;
 }
+.button
+{
+    margin-top: -350px;
+    float: right;
+    padding: 43px;
+}
 </style>
 </head>
 <body>
@@ -27,6 +33,12 @@ p
 <p>Thank you so much for your registration.I really appreciate it.<br>
 Have a great day!!<br>
 [BARATH KUMAR S] at [TRAVEL.COM]</p>
+
+<div class="button">
+                        <button class="button-style">
+                            <a href="/home/homepage">Logout</a>
+                        </button> 
+            </div>
 
 </body>
 </html>

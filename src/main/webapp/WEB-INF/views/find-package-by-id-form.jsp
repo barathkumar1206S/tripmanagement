@@ -23,17 +23,14 @@ function maxNumberOfSeats() {
 
 
 body {
-    background-image: url("https://wallpapersmug.com/download/1366x768/e1e099/gradient-pattern-abstract.jpg"); 
-    /* background-color: #a5edf3; */ 
-    background-repeat: no-repeat;
-    background-size: 1366px 650px;
-    background-position: center top;
-    position: relative;
+    background-image: url("https://www.teahub.io/photos/full/29-297120_beach-underwater-ocean-scenery-hd-wallpaper2016-under-water.jpg"); 
+    background-size: 1366px 768px;
+  
 }
 </style>
 </head>
 <body>
-	<h2 text-align= "center">Package Details</h2>
+	<h2 align="center">Package Details</h2>
 	<div id="root">
 		<div id="form" id="form" class="top">
 			<form:form action="" method="get" modelAttribute="getpackbyid" name="myForm">
