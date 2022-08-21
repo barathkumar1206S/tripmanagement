@@ -3,6 +3,7 @@ package com.chainsys.tripmanagement.businesslogic;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
 
 public class Logic {
@@ -24,6 +25,10 @@ public class Logic {
 	            e.printStackTrace();
 	        }
 	        return date;
+	    }
+		
+		public static LocalDate getInstanceFutureDate() {
+	        return java.time.LocalDate.now();
 	    }
 	}
 

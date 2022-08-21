@@ -8,6 +8,11 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style><%@include file ="/WEB-INF/css/alljsp.css"%>
+body {
+    background-image: url("https://www.teahub.io/photos/full/29-297120_beach-underwater-ocean-scenery-hd-wallpaper2016-under-water.jpg"); 
+    background-size: 1366px 768px;
+  
+}
 </style>
 </head>
 <body>

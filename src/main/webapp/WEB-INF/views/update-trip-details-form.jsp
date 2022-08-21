@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
        <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+     <%@ page import="com.chainsys.tripmanagement.businesslogic.Logic"%>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -40,14 +41,16 @@
 			    <div>
 				<label class="heading-text" for="startDate">Start Date </label>
 				<div>		
-					<form:input type="date" path="startDate" readonly="true" class="input-size" />
+					<form:input type="date" path="startDate" readonly="true" min="<%=Logic.getInstanceDate()%>"
+					 class="input-size" />
 				</div>
 				</div>
                  
                 <div>
 				<label class="heading-text" for="endDate">End Date</label>	
 				<div>	
-					<form:input type="date" path="endDate" readonly="true" class="input-size" />
+					<form:input type="date" path="endDate" readonly="true" min="<%=Logic.getInstanceDate()%>"
+					 class="input-size" />
 				</div>
 				</div>
 				
