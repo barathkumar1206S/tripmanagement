@@ -21,6 +21,9 @@ import com.chainsys.tripmanagement.service.TripDetailsService;
 @Controller
 @RequestMapping("/tripdetail")
 public class TripDetailsController {
+	
+	public static final String LISTOFTRIPDETAILS="redirect:/tripdetail/getalltripdetails";
+
 	@Autowired
 	TripDetailsService tripDetailservice;
 	@Autowired
@@ -65,7 +68,7 @@ public class TripDetailsController {
 	@PostMapping("/addform")
 	public String addTripForm(@ModelAttribute("addtripform") TripDetails tDetails,Model model) {
 		tripDetailservice.save(tDetails);
-		return "redirect:/tripdetail/getalltripdetails";
+		return LISTOFTRIPDETAILS;
 	}
 
 	
@@ -79,14 +82,14 @@ public class TripDetailsController {
 	public String updateTripDetails(@ModelAttribute("updatetripdetailsform") TripDetails tripDetail) {
 		
 		tripDetailservice.save(tripDetail);
-		return "redirect:/tripdetail/getalltripdetails";
+		return LISTOFTRIPDETAILS;
 	}
 	
 
 	@GetMapping("/deletebyid")
 	public String deleteTrip(@RequestParam("tripId") int id) {
 		tripDetailservice.deleteById(id);
-		return "redirect:/tripdetail/getalltripdetails";
+		return LISTOFTRIPDETAILS;
 	}
 	
 

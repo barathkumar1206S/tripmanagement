@@ -9,7 +9,6 @@
 <style><%@include file ="/WEB-INF/css/showpackages.css"%>
 </style>
 </head>
-
 <body>
 <section>
 	 <div class="images__card">
@@ -25,7 +24,6 @@
 				
 			</form>
 		
-
  <div class="images__card1">
                 <h2 class="center">ChennaiToLadakh</h2>
             </div>
@@ -37,7 +35,6 @@
 				</div>
 			</form>
 		
-
 	 <div class="images__card2">
                 <h2  class="center">ChennaiToKashmir</h2>
             </div>
@@ -54,9 +51,3 @@
 	</section>
 </body>
 </html>
-
-
-
-
-
-

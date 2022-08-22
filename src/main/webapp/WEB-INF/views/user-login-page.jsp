@@ -39,7 +39,8 @@ body {
                     <input type="submit" value="Login">
                 </div>
             </form:form>
-          
+          <div>${message}
+</div>
         </div>
     </section>
 

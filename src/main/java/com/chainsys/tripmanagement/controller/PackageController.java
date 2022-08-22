@@ -20,7 +20,10 @@ import com.chainsys.tripmanagement.service.PackageService;
 @Controller
 @RequestMapping("/package")
 public class PackageController {
-@Autowired
+ 
+	public static final String LISTOFPACKAGES="redirect:/package/getallpackages";
+	
+	@Autowired
 PackageService packService;
 
 @GetMapping("/getallpackages")
@@ -45,7 +48,7 @@ public String showAddForm(Model model) {
 public String addPackage(@ModelAttribute("addPackage") TripPackage thePack) {
 	
 	packService.save(thePack);
-	return "redirect:/package/getallpackages";
+	return LISTOFPACKAGES;
 }
 @GetMapping("/updatepackform")
 public String showPackage(@RequestParam("packageId") int id, Model model) {
@@ -58,12 +61,12 @@ public String showPackage(@RequestParam("packageId") int id, Model model) {
 public String updatePackage(@ModelAttribute("updatepackageform") TripPackage tpack) {
 	
 	packService.save(tpack);
-	return "redirect:/package/getallpackages";
+	return LISTOFPACKAGES;
 }
 @GetMapping("/deletepack")
 public String deletePackage(@RequestParam("packageId") int id) {
 	packService.deleteById(id);
-	return "redirect:/package/getallpackages";
+	return LISTOFPACKAGES;
 }
 
 

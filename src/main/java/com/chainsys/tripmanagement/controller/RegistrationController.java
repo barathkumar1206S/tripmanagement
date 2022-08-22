@@ -91,9 +91,5 @@ public class RegistrationController {
 		return "registration-payments-details";
 	}
 
-	@GetMapping("/usersloginform")
-	public String userLogIn() {
-		return "user-loginform";
-	}
-
+	
 }

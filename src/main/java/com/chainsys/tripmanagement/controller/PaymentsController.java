@@ -20,6 +20,8 @@ import com.chainsys.tripmanagement.service.TripDetailsService;
 @Controller
 @RequestMapping("/payment")
 public class PaymentsController {
+	public static final String  LISTOFPAYMENTS= "redirect:/payment/getallpayments";
+	
 @Autowired
  PaymentsService payService;
 @Autowired
@@ -41,7 +43,7 @@ public String showAddPaymentForm(Model model) {
 public String addPayments(@ModelAttribute("addpayments") TripPayments thePay) {
 	
 	payService.save(thePay);
-	return "redirect:/payment/getallpayments";
+	return LISTOFPAYMENTS;
 }
 
 @GetMapping("/updatepaymentform")
@@ -55,13 +57,13 @@ public String showUpdatePayForm(@RequestParam("paymentId") int id, Model model) 
 public String updatepayment(@ModelAttribute("updatepayments") TripPayments tpay) {
 	
 	payService.save(tpay);
-	return "redirect:/payment/getallpayments";
+	return LISTOFPAYMENTS;
 }
 
 @GetMapping("/deletepayment")
 public String deletePaymentById(@RequestParam("paymentId") int id) {
 	payService.deleteById(id);
-	return "redirect:/payment/getallpayments";
+	return LISTOFPAYMENTS;
 }
 
 @GetMapping("/getpayments")
