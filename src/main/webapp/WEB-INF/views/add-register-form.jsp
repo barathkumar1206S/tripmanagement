@@ -8,12 +8,11 @@
 <title>NEW REGISTRATION</title>
 <style><%@include file ="/WEB-INF/css/alljsp.css"%>
 body {
-	/* background-image:url(https://lh5.googleusercontent.com/proxy/YXR3HSsNAGzGBwz1EHBaA_56py2o7Vzt7fFHRwRft7yrFZwHdXqB_4r8wO3DosViVWDWZQRQCbJZPNHknU70Q0epxAu5eljcjlG535LIFAojMU-e8quIUuTrOpDfMF1nyDGQ93GqJvTbzMyxRh00oBhKuff8xdA); */
-	background-color: #a5edf3;
-	background-repeat: no-repeat;
-	background-size: 1366px 650px;
-	background-position: center top;
-	position: relative;
+    
+    background-image: url("https://w0.peakpx.com/wallpaper/83/55/HD-wallpaper-desert-ultra-nature-desert-landscape-background-colors-sand-africa-dunes-pastel-sahara-editing-morocco-erg-chebbi.jpg");
+    background-repeat: no-repeat;
+    background-size:1366px,768px;
+
 }
 </style>
 </head>
