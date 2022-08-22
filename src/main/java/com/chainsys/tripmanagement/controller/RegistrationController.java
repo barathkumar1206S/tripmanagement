@@ -50,17 +50,8 @@ public class RegistrationController {
 
 	@PostMapping("/update")
 	public String updateRegistration(@ModelAttribute("updateregister") TripRegistration treg){
-		if(treg.getRole().equalsIgnoreCase("user")) {
 		regService.save(treg);
-		int userId=treg.getUserId(); 
-		return "redirect:/home/userHomeform?userId="+userId;
-		}
-		else if(treg.getRole().equalsIgnoreCase("admin")) {
-			regService.save(treg);
-		int userId=treg.getUserId(); 
-			return "redirect:/home/adminHomeform?userId="+userId;
-		}
-		return "redirect:/registration/updateregform";
+		return "redirect:/home/homepage";
 	}
 
 	

@@ -10,7 +10,11 @@
 <style><%@include file ="/WEB-INF/css/alljsp.css"%>
 
 body {
-    background-color: #a5edf3;
+    
+    background-image: url("https://a-static.besthdwallpaper.com/classic-car-miniature-in-light-blue-and-pink-background-wallpaper-1366x768-54258_46.jpg");
+    background-repeat: no-repeat;
+    background-size:1366px,768px;
+
 }
 
 </style>

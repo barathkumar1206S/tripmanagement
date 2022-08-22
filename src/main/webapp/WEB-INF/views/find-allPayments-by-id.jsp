@@ -8,10 +8,15 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style><%@include file ="/WEB-INF/css/alljsp.css"%>
-body {
-    background-color: #a5edf3;
+
+ body {
+    
+    background-image: url("https://w0.peakpx.com/wallpaper/83/55/HD-wallpaper-desert-ultra-nature-desert-landscape-background-colors-sand-africa-dunes-pastel-sahara-editing-morocco-erg-chebbi.jpg");
+    background-repeat: no-repeat;
+    background-size:1366px,768px;
 
 }
+
 
 
 </style>

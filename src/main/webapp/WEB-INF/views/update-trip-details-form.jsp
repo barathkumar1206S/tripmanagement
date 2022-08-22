@@ -9,6 +9,15 @@
 <meta charset="ISO-8859-1">
 <title>Trip Details</title>
 <style><%@include file ="/WEB-INF/css/alljsp.css"%>
+
+body {
+    
+    background-image: url("https://a-static.besthdwallpaper.com/artistic-pink-heart-wallpaper-1366x768-11184_46.jpg");
+    background-repeat: no-repeat;
+    background-size:1366px,768px;
+
+}
+
 </style>
 </head>
 <body>

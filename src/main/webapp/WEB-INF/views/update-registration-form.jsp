@@ -14,6 +14,13 @@ body {
 }
 
 </style>
+<script>
+function msg()
+{
+	alert("Update Successfully....!");
+	alert("Login again...");
+	}
+</script>
 </head>
 <body>
     <div id="root">
@@ -69,24 +76,24 @@ body {
 				<div>
 				<label class="heading-text" for="password">Password</label>
 				<div>
-					<form:input type="hidden" path="password" name="password" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" title="Enter a valid password Welcomes@03 "  required="true"
+					<form:input  path="password" name="password" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" title="Enter a valid password Welcomes@03 "  required="true"
 					class="input-size" />
 				</div>
 				</div>
 				
-				<div>
+			<%-- 	 <div>
 				<label class="heading-text" for="role">Role</label>
-				<div>
+				<div> 
 					
 					<form:radiobutton path="role" value="user" />
 					User
 					<form:radiobutton path="role" value="admin" />
 					Admin
 				</div>
-				</div>
+				</div> --%>
 				
 				<div>
-                    <form:button class="button-style">UPDATE</form:button>
+                    <form:button class="button-style" onclick="msg()" >UPDATE</form:button>
                 </div>
 			</form:form>
 		</div>
