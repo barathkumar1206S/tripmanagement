@@ -13,8 +13,12 @@
     color: #e80c4d;
     font-size: 0.9em;
 }
-body {
-    background-color: #a5edf3;
+
+ body {
+    background-image: url("https://www.teahub.io/photos/full/29-297120_beach-underwater-ocean-scenery-hd-wallpaper2016-under-water.jpg"); 
+    background-size: 1366px 768px;
+  
+
 }
 </style>
 </head>

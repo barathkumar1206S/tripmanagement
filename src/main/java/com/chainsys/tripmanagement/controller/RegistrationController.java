@@ -73,11 +73,7 @@ public class RegistrationController {
 	
 
 	
-//
-//	@RequestMapping("/findbyuserid")
-//	public String findById() {
-//		return "find-by-userid-form";
-//	}
+
 
 	@GetMapping("/getregistration")
 	public String getRegistration(@RequestParam("userId") int userId, Model model) {

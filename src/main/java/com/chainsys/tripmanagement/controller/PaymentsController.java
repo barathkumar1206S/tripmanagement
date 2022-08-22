@@ -67,7 +67,6 @@ public String deletePaymentById(@RequestParam("paymentId") int id) {
 @GetMapping("/getpayments")
 public String getPayment(@RequestParam("tripId") int tripid,@RequestParam("userId") int userId, Model model) {
 TripPayments tpayments = payService.findByTripIdAndUserid(tripid, userId);
-//	model.addAttribute("getpayments", tpayments);
 	model.addAttribute("getpayments",tpayments);
 	TripDetails tripDetails=tripDetailsService.findById(tripid);
 	tpayments.setTripId(tripid);

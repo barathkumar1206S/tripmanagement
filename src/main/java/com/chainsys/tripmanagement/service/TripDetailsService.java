@@ -25,8 +25,7 @@ public class TripDetailsService {
 	@Autowired
 	private PackageService packageService;
 	public List<TripDetails> getAllTripDetails() {
-		List<TripDetails> triplist = tripDetailsRepo.findAll();
-		return triplist;
+		return tripDetailsRepo.findAll();
 	}
 
 	public TripDetails save(TripDetails tpd) {
@@ -69,8 +68,7 @@ public class TripDetailsService {
 	}
 
 	public List<TripDetails> findUserById(int userId) {
-		List<TripDetails> triplist =tripDetailsRepo.findByUserId(userId);
-	  return triplist;
+		return tripDetailsRepo.findByUserId(userId);
 	}
 	
 

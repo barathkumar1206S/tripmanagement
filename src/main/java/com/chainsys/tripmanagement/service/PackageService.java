@@ -20,8 +20,7 @@ public class PackageService {
 	private TripDetailsRepository tripDetailsRepository;
 	
 	public List<TripPackage> getAllPackages(){
-		List<TripPackage> packlist= packRepository.findAll();
-		return packlist;
+		return packRepository.findAll();
 	}
 	public TripPackage save(TripPackage trpack) {
 		return  packRepository.save(trpack);
@@ -41,7 +40,7 @@ public TripPackageAndTripDetailsDTO tripPackageAndTripDetailsDTO(int id) {
 	List<TripDetails> tripDetailsList=tripDetailsRepository.findByTripPackagePackageId(id);
 	Iterator<TripDetails> itr=tripDetailsList.iterator();
 	while(itr.hasNext()) {
-		tripPackageAndTripDetailsDTO.addTripPackageByTripDetails((TripDetails) itr.next());
+		tripPackageAndTripDetailsDTO.addTripPackageByTripDetails(itr.next());
 	}
 	return tripPackageAndTripDetailsDTO;
 }

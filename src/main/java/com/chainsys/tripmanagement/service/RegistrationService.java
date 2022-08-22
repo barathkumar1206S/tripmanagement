@@ -20,8 +20,7 @@ public class RegistrationService {
 	private TripPaymentsRepository tripPaymentsRepository;
 	
 	public List<TripRegistration> getAllRegistration(){
-		List<TripRegistration> reglist=tripRegistrationRepository.findAll();
-		return reglist;
+		return tripRegistrationRepository.findAll();
 	}
 	 public TripRegistration save(TripRegistration tpreg) {
 		return tripRegistrationRepository.save(tpreg);
@@ -48,7 +47,7 @@ public class RegistrationService {
 		List<TripPayments> tripPaymentList=tripPaymentsRepository.findByTripRegistrationUserId(id);
 		Iterator<TripPayments> itr=tripPaymentList.iterator();
 		while(itr.hasNext()) {
-			tripRegistrationAndTripPaymentsDTO.addTripRegistrationByTripPayments((TripPayments) itr.next());		
+			tripRegistrationAndTripPaymentsDTO.addTripRegistrationByTripPayments(itr.next());		
 		}
 		return tripRegistrationAndTripPaymentsDTO;
 	} 

@@ -11,8 +11,7 @@ public class PaymentsService {
 	@Autowired
 	private TripPaymentsRepository tPayRepo; 
 	public List<TripPayments> getAllPayments(){
-		List<TripPayments> tpaylist=tPayRepo.findAll();
-		return tpaylist;
+		return tPayRepo.findAll();
 	}
 	public TripPayments save(TripPayments trpay) {
 		

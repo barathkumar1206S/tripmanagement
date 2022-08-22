@@ -31,7 +31,6 @@ public String getpackage(Model model) {
 }
 @GetMapping("/showpackages")
 public String showAllPackages(@RequestParam("userId")int userId,Model model) {
-	// System.out.println(userId + " showpackage");
 	model.addAttribute("userId", userId);
 	return "show-packages";
 }
@@ -67,10 +66,6 @@ public String deletePackage(@RequestParam("packageId") int id) {
 	return "redirect:/package/getallpackages";
 }
 
-//@GetMapping("/findbyidpackform")
-//public String findById() {
-//	return "find-by-packid-form";
-//}
 
 
 @GetMapping("/getpackagebyid")
@@ -78,7 +73,6 @@ public String getPackageById(@RequestParam("packageId") int id,@RequestParam("us
 	TripPackage tpack =packService.findById(id);
 	model.addAttribute("getpackbyid",tpack);
 	model.addAttribute("packageId", id);
-	//System.out.println(userId+" getpackagebyid");
 	model.addAttribute("userId", userId);
 	if(tpack.getMaxNoOfSeats()<0) {
 		return "error-page";

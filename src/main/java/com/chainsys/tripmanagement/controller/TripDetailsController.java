@@ -82,11 +82,7 @@ public class TripDetailsController {
 		return "redirect:/tripdetail/getalltripdetails";
 	}
 	
-//	@RequestMapping("/deletebyidform")
-//	public String deleteBytripId() {
-//		return "delete-by-tripid-form";
-//	}
-//	
+
 	@GetMapping("/deletebyid")
 	public String deleteTrip(@RequestParam("tripId") int id) {
 		tripDetailservice.deleteById(id);
