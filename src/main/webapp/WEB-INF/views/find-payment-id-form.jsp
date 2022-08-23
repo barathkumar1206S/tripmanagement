@@ -11,7 +11,6 @@
 body {
 	 background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
 		url("https://thumbs.dreamstime.com/b/euro-4054151.jpg"); 
- /*    background-color: #a5edf3;  */ 
 	background-repeat: no-repeat;
 	background-size: 1366px 650px;
 	background-position: center top;
@@ -48,10 +47,9 @@ body {
 					</label>
 					<div>
 					<form:input path="paymentAmout" id="paymentAmout"
-							onchange="calculation(this.form)" class="input-size" />
+						 class="input-size" />
 					</div>
 				</div>
-
 				<div>
 					<label class="color"  for="tripId">TripId</label>
 					<div>

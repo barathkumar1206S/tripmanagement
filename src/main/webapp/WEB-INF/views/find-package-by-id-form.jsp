@@ -38,21 +38,21 @@ body {
 				<div>
 				<label class="heading-text" for="packageId">PackageId</label>
 				<div>	
-					<form:input path="packageId" class="input-size" />
+					<form:input path="packageId" readonly="true" class="input-size" />
 				</div>
 				</div>
 				
 				<div>
 				<label class="heading-text" for="boardingPlace">Boarding Place </label>			
 				<div>		
-					<form:input path="boardingPlace" class="input-size" />
+					<form:input path="boardingPlace" readonly="true" class="input-size" />
 				</div>
 				</div>
 				
 				<div>
 				<label class="heading-text" for="destination">Destination</label>			
 				<div>		
-					<form:input path="destination" class="input-size" />
+					<form:input path="destination" readonly="true" class="input-size" />
 				</div>
 				</div>
 				
@@ -66,35 +66,35 @@ body {
 			    <div>
 				<label class="heading-text" for="amount">Amount</label>			
 				<div>
-					<form:input path="amount" class="input-size" />
+					<form:input path="amount" readonly="true" class="input-size" />
 				</div>
 				</div>
 
                 <div>
 				<label class="heading-text" for="noOfDays">No Of Days</label>			
 				<div>	
-					<form:input path="noOfDays" class="input-size" />
+					<form:input path="noOfDays" readonly="true" class="input-size" />
 				</div>
 				</div>
 				
 				<div>
 				<label class="heading-text" for="maxNoOfSeats">Max No Of Seats</label>			
 				<div>
-					<form:input path="maxNoOfSeats" id ="maxNoOfSeats" class="input-size" name="maxNoOfSeats" value=""/>
+					<form:input path="maxNoOfSeats" id ="maxNoOfSeats" readonly="true" class="input-size" name="maxNoOfSeats" value=""/>
 				</div>
 				</div>
 				
 				<div>
 				<label class="heading-text" for="startDate">Start Date</label>			
 				<div>		
-					<form:input type="date" path="startDate" class="input-size" />
+					<form:input type="date" path="startDate" readonly="true" class="input-size" />
 					</div>
 					</div>
 					
 					<div>
 				<label class="heading-text" for="endDate">End Date</label>			
 				<div class="bottom">
-					<form:input type="date" path="endDate" class="input-size" />
+					<form:input type="date" path="endDate" readonly="true" class="input-size" />
 					</div>
 					</div>
 					

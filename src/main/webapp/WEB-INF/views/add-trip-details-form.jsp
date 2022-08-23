@@ -43,14 +43,14 @@ body {
 			    <div>
 				<label class="heading-text" for="startDate">StartDate </label>
 				<div>		
-					<form:input type="date" path="startDate" class="input-size" />
+					<form:input type="date" path="startDate" readonly="true" class="input-size" />
 				</div>
 				</div>
                  
                 <div>
 				<label class="heading-text" for="endDate">EndDate</label>	
 				<div>	
-					<form:input type="date" path="endDate" class="input-size" />
+					<form:input type="date" path="endDate" readonly="true" class="input-size" />
 				</div>
 				</div>
 				

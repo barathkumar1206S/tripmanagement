@@ -22,7 +22,8 @@ public class PaymentsService {
 	}
    public void deleteById(int id) {
 	   tPayRepo.deleteById(id);
-   }public TripPayments findByTripIdAndUserid(int tripId,int userId) {
+   }
+   public TripPayments findByTripIdAndUserid(int tripId,int userId) {
 	   return tPayRepo.findByTripIdAndUserId(tripId, userId);
    }
    
