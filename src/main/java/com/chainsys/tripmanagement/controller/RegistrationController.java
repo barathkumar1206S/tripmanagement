@@ -13,6 +13,7 @@ import java.util.List;
 import com.chainsys.tripmanagement.dto.TripRegistrationAndTripPaymentsDTO;
 import com.chainsys.tripmanagement.model.TripRegistration;
 import com.chainsys.tripmanagement.service.RegistrationService;
+import com.chainsys.tripmanagement.validation.InvalidInputDataException;
 
 @Controller
 @RequestMapping("/registration")
@@ -35,8 +36,27 @@ public class RegistrationController {
 	}
 
 	@PostMapping("/add")
-	public String addRegister(@ModelAttribute("addregister") TripRegistration registrationTrip) {
-		
+	public String addRegister(@ModelAttribute("addregister") TripRegistration registrationTrip,Model model) {
+		TripRegistration registrationTrip1 = regService.getByEmail(registrationTrip.getEmail());
+	        try {
+	            if (registrationTrip1 != null) {
+	                throw new InvalidInputDataException("* Email already exists");
+	            }
+	        } catch (InvalidInputDataException exception) {
+	            model.addAttribute("error", exception.getMessage());
+	            model.addAttribute("message", "Try different email");
+	            return "add-register-form";
+	        }
+	        registrationTrip1 = regService.getbyPhone(registrationTrip.getPhoneNumber());
+	        try {
+	            if (registrationTrip1 != null) {
+	                throw new InvalidInputDataException("* PhoneNumber already exists");
+	            }
+	        } catch (InvalidInputDataException exception) {
+	            model.addAttribute("error", exception.getMessage());
+	            model.addAttribute("message", "Try different phone");
+	            return "add-register-form";
+	        }  
 		regService.save(registrationTrip);
 		return "redirect:/registration/getregistration?userId=" + registrationTrip.getUserId();	
 	}

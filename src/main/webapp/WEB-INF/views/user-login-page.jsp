@@ -24,7 +24,7 @@ body {
 					
 						<form:input path="email" name="email"
 							pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
-							title="Enter a valid email welcome03@gmail.com"
+							title="Enter a valid email "
 							placeholder="Enter Email" required="true" class="input-size" />
 					
 				</div>
@@ -32,7 +32,7 @@ body {
                     <label for="password" class="label">Password :</label>
                     <form:input path="password" placeholder="Password"
                         type="password" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
-                        title="Enter a valid password Welcomes@03" required="true"
+                        title="Enter a valid password " required="true"
                         class="input" />
                 </div>
                 <div class="control">

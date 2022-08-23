@@ -28,6 +28,12 @@ public class RegistrationService {
 	 public TripRegistration findById(int id) {
 		 return tripRegistrationRepository.findById(id);
 	 }
+	 public TripRegistration getByEmail(String email) {
+		 return tripRegistrationRepository.findByEmail(email);
+	 }
+	 public TripRegistration getbyPhone(String phone) {
+		 return tripRegistrationRepository.findByPhoneNumber(phone);
+	 }
 	 public void deleteById(int id) {
 		 tripRegistrationRepository.deleteById(id);
 	 }

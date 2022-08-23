@@ -12,7 +12,8 @@ public interface TripRegistrationRepository extends  CrudRepository<TripRegistra
 	void deleteById(int id);
 	List <TripRegistration> findAll();
 	TripRegistration findByEmailAndPassword(String email,String password);
-
+	TripRegistration findByEmail(String email);
+	TripRegistration findByPhoneNumber(String phone);
 
 
 }

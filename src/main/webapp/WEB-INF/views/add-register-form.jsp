@@ -18,6 +18,8 @@ body {
 </head>
 <body>
 	<h3 class="center">User Registration form</h3>
+	<div style="color:red">${error}</div>
+	<div style="color:red">${message}</div>
 	<div id="root">
 		<div id="form" class="top">
 			<form:form class="action" action="add" method="post"
@@ -63,7 +65,7 @@ body {
 					<div>
 						<form:input path="email" name="email"
 							pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
-							title="Enter a valid email welcome03@gmail.com"
+							title="Enter a valid email "
 							placeholder="Enter a Email" required="true" class="input-size" />
 					</div>
 				</div>
@@ -72,7 +74,7 @@ body {
 					<div>
 						<form:input path="password"
 							pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
-							title="Enter a valid password Welcomes@03 " type="password"
+							title="Enter a valid password  " type="password"
 							required="true" class="input-size" />
 					</div>
 				</div>
