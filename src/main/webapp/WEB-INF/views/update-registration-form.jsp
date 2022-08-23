@@ -10,7 +10,9 @@
 <style ><%@include file ="/WEB-INF/css/alljsp.css"%>
 
 body {
-    background-color: #a5edf3;
+    background-image: url("https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&w=600");
+    background-repeat: no-repeat;
+    background-size:1366px,768px;
 }
 
 </style>
@@ -55,7 +57,7 @@ function msg()
 				<div>
 				<label class="heading-text" for="dob">Date Of Birth</label>
 				<div>
-					<form:input type="date" path="dob" required="true" class="input-size"/>
+					<form:input type="date" path="dob" max='2022-08-23' required="true" class="input-size"/>
 				</div>
 				</div>
 				
@@ -81,16 +83,7 @@ function msg()
 				</div>
 				</div>
 				
-			<%-- 	 <div>
-				<label class="heading-text" for="role">Role</label>
-				<div> 
-					
-					<form:radiobutton path="role" value="user" />
-					User
-					<form:radiobutton path="role" value="admin" />
-					Admin
-				</div>
-				</div> --%>
+	
 				
 				<div>
                     <form:button class="button-style" onclick="msg()" >UPDATE</form:button>

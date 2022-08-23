@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.tripmanagement.model.TripDetails;
 import com.chainsys.tripmanagement.model.TripPayments;
 import com.chainsys.tripmanagement.service.PaymentsService;
-import com.chainsys.tripmanagement.service.TripDetailsService;
 
 @Controller
 @RequestMapping("/payment")
@@ -24,8 +22,6 @@ public class PaymentsController {
 	
 @Autowired
  PaymentsService payService;
-@Autowired
-private TripDetailsService tripDetailsService;
 @GetMapping("/getallpayments")
 public String getPayments(Model model) {
 List<TripPayments> payList=payService.getAllPayments();
@@ -70,10 +66,6 @@ public String deletePaymentById(@RequestParam("paymentId") int id) {
 public String getPayment(@RequestParam("tripId") int tripid,@RequestParam("userId") int userId, Model model) {
 TripPayments tpayments = payService.findByTripIdAndUserid(tripid, userId);
 	model.addAttribute("getpayments",tpayments);
-	TripDetails tripDetails=tripDetailsService.findById(tripid);
-	tpayments.setTripId(tripid);
-	tpayments.setUserId(tripDetails.getUserId());
-	tpayments.setFromDate(tpayments.getFromDate());
 	return "find-payment-id-form";
 }
 

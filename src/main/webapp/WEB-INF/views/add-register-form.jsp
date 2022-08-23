@@ -28,7 +28,7 @@ body {
 					<div>
 						<form:input path="userName" pattern="^[a-z A-Z]+$"
 							title="Please Enter Charactor Only"
-							placeholder="Enter userName" class="input-size" />
+							placeholder="Enter UserName" class="input-size" />
 					</div>
 				</div>
 
@@ -45,7 +45,7 @@ body {
 				<div>
 					<label class="heading-text" for="dob">Date Of Birth</label>
 					<div>
-						<form:input type="date" path="dob" required="true"
+						<form:input type="date" path="dob" max='2022-08-23' required="true"
 							class="input-size" />
 					</div>
 				</div>
@@ -77,15 +77,7 @@ body {
 					</div>
 				</div>
 				<div>
-					<label class="heading-text" for="role">Role</label>
-
-					<div>
-
-						<form:radiobutton path="role" value="user" />
-						User
-						<form:radiobutton path="role" value="admin" />
-						Admin
-					</div>
+						<form:hidden path="role" name="role" value="user" />
 				</div>
 				<div>
 					<input type="submit" value="Submit" /> <input type="reset">

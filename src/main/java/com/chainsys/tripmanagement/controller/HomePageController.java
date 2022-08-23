@@ -48,7 +48,6 @@ public class HomePageController {
 				throw new InvalidInputDataException("There is no Matching data");
 	} 
 		catch (InvalidInputDataException exp) {
-		model.addAttribute("error", "Error Name:" + exp.getMessage());
 		model.addAttribute("message", "Email or password Mismatch");
 		return USERLOGINPAGE;
 	}

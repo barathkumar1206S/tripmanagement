@@ -37,6 +37,8 @@ public class TripDetailsService {
 		tripPayments.setPaymentAmout((float)(Logic.paymentAmountCalculation(tpd.getBookedPassengers(), tripPackage.getAmount())));
 		tripPayments.setFromDate(Logic.getInstanceDate());
 		paymentsService.save(tripPayments);
+		
+		
 		TripPackage  tripPackageDetail=packageService.findById(tpd.getPackageId());
 		tripPackageDetail.setMaxNoOfSeats(tripPackageDetail.getMaxNoOfSeats()-tpd.getBookedPassengers());
 		packageService.save(tripPackageDetail);

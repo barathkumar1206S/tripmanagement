@@ -25,7 +25,7 @@ body {
 						<form:input path="email" name="email"
 							pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
 							title="Enter a valid email welcome03@gmail.com"
-							placeholder="Enter a Email" required="true" class="input-size" />
+							placeholder="Enter Email" required="true" class="input-size" />
 					
 				</div>
                 <div class="control">

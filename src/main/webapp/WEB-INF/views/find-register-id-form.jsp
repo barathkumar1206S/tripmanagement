@@ -7,9 +7,15 @@
 <meta charset="ISO-8859-1">
 <title>Find RegisterById</title>
 <style><%@include file ="/WEB-INF/css/alljsp.css"%>
+body {
+    
+    background-image: url("https://w0.peakpx.com/wallpaper/83/55/HD-wallpaper-desert-ultra-nature-desert-landscape-background-colors-sand-africa-dunes-pastel-sahara-editing-morocco-erg-chebbi.jpg");
+    background-repeat: no-repeat;
+    background-size:1366px,768px;
+
+}
 </style>
 </head>
-<body>
 <body>
     <div id="root">
         <div id="form" class="top">
@@ -70,16 +76,8 @@
 					class="input-size" />
 				</div>
 				</div>
-				
-				<div>
-				<label class="heading-text" for="role">Role</label>
-				<div>
-					
-					<form:radiobutton path="role" value="user" />
-					user
-					<form:radiobutton path="role" value="admin" />
-					admin
-				</div>
+					<div>
+						<form:hidden path="role" name="role" value="user" />
 				</div>
 				<form:button class="button-style">
                             <a href="/home/login">Next</a>
