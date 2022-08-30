@@ -20,8 +20,10 @@ background-image:url("https://picfiles.alphacoders.com/255/255875.jpg");
 	<ul>
 		<li><a href="#">UserDetails</a>
 				<ul class="ul-2">
-					<li><a href="/registration/getallregistrations">List</a></li>
-					<li><a href="/registration/updateregform?userId=${userId}">Update</a></li>
+				<li><a href="/registration/addadminform">Add Admin</a></li>
+				<li><a href="/registration/getallregistrations">List</a></li>
+				<li><a href="/registration/updateregform?userId=${userId}">Update</a></li>
+					
 				</ul></li>
 			
 			<li><a href="#">PackageList</a>

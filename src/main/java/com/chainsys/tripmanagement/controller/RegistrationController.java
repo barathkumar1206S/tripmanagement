@@ -44,7 +44,6 @@ public class RegistrationController {
 	            }
 	        } catch (InvalidInputDataException exception) {
 	            model.addAttribute("error", exception.getMessage());
-	            model.addAttribute("message", "Try different email");
 	            return "add-register-form";
 	        }
 	        registrationTrip1 = regService.getbyPhone(registrationTrip.getPhoneNumber());
@@ -54,13 +53,43 @@ public class RegistrationController {
 	            }
 	        } catch (InvalidInputDataException exception) {
 	            model.addAttribute("error", exception.getMessage());
-	            model.addAttribute("message", "Try different phone");
 	            return "add-register-form";
 	        }  
 		regService.save(registrationTrip);
 		return "redirect:/registration/getregistration?userId=" + registrationTrip.getUserId();	
 	}
 
+	@GetMapping("/addadminform")
+	public String showAddAdminForm(Model model) {
+		TripRegistration thereg = new TripRegistration();
+		model.addAttribute("addadminregister", thereg);
+		return "add-admin-form";
+	}
+
+	@PostMapping("/addadmin")
+	public String addAdminRegister(@ModelAttribute("addadminregister") TripRegistration registrationTrip,Model model) {
+		TripRegistration registrationTrip1 = regService.getByEmail(registrationTrip.getEmail());
+	        try {
+	            if (registrationTrip1 != null) {
+	                throw new InvalidInputDataException("* Email already exists");
+	            }
+	        } catch (InvalidInputDataException exception) {
+	            model.addAttribute("error", exception.getMessage());
+	            return "add-register-form";
+	        }
+	        registrationTrip1 = regService.getbyPhone(registrationTrip.getPhoneNumber());
+	        try {
+	            if (registrationTrip1 != null) {
+	                throw new InvalidInputDataException("* PhoneNumber already exists");
+	            }
+	        } catch (InvalidInputDataException exception) {
+	            model.addAttribute("error", exception.getMessage());
+	            return "add-register-form";
+	        }  
+		regService.save(registrationTrip);
+		return "redirect:/registration/getregistration?userId=" + registrationTrip.getUserId();	
+	}
+	
 	@GetMapping("/updateregform")
 	public String showUpdateForm(@RequestParam("userId") int userId, Model model) {
 		TripRegistration treg = regService.findById(userId);
@@ -74,17 +103,11 @@ public class RegistrationController {
 		return "redirect:/home/homepage";
 	}
 
-	
-
 	@GetMapping("/deletereg")
 	public String deleteRegistration(@RequestParam("userId") int id) {
 		regService.deleteById(id);
 		return "redirect:/registration/getallregistrations";
 	}
-	
-
-	
-
 
 	@GetMapping("/getregistration")
 	public String getRegistration(@RequestParam("userId") int userId, Model model) {

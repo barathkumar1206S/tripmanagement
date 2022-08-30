@@ -38,6 +38,7 @@ package_id number(4),
 FOREIGN KEY (package_id) REFERENCES package(package_id),
 start_date date,
 end_date date,
+user_id number(4),
 Booked_passengers number(10),
 trip_status varchar2(20)
 );

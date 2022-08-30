@@ -21,7 +21,7 @@ public class HomePageController {
 	@Autowired
 	private RegistrationService registrationService;
 	@GetMapping("homepage")
-	public String getHome(Model model) {
+	public String getHome() {
 		return "webpage";
 		
 	}
@@ -35,7 +35,7 @@ public class HomePageController {
 	}
 
 	@GetMapping("/newuser")
-	public String getfirstPage(Model mode) {
+	public String getfirstPage(Model model) {
 		return "redirect:/registration/addregform";
 	}
 

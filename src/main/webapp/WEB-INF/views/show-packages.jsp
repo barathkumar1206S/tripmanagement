@@ -12,7 +12,7 @@
 <body>
 <section>
 	 <div class="images__card">
-                <h2 class="center">Chennai To Goa</h2>
+                <h2 class="center">Chennail To Goa</h2>
             </div>
 		<form action="getpackagebyid" method="get">
 			<div class="center">

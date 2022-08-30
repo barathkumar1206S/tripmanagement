@@ -17,14 +17,14 @@ body {
 </style>
 </head>
 <body>
-	<h3 class="center">User Registration form</h3>
+	<h3 class="center">Admin Registration form</h3>
 	
 	<div id="root">
 		<div id="form" class="top">
-			<form:form class="action" action="add" method="post"
-				modelAttribute="addregister">
+			<form:form class="action" action="addadmin" method="post"
+				modelAttribute="addadminregister">
 				<div>
-					<label class="heading-text" for="userName">User Name</label>
+					<label class="heading-text" for="userName">Admin Name</label>
 					<div>
 						<form:input path="userName" pattern="^[a-z A-Z]+$"
 							title="Please Enter Charactor Only"
@@ -74,7 +74,7 @@ body {
 					</div>
 				</div>
 				<div>
-						<form:hidden path="role" name="role" value="user" />
+						<form:hidden path="role" name="role" value="admin" />
 				</div>
 				<div>
 					<input type="submit" value="Submit" /> <input type="reset">

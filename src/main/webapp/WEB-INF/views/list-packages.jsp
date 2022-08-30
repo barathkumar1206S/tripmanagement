@@ -62,7 +62,7 @@ cellpadding:2px;
 						
 						
 					</tr>
-                </c:forEach>
+                </c:forEach>
 			</tbody>
 		</table>
 		<div class="btn_align">

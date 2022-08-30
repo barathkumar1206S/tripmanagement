@@ -57,7 +57,7 @@ function msg()
 				<div>
 				<label class="heading-text" for="dob">Date Of Birth</label>
 				<div>
-					<form:input type="date" path="dob" max='2022-08-23' required="true" class="input-size"/>
+					<form:input type="date" path="dob" max='2022-08-30' required="true" class="input-size"/>
 				</div>
 				</div>
 				

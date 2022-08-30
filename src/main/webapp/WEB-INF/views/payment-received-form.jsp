@@ -35,9 +35,8 @@ Have a great day!!<br>
 [BARATH KUMAR S] at [TRAVEL.COM]</p>
 
 <div class="button">
-                        <button class="button-style">
-                            <a href="/home/homepage">Logout</a>
-                        </button> 
+ <button class="button-style"><a href="/home/homepage">Logout</a></button> 
+                       
             </div>
 
 </body>
