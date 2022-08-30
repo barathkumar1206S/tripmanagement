@@ -22,7 +22,7 @@ public class Logic {
 	        try {
 	            date=new java.sql.Date(dateFormat.parse(dates).getTime());
 	        } catch (ParseException e) {
-	            e.printStackTrace();
+	            return date;
 	        }
 	        return date;
 	    }
