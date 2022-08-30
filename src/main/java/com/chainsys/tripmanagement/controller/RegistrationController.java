@@ -20,6 +20,9 @@ import com.chainsys.tripmanagement.validation.InvalidInputDataException;
 public class RegistrationController {
 	@Autowired
 	public RegistrationService regService;
+	
+	public static final String ADDREGISTERATION="redirect:/registration/addregform";
+
 
 	@GetMapping("/getallregistrations")
 	public String getRegistration(Model model) {
@@ -43,8 +46,8 @@ public class RegistrationController {
 	                throw new InvalidInputDataException("* Email already exists");
 	            }
 	        } catch (InvalidInputDataException exception) {
-	            model.addAttribute("error", exception.getMessage());
-	            return "add-register-form";
+	            model.addAttribute("error2", exception.getMessage());
+	            return ADDREGISTERATION;
 	        }
 	        registrationTrip1 = regService.getbyPhone(registrationTrip.getPhoneNumber());
 	        try {
@@ -53,7 +56,7 @@ public class RegistrationController {
 	            }
 	        } catch (InvalidInputDataException exception) {
 	            model.addAttribute("error", exception.getMessage());
-	            return "add-register-form";
+	            return ADDREGISTERATION;
 	        }  
 		regService.save(registrationTrip);
 		return "redirect:/registration/getregistration?userId=" + registrationTrip.getUserId();	
@@ -75,7 +78,7 @@ public class RegistrationController {
 	            }
 	        } catch (InvalidInputDataException exception) {
 	            model.addAttribute("error", exception.getMessage());
-	            return "add-register-form";
+	            return ADDREGISTERATION;
 	        }
 	        registrationTrip1 = regService.getbyPhone(registrationTrip.getPhoneNumber());
 	        try {
@@ -84,7 +87,7 @@ public class RegistrationController {
 	            }
 	        } catch (InvalidInputDataException exception) {
 	            model.addAttribute("error", exception.getMessage());
-	            return "add-register-form";
+	            return ADDREGISTERATION;
 	        }  
 		regService.save(registrationTrip);
 		return "redirect:/registration/getregistration?userId=" + registrationTrip.getUserId();	
@@ -98,8 +101,8 @@ public class RegistrationController {
 	}
 
 	@PostMapping("/update")
-	public String updateRegistration(@ModelAttribute("updateregister") TripRegistration treg){
-		regService.save(treg);
+	public String updateRegistration(@ModelAttribute("updateregister") TripRegistration tripreg){
+		regService.save(tripreg);
 		return "redirect:/home/homepage";
 	}
 

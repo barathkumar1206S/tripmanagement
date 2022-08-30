@@ -42,7 +42,7 @@ body {
 				<div>
 					<label class="heading-text" for="dob">Date Of Birth</label>
 					<div>
-						<form:input type="date" path="dob" max='2022-08-23' required="true"
+						<form:input type="date" path="dob" max='2022-08-30' required="true"
 							class="input-size" />
 					</div>
 				</div>
@@ -82,7 +82,7 @@ body {
 			</form:form>
 		</div>
 	</div>
-	<div style="color:red;position: absolute; right: 620px;bottom: 168px;  margin-left: 9px; text-align: center;">${error}</div>
+	<div style="color:red;position: absolute; right: 620px;bottom: 168px;  margin-left: 9px; text-align: center;">${error2}</div>
 </body>
 </html>
  
