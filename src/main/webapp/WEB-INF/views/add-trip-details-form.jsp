@@ -34,21 +34,21 @@ body {
 				</div>
 				
 				<div>
-				<label class="heading-text" for="userId">UserId</label>
+				<label class="heading-text" for="userId">User Id</label>
 				<div>
 					<form:input path="userId" readonly="true" class="input-size" />
 				</div>
 				</div>
 			
 			    <div>
-				<label class="heading-text" for="startDate">StartDate </label>
+				<label class="heading-text" for="startDate">Start Date </label>
 				<div>		
 					<form:input type="date" path="startDate" readonly="true" class="input-size" />
 				</div>
 				</div>
                  
                 <div>
-				<label class="heading-text" for="endDate">EndDate</label>	
+				<label class="heading-text" for="endDate">End Date</label>	
 				<div>	
 					<form:input type="date" path="endDate" readonly="true" class="input-size" />
 				</div>
@@ -63,10 +63,10 @@ body {
 				</div>
 
 				<div class="bottom">
-					Trip Status: <form:select path="tripStatus">  
+					Trip Status: <form:select  readonly="true" path="tripStatus">  
         <form:option value="Starting" label="Starting"/>  
-        <form:option value="Inprogress" label="Inprogress"/>  
-        <form:option value="cancel" label="cancel"/>  
+<%--         <form:option value="Inprogress" label="Inprogress"/>  
+        <form:option value="cancel" label="cancel"/>   --%>
         </form:select>
 				</div>
 

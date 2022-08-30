@@ -56,7 +56,8 @@ cellpadding:2px;
 						<td>${tripPackage.startDate}</td>
 						<td>${tripPackage.endDate}</td>
 						<td><a href="updatepackform?packageId=${tripPackage.packageId}">Edit</a></td>
-                        <td><a href="deletepack?packageId=${tripPackage.packageId}">Delete</a></td>
+                        <td><a href="deletepack?packageId=${tripPackage.packageId}"
+                        onclick="if (confirm('Are you sure you want to delete?')) form.action='/Config?pg=FIBiller&amp;cmd=delete'; else return false;">Delete</a></td>
                         <td><a href="getpackage?packageId=${tripPackage.packageId}">View</a></td>
 						
 						
